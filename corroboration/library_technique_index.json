@@ -1,0 +1,3667 @@
+{
+ "T0817": {
+  "name": "",
+  "detect_packs": [],
+  "hunt_packs": [
+   "oilrig"
+  ]
+ },
+ "T0853": {
+  "name": "",
+  "detect_packs": [
+   "oilrig"
+  ],
+  "hunt_packs": []
+ },
+ "T0859": {
+  "name": "",
+  "detect_packs": [],
+  "hunt_packs": [
+   "oilrig"
+  ]
+ },
+ "T0865": {
+  "name": "",
+  "detect_packs": [
+   "oilrig"
+  ],
+  "hunt_packs": []
+ },
+ "T0869": {
+  "name": "",
+  "detect_packs": [],
+  "hunt_packs": [
+   "oilrig"
+  ]
+ },
+ "T1001": {
+  "name": "Data Obfuscation",
+  "detect_packs": [
+   "ballistic-bobcat"
+  ],
+  "hunt_packs": []
+ },
+ "T1003": {
+  "name": "OS Credential Dumping",
+  "detect_packs": [
+   "apt39",
+   "homeland-justice",
+   "volatile-cedar"
+  ],
+  "hunt_packs": []
+ },
+ "T1003.001": {
+  "name": "LSASS Memory",
+  "detect_packs": [
+   "agrius",
+   "apt33",
+   "apt39",
+   "ballistic-bobcat",
+   "cavern-manticore",
+   "charming-kitten",
+   "copykittens",
+   "greenbug",
+   "imperial-kitten",
+   "muddywater",
+   "oilrig",
+   "pioneer-kitten",
+   "sidewinder",
+   "tortoiseshell",
+   "tropic-trooper"
+  ],
+  "hunt_packs": []
+ },
+ "T1003.002": {
+  "name": "Security Account Manager",
+  "detect_packs": [
+   "agrius",
+   "cavern-manticore"
+  ],
+  "hunt_packs": []
+ },
+ "T1003.003": {
+  "name": "NTDS",
+  "detect_packs": [
+   "pioneer-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1003.004": {
+  "name": "LSA Secrets",
+  "detect_packs": [
+   "apt33",
+   "muddywater",
+   "oilrig"
+  ],
+  "hunt_packs": []
+ },
+ "T1003.005": {
+  "name": "Cached Domain Credentials",
+  "detect_packs": [
+   "muddywater",
+   "oilrig"
+  ],
+  "hunt_packs": [
+   "apt33"
+  ]
+ },
+ "T1003.006": {
+  "name": "DCSync",
+  "detect_packs": [
+   "unc1549"
+  ],
+  "hunt_packs": []
+ },
+ "T1005": {
+  "name": "Data from Local System",
+  "detect_packs": [
+   "apt39",
+   "arid-viper",
+   "ballistic-bobcat",
+   "charming-kitten",
+   "dark-caracal",
+   "domestic-kitten",
+   "infy",
+   "pioneer-kitten",
+   "predatory-sparrow",
+   "rocket-kitten",
+   "sea-turtle",
+   "sidewinder",
+   "stealth-falcon",
+   "tortoiseshell",
+   "volatile-cedar"
+  ],
+  "hunt_packs": [
+   "agrius",
+   "bahamut",
+   "copykittens",
+   "ferocious-kitten",
+   "homeland-justice",
+   "imperial-kitten",
+   "madi",
+   "moses-staff",
+   "oilalpha",
+   "oilrig",
+   "polonium",
+   "unc1860"
+  ]
+ },
+ "T1007": {
+  "name": "System Service Discovery",
+  "detect_packs": [
+   "tortoiseshell"
+  ],
+  "hunt_packs": [
+   "oilrig"
+  ]
+ },
+ "T1008": {
+  "name": "Fallback Channels",
+  "detect_packs": [
+   "volatile-cedar"
+  ],
+  "hunt_packs": [
+   "oilrig"
+  ]
+ },
+ "T1010": {
+  "name": "Application Window Discovery",
+  "detect_packs": [],
+  "hunt_packs": [
+   "cadelle",
+   "ferocious-kitten",
+   "hexane",
+   "infy"
+  ]
+ },
+ "T1012": {
+  "name": "Query Registry",
+  "detect_packs": [
+   "apt39",
+   "pioneer-kitten",
+   "stealth-falcon"
+  ],
+  "hunt_packs": [
+   "oilrig"
+  ]
+ },
+ "T1014": {
+  "name": "Rootkit",
+  "detect_packs": [
+   "scarred-manticore",
+   "unc1860"
+  ],
+  "hunt_packs": []
+ },
+ "T1016": {
+  "name": "System Network Configuration Discovery",
+  "detect_packs": [
+   "charming-kitten",
+   "greenbug",
+   "hexane",
+   "sidewinder",
+   "stealth-falcon",
+   "tortoiseshell",
+   "volatile-cedar"
+  ],
+  "hunt_packs": [
+   "muddywater",
+   "oilrig",
+   "polonium",
+   "strongpity",
+   "tropic-trooper",
+   "void-manticore"
+  ]
+ },
+ "T1016.001": {
+  "name": "Internet Connection Discovery",
+  "detect_packs": [
+   "dark-caracal",
+   "hexane"
+  ],
+  "hunt_packs": [
+   "charming-kitten"
+  ]
+ },
+ "T1016.002": {
+  "name": "Wi-Fi Discovery",
+  "detect_packs": [
+   "charming-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1018": {
+  "name": "Remote System Discovery",
+  "detect_packs": [
+   "apt39",
+   "ballistic-bobcat",
+   "charming-kitten",
+   "copykittens",
+   "hexane",
+   "homeland-justice",
+   "pioneer-kitten",
+   "tropic-trooper",
+   "volatile-cedar"
+  ],
+  "hunt_packs": [
+   "agrius",
+   "moses-staff"
+  ]
+ },
+ "T1020": {
+  "name": "Automated Exfiltration",
+  "detect_packs": [
+   "sidewinder",
+   "stealth-falcon",
+   "strongpity"
+  ],
+  "hunt_packs": []
+ },
+ "T1021.001": {
+  "name": "Remote Desktop Protocol",
+  "detect_packs": [
+   "agrius",
+   "apt33",
+   "apt39",
+   "cavern-manticore",
+   "charming-kitten",
+   "greenbug",
+   "hexane",
+   "homeland-justice",
+   "pioneer-kitten",
+   "tortoiseshell",
+   "unc1549",
+   "unc1860",
+   "void-manticore"
+  ],
+  "hunt_packs": [
+   "oilrig"
+  ]
+ },
+ "T1021.002": {
+  "name": "SMB/Windows Admin Shares",
+  "detect_packs": [
+   "apt39",
+   "copykittens",
+   "homeland-justice",
+   "imperial-kitten",
+   "moses-staff",
+   "pioneer-kitten",
+   "tortoiseshell",
+   "tropic-trooper",
+   "volatile-cedar"
+  ],
+  "hunt_packs": []
+ },
+ "T1021.004": {
+  "name": "SSH",
+  "detect_packs": [
+   "apt39",
+   "ballistic-bobcat",
+   "oilrig",
+   "pioneer-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1021.006": {
+  "name": "Windows Remote Management",
+  "detect_packs": [
+   "unc1549"
+  ],
+  "hunt_packs": []
+ },
+ "T1025": {
+  "name": "Data from Removable Media",
+  "detect_packs": [
+   "arid-viper"
+  ],
+  "hunt_packs": [
+   "oilrig"
+  ]
+ },
+ "T1027": {
+  "name": "Obfuscated Files or Information",
+  "detect_packs": [
+   "ballistic-bobcat",
+   "copykittens",
+   "ferocious-kitten",
+   "hexane",
+   "imperial-kitten",
+   "rocket-kitten",
+   "tortoiseshell"
+  ],
+  "hunt_packs": [
+   "arid-viper",
+   "bahamut",
+   "cotton-sandstorm",
+   "void-manticore",
+   "volatile-cedar"
+  ]
+ },
+ "T1027.002": {
+  "name": "Software Packing",
+  "detect_packs": [
+   "apt39",
+   "dark-caracal",
+   "madi"
+  ],
+  "hunt_packs": [
+   "gaza-cybergang",
+   "scarred-manticore",
+   "unc1860"
+  ]
+ },
+ "T1027.003": {
+  "name": "Steganography",
+  "detect_packs": [
+   "dark-caracal"
+  ],
+  "hunt_packs": [
+   "muddywater"
+  ]
+ },
+ "T1027.004": {
+  "name": "Compile After Delivery",
+  "detect_packs": [
+   "muddywater",
+   "sea-turtle"
+  ],
+  "hunt_packs": []
+ },
+ "T1027.005": {
+  "name": "Indicator Removal from Tools",
+  "detect_packs": [],
+  "hunt_packs": [
+   "oilrig"
+  ]
+ },
+ "T1027.006": {
+  "name": "HTML Smuggling",
+  "detect_packs": [
+   "gaza-cybergang"
+  ],
+  "hunt_packs": []
+ },
+ "T1027.007": {
+  "name": "Dynamic API Resolution",
+  "detect_packs": [
+   "unc1549"
+  ],
+  "hunt_packs": []
+ },
+ "T1027.009": {
+  "name": "Embedded Payloads",
+  "detect_packs": [],
+  "hunt_packs": [
+   "agrius"
+  ]
+ },
+ "T1027.010": {
+  "name": "Command Obfuscation",
+  "detect_packs": [
+   "hexane",
+   "muddywater",
+   "pioneer-kitten",
+   "sidewinder",
+   "stealth-falcon"
+  ],
+  "hunt_packs": [
+   "charming-kitten",
+   "wirte"
+  ]
+ },
+ "T1027.013": {
+  "name": "Encrypted/Encoded File",
+  "detect_packs": [
+   "apt39",
+   "dark-caracal",
+   "greenbug",
+   "homeland-justice",
+   "infy",
+   "pioneer-kitten",
+   "polonium",
+   "predatory-sparrow",
+   "sidewinder",
+   "stealth-falcon",
+   "strongpity",
+   "tortoiseshell",
+   "tropic-trooper",
+   "unc1549",
+   "unc3890"
+  ],
+  "hunt_packs": [
+   "apt33",
+   "charming-kitten",
+   "cyberav3ngers",
+   "group5",
+   "hexane",
+   "moses-staff",
+   "oilrig",
+   "scarred-manticore",
+   "unc1860"
+  ]
+ },
+ "T1027.015": {
+  "name": "Compression",
+  "detect_packs": [],
+  "hunt_packs": [
+   "gaza-cybergang",
+   "wirte"
+  ]
+ },
+ "T1033": {
+  "name": "System Owner/User Discovery",
+  "detect_packs": [
+   "apt39",
+   "cavern-manticore",
+   "charming-kitten",
+   "greenbug",
+   "hexane",
+   "sidewinder",
+   "stealth-falcon",
+   "tortoiseshell",
+   "volatile-cedar"
+  ],
+  "hunt_packs": [
+   "arid-viper",
+   "bahamut",
+   "gaza-cybergang",
+   "muddywater",
+   "oilrig",
+   "polonium",
+   "wirte"
+  ]
+ },
+ "T1036": {
+  "name": "Masquerading",
+  "detect_packs": [
+   "imperial-kitten",
+   "oilalpha",
+   "predatory-sparrow",
+   "tortoiseshell",
+   "unc1549"
+  ],
+  "hunt_packs": [
+   "agrius",
+   "bahamut",
+   "homeland-justice",
+   "oilrig",
+   "void-manticore"
+  ]
+ },
+ "T1036.002": {
+  "name": "Right-to-Left Override",
+  "detect_packs": [
+   "ferocious-kitten",
+   "infy",
+   "madi"
+  ],
+  "hunt_packs": []
+ },
+ "T1036.004": {
+  "name": "Masquerade Task or Service",
+  "detect_packs": [
+   "pioneer-kitten",
+   "strongpity"
+  ],
+  "hunt_packs": [
+   "charming-kitten"
+  ]
+ },
+ "T1036.005": {
+  "name": "Match Legitimate Resource Name or Location",
+  "detect_packs": [
+   "apt39",
+   "ballistic-bobcat",
+   "cavern-manticore",
+   "copykittens",
+   "ferocious-kitten",
+   "greenbug",
+   "group5",
+   "madi",
+   "muddywater",
+   "oilrig",
+   "pioneer-kitten",
+   "polonium",
+   "rocket-kitten",
+   "sidewinder",
+   "stealth-falcon",
+   "strongpity",
+   "tortoiseshell",
+   "tropic-trooper",
+   "unc3890"
+  ],
+  "hunt_packs": [
+   "bahamut",
+   "charming-kitten",
+   "cotton-sandstorm",
+   "cyberav3ngers",
+   "domestic-kitten",
+   "moses-staff",
+   "scarred-manticore",
+   "unc1860",
+   "wirte"
+  ]
+ },
+ "T1036.007": {
+  "name": "Double File Extension",
+  "detect_packs": [
+   "arid-viper"
+  ],
+  "hunt_packs": []
+ },
+ "T1036.008": {
+  "name": "Masquerade File Type",
+  "detect_packs": [
+   "arid-viper",
+   "rocket-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1036.010": {
+  "name": "Masquerade Account Name",
+  "detect_packs": [],
+  "hunt_packs": [
+   "charming-kitten"
+  ]
+ },
+ "T1037.004": {
+  "name": "RC Scripts",
+  "detect_packs": [],
+  "hunt_packs": [
+   "cyberav3ngers"
+  ]
+ },
+ "T1039": {
+  "name": "Data from Network Shared Drive",
+  "detect_packs": [],
+  "hunt_packs": [
+   "pioneer-kitten"
+  ]
+ },
+ "T1040": {
+  "name": "Network Sniffing",
+  "detect_packs": [],
+  "hunt_packs": [
+   "apt33"
+  ]
+ },
+ "T1041": {
+  "name": "Exfiltration Over C2 Channel",
+  "detect_packs": [
+   "agrius",
+   "arid-viper",
+   "bahamut",
+   "ballistic-bobcat",
+   "copykittens",
+   "dark-caracal",
+   "ferocious-kitten",
+   "gaza-cybergang",
+   "hexane",
+   "imperial-kitten",
+   "infy",
+   "madi",
+   "polonium",
+   "rocket-kitten",
+   "scarred-manticore",
+   "sea-turtle",
+   "sidewinder",
+   "stealth-falcon",
+   "strongpity",
+   "tortoiseshell",
+   "tropic-trooper",
+   "unc3890"
+  ],
+  "hunt_packs": [
+   "apt39",
+   "domestic-kitten",
+   "homeland-justice",
+   "muddywater",
+   "oilalpha",
+   "unc1549",
+   "unc1860",
+   "wirte"
+  ]
+ },
+ "T1046": {
+  "name": "Network Service Discovery",
+  "detect_packs": [
+   "apt39",
+   "ballistic-bobcat",
+   "cavern-manticore",
+   "charming-kitten",
+   "copykittens",
+   "cyberav3ngers",
+   "homeland-justice",
+   "imperial-kitten",
+   "oilrig",
+   "pioneer-kitten",
+   "tropic-trooper",
+   "unc1860"
+  ],
+  "hunt_packs": [
+   "agrius"
+  ]
+ },
+ "T1047": {
+  "name": "Windows Management Instrumentation",
+  "detect_packs": [
+   "arid-viper",
+   "cavern-manticore",
+   "charming-kitten",
+   "gaza-cybergang",
+   "greenbug",
+   "moses-staff",
+   "muddywater",
+   "oilrig",
+   "predatory-sparrow",
+   "stealth-falcon",
+   "tortoiseshell"
+  ],
+  "hunt_packs": []
+ },
+ "T1048": {
+  "name": "Exfiltration Over Alternative Protocol",
+  "detect_packs": [
+   "domestic-kitten",
+   "unc3890"
+  ],
+  "hunt_packs": []
+ },
+ "T1048.003": {
+  "name": "Exfiltration Over Unencrypted Non-C2 Protocol",
+  "detect_packs": [
+   "apt33",
+   "copykittens",
+   "infy",
+   "oilrig",
+   "rocket-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1049": {
+  "name": "System Network Connections Discovery",
+  "detect_packs": [
+   "charming-kitten",
+   "greenbug",
+   "hexane",
+   "tortoiseshell"
+  ],
+  "hunt_packs": [
+   "muddywater",
+   "oilrig"
+  ]
+ },
+ "T1053.005": {
+  "name": "Scheduled Task",
+  "detect_packs": [
+   "agrius",
+   "apt33",
+   "apt39",
+   "cavern-manticore",
+   "charming-kitten",
+   "copykittens",
+   "gaza-cybergang",
+   "hexane",
+   "homeland-justice",
+   "imperial-kitten",
+   "infy",
+   "moses-staff",
+   "muddywater",
+   "oilrig",
+   "pioneer-kitten",
+   "polonium",
+   "predatory-sparrow",
+   "sidewinder",
+   "stealth-falcon",
+   "strongpity",
+   "tortoiseshell",
+   "unc3890",
+   "wirte"
+  ],
+  "hunt_packs": []
+ },
+ "T1055": {
+  "name": "Process Injection",
+  "detect_packs": [
+   "copykittens",
+   "gaza-cybergang",
+   "tortoiseshell",
+   "tropic-trooper"
+  ],
+  "hunt_packs": [
+   "scarred-manticore",
+   "unc1860"
+  ]
+ },
+ "T1055.001": {
+  "name": "Dynamic-link Library Injection",
+  "detect_packs": [
+   "domestic-kitten",
+   "imperial-kitten",
+   "tropic-trooper"
+  ],
+  "hunt_packs": []
+ },
+ "T1055.012": {
+  "name": "Process Hollowing",
+  "detect_packs": [
+   "dark-caracal"
+  ],
+  "hunt_packs": []
+ },
+ "T1056": {
+  "name": "Input Capture",
+  "detect_packs": [
+   "pioneer-kitten"
+  ],
+  "hunt_packs": [
+   "apt39"
+  ]
+ },
+ "T1056.001": {
+  "name": "Keylogging",
+  "detect_packs": [
+   "arid-viper",
+   "cadelle",
+   "dark-caracal",
+   "domestic-kitten",
+   "greenbug",
+   "infy",
+   "polonium",
+   "rocket-kitten",
+   "sidewinder",
+   "strongpity",
+   "volatile-cedar"
+  ],
+  "hunt_packs": [
+   "apt39",
+   "bahamut",
+   "charming-kitten",
+   "copykittens",
+   "ferocious-kitten",
+   "group5",
+   "hexane",
+   "madi",
+   "oilrig",
+   "tortoiseshell"
+  ]
+ },
+ "T1056.002": {
+  "name": "GUI Input Capture",
+  "detect_packs": [
+   "sidewinder",
+   "unc1549"
+  ],
+  "hunt_packs": []
+ },
+ "T1056.003": {
+  "name": "Web Portal Capture",
+  "detect_packs": [
+   "oilalpha"
+  ],
+  "hunt_packs": [
+   "domestic-kitten",
+   "rocket-kitten",
+   "tortoiseshell",
+   "unc3890"
+  ]
+ },
+ "T1057": {
+  "name": "Process Discovery",
+  "detect_packs": [
+   "bahamut",
+   "charming-kitten",
+   "hexane",
+   "sidewinder",
+   "stealth-falcon",
+   "tortoiseshell"
+  ],
+  "hunt_packs": [
+   "ballistic-bobcat",
+   "copykittens",
+   "ferocious-kitten",
+   "gaza-cybergang",
+   "infy",
+   "muddywater",
+   "oilrig",
+   "polonium",
+   "predatory-sparrow",
+   "scarred-manticore",
+   "strongpity"
+  ]
+ },
+ "T1059": {
+  "name": "Command and Scripting Interpreter",
+  "detect_packs": [
+   "apt39",
+   "volatile-cedar"
+  ],
+  "hunt_packs": [
+   "oilrig"
+  ]
+ },
+ "T1059.001": {
+  "name": "PowerShell",
+  "detect_packs": [
+   "apt33",
+   "apt39",
+   "cavern-manticore",
+   "charming-kitten",
+   "copykittens",
+   "dark-caracal",
+   "gaza-cybergang",
+   "greenbug",
+   "hexane",
+   "homeland-justice",
+   "moses-staff",
+   "muddywater",
+   "oilrig",
+   "pioneer-kitten",
+   "polonium",
+   "predatory-sparrow",
+   "stealth-falcon",
+   "strongpity",
+   "tortoiseshell",
+   "unc3890",
+   "wirte"
+  ],
+  "hunt_packs": []
+ },
+ "T1059.003": {
+  "name": "Windows Command Shell",
+  "detect_packs": [
+   "agrius",
+   "arid-viper",
+   "ballistic-bobcat",
+   "cavern-manticore",
+   "charming-kitten",
+   "dark-caracal",
+   "ferocious-kitten",
+   "gaza-cybergang",
+   "greenbug",
+   "hexane",
+   "homeland-justice",
+   "imperial-kitten",
+   "moses-staff",
+   "muddywater",
+   "oilrig",
+   "polonium",
+   "predatory-sparrow",
+   "scarred-manticore",
+   "tortoiseshell",
+   "tropic-trooper",
+   "unc1860",
+   "unc3890",
+   "void-manticore"
+  ],
+  "hunt_packs": [
+   "wirte"
+  ]
+ },
+ "T1059.004": {
+  "name": "Unix Shell",
+  "detect_packs": [
+   "sea-turtle"
+  ],
+  "hunt_packs": [
+   "cyberav3ngers"
+  ]
+ },
+ "T1059.005": {
+  "name": "Visual Basic",
+  "detect_packs": [
+   "apt33",
+   "apt39",
+   "bahamut",
+   "charming-kitten",
+   "dark-caracal",
+   "ferocious-kitten",
+   "gaza-cybergang",
+   "hexane",
+   "imperial-kitten",
+   "infy",
+   "muddywater",
+   "oilrig",
+   "predatory-sparrow",
+   "rocket-kitten",
+   "stealth-falcon",
+   "tortoiseshell",
+   "wirte"
+  ],
+  "hunt_packs": []
+ },
+ "T1059.006": {
+  "name": "Python",
+  "detect_packs": [
+   "apt39",
+   "arid-viper",
+   "dark-caracal",
+   "gaza-cybergang",
+   "imperial-kitten"
+  ],
+  "hunt_packs": [
+   "muddywater"
+  ]
+ },
+ "T1059.007": {
+  "name": "JavaScript",
+  "detect_packs": [
+   "gaza-cybergang",
+   "muddywater",
+   "sidewinder"
+  ],
+  "hunt_packs": [
+   "stealth-falcon",
+   "tortoiseshell"
+  ]
+ },
+ "T1059.010": {
+  "name": "AutoHotKey & AutoIT",
+  "detect_packs": [
+   "apt39"
+  ],
+  "hunt_packs": []
+ },
+ "T1068": {
+  "name": "Exploitation for Privilege Escalation",
+  "detect_packs": [
+   "apt33",
+   "oilrig"
+  ],
+  "hunt_packs": [
+   "unc1860"
+  ]
+ },
+ "T1069.001": {
+  "name": "Local Groups",
+  "detect_packs": [
+   "hexane",
+   "oilrig",
+   "tortoiseshell"
+  ],
+  "hunt_packs": []
+ },
+ "T1069.002": {
+  "name": "Domain Groups",
+  "detect_packs": [
+   "oilrig",
+   "volatile-cedar"
+  ],
+  "hunt_packs": [
+   "wirte"
+  ]
+ },
+ "T1070.003": {
+  "name": "Clear Command History",
+  "detect_packs": [
+   "charming-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1070.004": {
+  "name": "File Deletion",
+  "detect_packs": [
+   "apt39",
+   "ballistic-bobcat",
+   "charming-kitten",
+   "cyberav3ngers",
+   "dark-caracal",
+   "moses-staff",
+   "polonium",
+   "predatory-sparrow",
+   "strongpity",
+   "tortoiseshell",
+   "unc1549"
+  ],
+  "hunt_packs": [
+   "agrius",
+   "group5",
+   "oilrig",
+   "rocket-kitten",
+   "tropic-trooper"
+  ]
+ },
+ "T1070.006": {
+  "name": "Timestomp",
+  "detect_packs": [],
+  "hunt_packs": [
+   "agrius"
+  ]
+ },
+ "T1071": {
+  "name": "Application Layer Protocol",
+  "detect_packs": [
+   "charming-kitten",
+   "cyberav3ngers",
+   "oilalpha"
+  ],
+  "hunt_packs": []
+ },
+ "T1071.001": {
+  "name": "Web Protocols",
+  "detect_packs": [
+   "apt33",
+   "apt39",
+   "arid-viper",
+   "bahamut",
+   "ballistic-bobcat",
+   "cavern-manticore",
+   "charming-kitten",
+   "copykittens",
+   "cotton-sandstorm",
+   "dark-caracal",
+   "domestic-kitten",
+   "ferocious-kitten",
+   "gaza-cybergang",
+   "greenbug",
+   "hexane",
+   "homeland-justice",
+   "imperial-kitten",
+   "infy",
+   "madi",
+   "moses-staff",
+   "polonium",
+   "rocket-kitten",
+   "sea-turtle",
+   "sidewinder",
+   "stealth-falcon",
+   "strongpity",
+   "tortoiseshell",
+   "tropic-trooper",
+   "unc1549",
+   "unc3890",
+   "volatile-cedar"
+  ],
+  "hunt_packs": [
+   "muddywater",
+   "oilrig",
+   "scarred-manticore",
+   "unc1860",
+   "wirte"
+  ]
+ },
+ "T1071.002": {
+  "name": "File Transfer Protocols",
+  "detect_packs": [
+   "polonium"
+  ],
+  "hunt_packs": []
+ },
+ "T1071.003": {
+  "name": "Mail Protocols",
+  "detect_packs": [
+   "imperial-kitten"
+  ],
+  "hunt_packs": [
+   "tortoiseshell"
+  ]
+ },
+ "T1071.004": {
+  "name": "DNS",
+  "detect_packs": [
+   "apt39",
+   "copykittens",
+   "cyberav3ngers",
+   "greenbug",
+   "hexane"
+  ],
+  "hunt_packs": [
+   "oilrig"
+  ]
+ },
+ "T1072": {
+  "name": "Software Deployment Tools",
+  "detect_packs": [
+   "unc1549"
+  ],
+  "hunt_packs": []
+ },
+ "T1074.001": {
+  "name": "Local Data Staging",
+  "detect_packs": [
+   "apt39",
+   "arid-viper",
+   "copykittens",
+   "infy",
+   "rocket-kitten",
+   "sidewinder",
+   "strongpity"
+  ],
+  "hunt_packs": [
+   "agrius",
+   "hexane",
+   "muddywater",
+   "oilrig",
+   "tortoiseshell",
+   "tropic-trooper",
+   "volatile-cedar",
+   "wirte"
+  ]
+ },
+ "T1074.002": {
+  "name": "Remote Data Staging",
+  "detect_packs": [
+   "sea-turtle"
+  ],
+  "hunt_packs": []
+ },
+ "T1078": {
+  "name": "Valid Accounts",
+  "detect_packs": [
+   "apt33",
+   "apt39",
+   "cotton-sandstorm",
+   "greenbug",
+   "hexane",
+   "polonium",
+   "predatory-sparrow",
+   "sea-turtle",
+   "tortoiseshell",
+   "unc1549"
+  ],
+  "hunt_packs": [
+   "moses-staff",
+   "oilrig"
+  ]
+ },
+ "T1078.001": {
+  "name": "Default Accounts",
+  "detect_packs": [
+   "cavern-manticore",
+   "charming-kitten",
+   "cyberav3ngers"
+  ],
+  "hunt_packs": []
+ },
+ "T1078.002": {
+  "name": "Domain Accounts",
+  "detect_packs": [
+   "charming-kitten",
+   "oilrig",
+   "pioneer-kitten",
+   "tortoiseshell"
+  ],
+  "hunt_packs": [
+   "agrius",
+   "void-manticore"
+  ]
+ },
+ "T1078.003": {
+  "name": "Local Accounts",
+  "detect_packs": [
+   "ballistic-bobcat",
+   "pioneer-kitten",
+   "sea-turtle"
+  ],
+  "hunt_packs": []
+ },
+ "T1078.004": {
+  "name": "Cloud Accounts",
+  "detect_packs": [
+   "apt33",
+   "charming-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1082": {
+  "name": "System Information Discovery",
+  "detect_packs": [
+   "ballistic-bobcat",
+   "cavern-manticore",
+   "cotton-sandstorm",
+   "greenbug",
+   "hexane",
+   "sidewinder",
+   "stealth-falcon",
+   "tortoiseshell",
+   "volatile-cedar"
+  ],
+  "hunt_packs": [
+   "arid-viper",
+   "bahamut",
+   "cadelle",
+   "charming-kitten",
+   "copykittens",
+   "domestic-kitten",
+   "gaza-cybergang",
+   "imperial-kitten",
+   "infy",
+   "moses-staff",
+   "muddywater",
+   "oilrig",
+   "polonium",
+   "predatory-sparrow",
+   "scarred-manticore",
+   "tropic-trooper",
+   "unc3890",
+   "wirte"
+  ]
+ },
+ "T1083": {
+  "name": "File and Directory Discovery",
+  "detect_packs": [
+   "charming-kitten",
+   "dark-caracal",
+   "greenbug",
+   "hexane",
+   "muddywater",
+   "pioneer-kitten",
+   "sidewinder",
+   "strongpity",
+   "volatile-cedar"
+  ],
+  "hunt_packs": [
+   "apt39",
+   "arid-viper",
+   "ferocious-kitten",
+   "gaza-cybergang",
+   "homeland-justice",
+   "madi",
+   "moses-staff",
+   "polonium",
+   "tortoiseshell"
+  ]
+ },
+ "T1087": {
+  "name": "Account Discovery",
+  "detect_packs": [
+   "hexane",
+   "unc1549"
+  ],
+  "hunt_packs": []
+ },
+ "T1087.001": {
+  "name": "Local Account",
+  "detect_packs": [
+   "greenbug",
+   "oilrig",
+   "tortoiseshell"
+  ],
+  "hunt_packs": []
+ },
+ "T1087.002": {
+  "name": "Domain Account",
+  "detect_packs": [
+   "cavern-manticore",
+   "hexane",
+   "muddywater",
+   "oilrig",
+   "pioneer-kitten",
+   "tortoiseshell",
+   "void-manticore"
+  ],
+  "hunt_packs": []
+ },
+ "T1087.003": {
+  "name": "Email Account",
+  "detect_packs": [
+   "charming-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1087.004": {
+  "name": "Cloud Account",
+  "detect_packs": [
+   "apt33"
+  ],
+  "hunt_packs": []
+ },
+ "T1090": {
+  "name": "Proxy",
+  "detect_packs": [
+   "ballistic-bobcat",
+   "cavern-manticore",
+   "copykittens",
+   "greenbug",
+   "pioneer-kitten",
+   "sea-turtle",
+   "unc1549"
+  ],
+  "hunt_packs": [
+   "charming-kitten",
+   "hexane",
+   "muddywater",
+   "polonium",
+   "scarred-manticore",
+   "tortoiseshell",
+   "unc1860"
+  ]
+ },
+ "T1090.001": {
+  "name": "Internal Proxy",
+  "detect_packs": [
+   "tropic-trooper",
+   "void-manticore"
+  ],
+  "hunt_packs": [
+   "apt39"
+  ]
+ },
+ "T1090.002": {
+  "name": "External Proxy",
+  "detect_packs": [],
+  "hunt_packs": [
+   "apt39",
+   "muddywater",
+   "scarred-manticore"
+  ]
+ },
+ "T1090.003": {
+  "name": "Multi-hop Proxy",
+  "detect_packs": [
+   "apt33"
+  ],
+  "hunt_packs": [
+   "strongpity"
+  ]
+ },
+ "T1095": {
+  "name": "Non-Application Layer Protocol",
+  "detect_packs": [
+   "dark-caracal",
+   "polonium"
+  ],
+  "hunt_packs": [
+   "madi",
+   "scarred-manticore",
+   "unc1860"
+  ]
+ },
+ "T1098": {
+  "name": "Account Manipulation",
+  "detect_packs": [
+   "apt33",
+   "cavern-manticore"
+  ],
+  "hunt_packs": [
+   "pioneer-kitten"
+  ]
+ },
+ "T1098.002": {
+  "name": "Additional Email Delegate Permissions",
+  "detect_packs": [
+   "charming-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1098.007": {
+  "name": "Additional Local or Domain Groups",
+  "detect_packs": [
+   "charming-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1102": {
+  "name": "Web Service",
+  "detect_packs": [
+   "imperial-kitten",
+   "pioneer-kitten"
+  ],
+  "hunt_packs": [
+   "arid-viper",
+   "gaza-cybergang"
+  ]
+ },
+ "T1102.002": {
+  "name": "Bidirectional Communication",
+  "detect_packs": [
+   "polonium",
+   "unc3890"
+  ],
+  "hunt_packs": [
+   "apt39",
+   "charming-kitten",
+   "gaza-cybergang",
+   "hexane",
+   "muddywater"
+  ]
+ },
+ "T1104": {
+  "name": "Multi-Stage Channels",
+  "detect_packs": [],
+  "hunt_packs": [
+   "muddywater"
+  ]
+ },
+ "T1105": {
+  "name": "Ingress Tool Transfer",
+  "detect_packs": [
+   "apt33",
+   "apt39",
+   "arid-viper",
+   "bahamut",
+   "ballistic-bobcat",
+   "cavern-manticore",
+   "charming-kitten",
+   "copykittens",
+   "cotton-sandstorm",
+   "dark-caracal",
+   "ferocious-kitten",
+   "gaza-cybergang",
+   "greenbug",
+   "group5",
+   "hexane",
+   "homeland-justice",
+   "imperial-kitten",
+   "infy",
+   "madi",
+   "moses-staff",
+   "muddywater",
+   "oilrig",
+   "pioneer-kitten",
+   "polonium",
+   "predatory-sparrow",
+   "rocket-kitten",
+   "sidewinder",
+   "stealth-falcon",
+   "strongpity",
+   "tortoiseshell",
+   "tropic-trooper",
+   "unc1549",
+   "unc3890",
+   "void-manticore",
+   "volatile-cedar"
+  ],
+  "hunt_packs": [
+   "domestic-kitten",
+   "scarred-manticore",
+   "unc1860",
+   "wirte"
+  ]
+ },
+ "T1106": {
+  "name": "Native API",
+  "detect_packs": [],
+  "hunt_packs": [
+   "dark-caracal",
+   "tropic-trooper",
+   "unc1860",
+   "wirte"
+  ]
+ },
+ "T1110": {
+  "name": "Brute Force",
+  "detect_packs": [
+   "agrius",
+   "apt33",
+   "apt39",
+   "cyberav3ngers",
+   "hexane",
+   "pioneer-kitten"
+  ],
+  "hunt_packs": [
+   "oilrig"
+  ]
+ },
+ "T1110.001": {
+  "name": "Password Guessing",
+  "detect_packs": [
+   "cotton-sandstorm"
+  ],
+  "hunt_packs": []
+ },
+ "T1110.002": {
+  "name": "Password Cracking",
+  "detect_packs": [],
+  "hunt_packs": [
+   "cotton-sandstorm"
+  ]
+ },
+ "T1110.003": {
+  "name": "Password Spraying",
+  "detect_packs": [
+   "agrius",
+   "apt33",
+   "hexane",
+   "unc1549"
+  ],
+  "hunt_packs": []
+ },
+ "T1111": {
+  "name": "Multi-Factor Authentication Interception",
+  "detect_packs": [],
+  "hunt_packs": [
+   "domestic-kitten"
+  ]
+ },
+ "T1112": {
+  "name": "Modify Registry",
+  "detect_packs": [
+   "cavern-manticore",
+   "charming-kitten",
+   "copykittens",
+   "homeland-justice",
+   "predatory-sparrow",
+   "sidewinder",
+   "stealth-falcon",
+   "tortoiseshell",
+   "unc1549"
+  ],
+  "hunt_packs": [
+   "oilrig"
+  ]
+ },
+ "T1113": {
+  "name": "Screen Capture",
+  "detect_packs": [
+   "arid-viper",
+   "dark-caracal",
+   "domestic-kitten",
+   "ferocious-kitten",
+   "greenbug",
+   "infy",
+   "polonium",
+   "sidewinder",
+   "unc1549",
+   "volatile-cedar"
+  ],
+  "hunt_packs": [
+   "apt39",
+   "bahamut",
+   "cadelle",
+   "charming-kitten",
+   "copykittens",
+   "gaza-cybergang",
+   "group5",
+   "hexane",
+   "madi",
+   "moses-staff",
+   "muddywater",
+   "oilrig",
+   "tortoiseshell",
+   "wirte"
+  ]
+ },
+ "T1114": {
+  "name": "Email Collection",
+  "detect_packs": [
+   "charming-kitten",
+   "predatory-sparrow"
+  ],
+  "hunt_packs": [
+   "hexane"
+  ]
+ },
+ "T1114.001": {
+  "name": "Local Email Collection",
+  "detect_packs": [
+   "charming-kitten",
+   "sea-turtle",
+   "wirte"
+  ],
+  "hunt_packs": []
+ },
+ "T1114.002": {
+  "name": "Remote Email Collection",
+  "detect_packs": [
+   "charming-kitten",
+   "scarred-manticore"
+  ],
+  "hunt_packs": []
+ },
+ "T1115": {
+  "name": "Clipboard Data",
+  "detect_packs": [],
+  "hunt_packs": [
+   "apt39",
+   "cadelle",
+   "domestic-kitten",
+   "ferocious-kitten",
+   "infy",
+   "oilrig",
+   "polonium"
+  ]
+ },
+ "T1119": {
+  "name": "Automated Collection",
+  "detect_packs": [
+   "arid-viper",
+   "infy",
+   "sidewinder",
+   "stealth-falcon",
+   "strongpity"
+  ],
+  "hunt_packs": [
+   "agrius",
+   "bahamut",
+   "domestic-kitten",
+   "hexane",
+   "oilrig",
+   "tortoiseshell"
+  ]
+ },
+ "T1120": {
+  "name": "Peripheral Device Discovery",
+  "detect_packs": [
+   "arid-viper",
+   "dark-caracal",
+   "domestic-kitten"
+  ],
+  "hunt_packs": [
+   "cadelle",
+   "infy",
+   "oilrig"
+  ]
+ },
+ "T1123": {
+  "name": "Audio Capture",
+  "detect_packs": [
+   "dark-caracal",
+   "infy"
+  ],
+  "hunt_packs": [
+   "arid-viper",
+   "bahamut",
+   "cadelle",
+   "domestic-kitten",
+   "group5",
+   "madi",
+   "oilalpha"
+  ]
+ },
+ "T1124": {
+  "name": "System Time Discovery",
+  "detect_packs": [],
+  "hunt_packs": [
+   "sidewinder"
+  ]
+ },
+ "T1125": {
+  "name": "Video Capture",
+  "detect_packs": [
+   "dark-caracal",
+   "polonium"
+  ],
+  "hunt_packs": [
+   "domestic-kitten",
+   "group5",
+   "oilalpha"
+  ]
+ },
+ "T1129": {
+  "name": "Shared Modules",
+  "detect_packs": [
+   "polonium",
+   "volatile-cedar"
+  ],
+  "hunt_packs": []
+ },
+ "T1132.001": {
+  "name": "Standard Encoding",
+  "detect_packs": [
+   "arid-viper",
+   "ballistic-bobcat",
+   "copykittens",
+   "greenbug",
+   "hexane",
+   "polonium",
+   "tortoiseshell",
+   "unc3890"
+  ],
+  "hunt_packs": [
+   "apt33",
+   "gaza-cybergang",
+   "infy",
+   "muddywater",
+   "oilrig"
+  ]
+ },
+ "T1133": {
+  "name": "External Remote Services",
+  "detect_packs": [
+   "cavern-manticore",
+   "cyberav3ngers",
+   "imperial-kitten",
+   "pioneer-kitten",
+   "polonium",
+   "sea-turtle"
+  ],
+  "hunt_packs": [
+   "homeland-justice",
+   "oilrig"
+  ]
+ },
+ "T1135": {
+  "name": "Network Share Discovery",
+  "detect_packs": [
+   "apt39"
+  ],
+  "hunt_packs": []
+ },
+ "T1136.001": {
+  "name": "Local Account",
+  "detect_packs": [
+   "apt39",
+   "cavern-manticore",
+   "charming-kitten",
+   "pioneer-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1137.001": {
+  "name": "Office Template Macros",
+  "detect_packs": [
+   "infy",
+   "muddywater",
+   "rocket-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1137.004": {
+  "name": "Outlook Home Page",
+  "detect_packs": [
+   "oilrig"
+  ],
+  "hunt_packs": []
+ },
+ "T1140": {
+  "name": "Deobfuscate/Decode Files or Information",
+  "detect_packs": [
+   "agrius",
+   "apt39",
+   "ballistic-bobcat",
+   "charming-kitten",
+   "dark-caracal",
+   "gaza-cybergang",
+   "greenbug",
+   "hexane",
+   "homeland-justice",
+   "muddywater",
+   "oilrig",
+   "stealth-falcon",
+   "tortoiseshell",
+   "unc1860"
+  ],
+  "hunt_packs": [
+   "arid-viper",
+   "copykittens",
+   "cyberav3ngers",
+   "infy",
+   "polonium",
+   "scarred-manticore",
+   "sidewinder",
+   "tropic-trooper",
+   "void-manticore",
+   "volatile-cedar",
+   "wirte"
+  ]
+ },
+ "T1189": {
+  "name": "Drive-by Compromise",
+  "detect_packs": [
+   "charming-kitten",
+   "copykittens",
+   "group5",
+   "imperial-kitten",
+   "tortoiseshell"
+  ],
+  "hunt_packs": [
+   "bahamut",
+   "dark-caracal",
+   "strongpity",
+   "unc3890"
+  ]
+ },
+ "T1190": {
+  "name": "Exploit Public-Facing Application",
+  "detect_packs": [
+   "agrius",
+   "apt39",
+   "ballistic-bobcat",
+   "cavern-manticore",
+   "charming-kitten",
+   "cotton-sandstorm",
+   "cyberav3ngers",
+   "homeland-justice",
+   "imperial-kitten",
+   "moses-staff",
+   "pioneer-kitten",
+   "polonium",
+   "scarred-manticore",
+   "sea-turtle",
+   "tortoiseshell",
+   "tropic-trooper",
+   "unc1860",
+   "void-manticore",
+   "volatile-cedar"
+  ],
+  "hunt_packs": [
+   "muddywater"
+  ]
+ },
+ "T1195": {
+  "name": "Supply Chain Compromise",
+  "detect_packs": [],
+  "hunt_packs": [
+   "oilrig",
+   "tortoiseshell"
+  ]
+ },
+ "T1195.002": {
+  "name": "Compromise Software Supply Chain",
+  "detect_packs": [],
+  "hunt_packs": [
+   "tortoiseshell"
+  ]
+ },
+ "T1197": {
+  "name": "BITS Jobs",
+  "detect_packs": [
+   "apt39",
+   "ferocious-kitten",
+   "greenbug",
+   "stealth-falcon"
+  ],
+  "hunt_packs": []
+ },
+ "T1199": {
+  "name": "Trusted Relationship",
+  "detect_packs": [
+   "tortoiseshell",
+   "unc1549"
+  ],
+  "hunt_packs": [
+   "polonium",
+   "predatory-sparrow",
+   "sea-turtle",
+   "unc3890"
+  ]
+ },
+ "T1201": {
+  "name": "Password Policy Discovery",
+  "detect_packs": [
+   "oilrig"
+  ],
+  "hunt_packs": []
+ },
+ "T1203": {
+  "name": "Exploitation for Client Execution",
+  "detect_packs": [
+   "apt33",
+   "group5",
+   "muddywater",
+   "oilrig",
+   "sea-turtle",
+   "sidewinder"
+  ],
+  "hunt_packs": []
+ },
+ "T1204": {
+  "name": "User Execution",
+  "detect_packs": [
+   "ballistic-bobcat"
+  ],
+  "hunt_packs": []
+ },
+ "T1204.001": {
+  "name": "Malicious Link",
+  "detect_packs": [
+   "apt33",
+   "apt39",
+   "charming-kitten",
+   "hexane",
+   "oilrig",
+   "rocket-kitten",
+   "sidewinder",
+   "tortoiseshell",
+   "unc1549"
+  ],
+  "hunt_packs": [
+   "arid-viper",
+   "bahamut",
+   "dark-caracal",
+   "gaza-cybergang",
+   "muddywater",
+   "stealth-falcon",
+   "unc3890",
+   "wirte"
+  ]
+ },
+ "T1204.002": {
+  "name": "Malicious File",
+  "detect_packs": [
+   "apt33",
+   "apt39",
+   "arid-viper",
+   "bahamut",
+   "charming-kitten",
+   "copykittens",
+   "cotton-sandstorm",
+   "dark-caracal",
+   "ferocious-kitten",
+   "gaza-cybergang",
+   "greenbug",
+   "group5",
+   "hexane",
+   "imperial-kitten",
+   "infy",
+   "madi",
+   "muddywater",
+   "oilrig",
+   "rocket-kitten",
+   "sidewinder",
+   "stealth-falcon",
+   "strongpity",
+   "tortoiseshell",
+   "unc1549",
+   "unc3890",
+   "wirte"
+  ],
+  "hunt_packs": [
+   "domestic-kitten",
+   "oilalpha"
+  ]
+ },
+ "T1204.004": {
+  "name": "Malicious Copy and Paste",
+  "detect_packs": [
+   "muddywater"
+  ],
+  "hunt_packs": []
+ },
+ "T1205": {
+  "name": "Traffic Signaling",
+  "detect_packs": [],
+  "hunt_packs": [
+   "unc1860"
+  ]
+ },
+ "T1210": {
+  "name": "Exploitation of Remote Services",
+  "detect_packs": [
+   "pioneer-kitten",
+   "tropic-trooper"
+  ],
+  "hunt_packs": [
+   "muddywater"
+  ]
+ },
+ "T1211": {
+  "name": "Exploitation for Stealth",
+  "detect_packs": [],
+  "hunt_packs": [
+   "unc1860"
+  ]
+ },
+ "T1213.002": {
+  "name": "Sharepoint",
+  "detect_packs": [
+   "unc1549"
+  ],
+  "hunt_packs": []
+ },
+ "T1213.006": {
+  "name": "Databases",
+  "detect_packs": [
+   "sea-turtle"
+  ],
+  "hunt_packs": []
+ },
+ "T1217": {
+  "name": "Browser Information Discovery",
+  "detect_packs": [
+   "oilrig"
+  ],
+  "hunt_packs": []
+ },
+ "T1218.001": {
+  "name": "Compiled HTML File",
+  "detect_packs": [
+   "dark-caracal",
+   "greenbug",
+   "oilrig"
+  ],
+  "hunt_packs": []
+ },
+ "T1218.003": {
+  "name": "CMSTP",
+  "detect_packs": [
+   "muddywater"
+  ],
+  "hunt_packs": []
+ },
+ "T1218.004": {
+  "name": "InstallUtil",
+  "detect_packs": [
+   "polonium"
+  ],
+  "hunt_packs": []
+ },
+ "T1218.005": {
+  "name": "Mshta",
+  "detect_packs": [
+   "muddywater",
+   "sidewinder",
+   "tortoiseshell"
+  ],
+  "hunt_packs": []
+ },
+ "T1218.007": {
+  "name": "Msiexec",
+  "detect_packs": [
+   "gaza-cybergang"
+  ],
+  "hunt_packs": []
+ },
+ "T1218.010": {
+  "name": "Regsvr32",
+  "detect_packs": [],
+  "hunt_packs": [
+   "wirte"
+  ]
+ },
+ "T1218.011": {
+  "name": "Rundll32",
+  "detect_packs": [
+   "cavern-manticore",
+   "charming-kitten",
+   "copykittens",
+   "infy",
+   "muddywater",
+   "unc3890"
+  ],
+  "hunt_packs": []
+ },
+ "T1219": {
+  "name": "Remote Access Tools",
+  "detect_packs": [
+   "apt33",
+   "cotton-sandstorm",
+   "imperial-kitten",
+   "oilrig",
+   "pioneer-kitten",
+   "rocket-kitten",
+   "sidewinder",
+   "unc1549",
+   "unc3890"
+  ],
+  "hunt_packs": []
+ },
+ "T1219.002": {
+  "name": "Remote Desktop Software",
+  "detect_packs": [
+   "muddywater"
+  ],
+  "hunt_packs": []
+ },
+ "T1221": {
+  "name": "Template Injection",
+  "detect_packs": [
+   "dark-caracal"
+  ],
+  "hunt_packs": []
+ },
+ "T1482": {
+  "name": "Domain Trust Discovery",
+  "detect_packs": [
+   "charming-kitten",
+   "pioneer-kitten",
+   "unc1549"
+  ],
+  "hunt_packs": []
+ },
+ "T1484.001": {
+  "name": "Group Policy Modification",
+  "detect_packs": [
+   "predatory-sparrow"
+  ],
+  "hunt_packs": []
+ },
+ "T1485": {
+  "name": "Data Destruction",
+  "detect_packs": [
+   "agrius",
+   "apt33",
+   "predatory-sparrow",
+   "wirte"
+  ],
+  "hunt_packs": [
+   "homeland-justice",
+   "moses-staff",
+   "void-manticore"
+  ]
+ },
+ "T1486": {
+  "name": "Data Encrypted for Impact",
+  "detect_packs": [
+   "agrius",
+   "cavern-manticore",
+   "charming-kitten"
+  ],
+  "hunt_packs": [
+   "homeland-justice",
+   "moses-staff"
+  ]
+ },
+ "T1489": {
+  "name": "Service Stop",
+  "detect_packs": [
+   "agrius",
+   "homeland-justice",
+   "predatory-sparrow"
+  ],
+  "hunt_packs": []
+ },
+ "T1490": {
+  "name": "Inhibit System Recovery",
+  "detect_packs": [
+   "agrius",
+   "apt33",
+   "cavern-manticore",
+   "homeland-justice",
+   "predatory-sparrow",
+   "void-manticore"
+  ],
+  "hunt_packs": []
+ },
+ "T1491.001": {
+  "name": "Internal Defacement",
+  "detect_packs": [
+   "cyberav3ngers",
+   "homeland-justice",
+   "predatory-sparrow",
+   "wirte"
+  ],
+  "hunt_packs": []
+ },
+ "T1491.002": {
+  "name": "External Defacement",
+  "detect_packs": [
+   "cotton-sandstorm"
+  ],
+  "hunt_packs": [
+   "homeland-justice"
+  ]
+ },
+ "T1497.001": {
+  "name": "System Checks",
+  "detect_packs": [
+   "sidewinder"
+  ],
+  "hunt_packs": [
+   "arid-viper",
+   "infy",
+   "oilrig",
+   "wirte"
+  ]
+ },
+ "T1497.002": {
+  "name": "User Activity Based Checks",
+  "detect_packs": [],
+  "hunt_packs": [
+   "gaza-cybergang"
+  ]
+ },
+ "T1497.003": {
+  "name": "Time Based Checks",
+  "detect_packs": [],
+  "hunt_packs": [
+   "sidewinder"
+  ]
+ },
+ "T1499": {
+  "name": "Endpoint Denial of Service",
+  "detect_packs": [
+   "cyberav3ngers",
+   "predatory-sparrow"
+  ],
+  "hunt_packs": []
+ },
+ "T1505": {
+  "name": "Server Software Component",
+  "detect_packs": [
+   "pioneer-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1505.003": {
+  "name": "Web Shell",
+  "detect_packs": [
+   "agrius",
+   "apt39",
+   "ballistic-bobcat",
+   "cavern-manticore",
+   "charming-kitten",
+   "greenbug",
+   "homeland-justice",
+   "moses-staff",
+   "oilrig",
+   "pioneer-kitten",
+   "scarred-manticore",
+   "sea-turtle",
+   "tropic-trooper",
+   "unc1860",
+   "void-manticore",
+   "volatile-cedar"
+  ],
+  "hunt_packs": [
+   "arid-viper"
+  ]
+ },
+ "T1505.004": {
+  "name": "IIS Components",
+  "detect_packs": [
+   "scarred-manticore",
+   "unc1860"
+  ],
+  "hunt_packs": []
+ },
+ "T1518": {
+  "name": "Software Discovery",
+  "detect_packs": [
+   "hexane",
+   "sidewinder"
+  ],
+  "hunt_packs": [
+   "bahamut",
+   "domestic-kitten",
+   "muddywater",
+   "oilrig",
+   "scarred-manticore",
+   "stealth-falcon"
+  ]
+ },
+ "T1518.001": {
+  "name": "Security Software Discovery",
+  "detect_packs": [
+   "arid-viper",
+   "bahamut",
+   "infy",
+   "muddywater",
+   "predatory-sparrow",
+   "sidewinder",
+   "strongpity",
+   "tortoiseshell",
+   "tropic-trooper",
+   "wirte"
+  ],
+  "hunt_packs": [
+   "ferocious-kitten",
+   "gaza-cybergang",
+   "stealth-falcon"
+  ]
+ },
+ "T1526": {
+  "name": "Cloud Service Discovery",
+  "detect_packs": [
+   "apt33"
+  ],
+  "hunt_packs": []
+ },
+ "T1529": {
+  "name": "System Shutdown/Reboot",
+  "detect_packs": [
+   "predatory-sparrow"
+  ],
+  "hunt_packs": [
+   "agrius",
+   "moses-staff",
+   "void-manticore"
+  ]
+ },
+ "T1530": {
+  "name": "Data from Cloud Storage",
+  "detect_packs": [
+   "pioneer-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1531": {
+  "name": "Account Access Removal",
+  "detect_packs": [
+   "cyberav3ngers",
+   "predatory-sparrow"
+  ],
+  "hunt_packs": []
+ },
+ "T1534": {
+  "name": "Internal Spearphishing",
+  "detect_packs": [
+   "hexane",
+   "wirte"
+  ],
+  "hunt_packs": [
+   "muddywater"
+  ]
+ },
+ "T1539": {
+  "name": "Steal Web Session Cookie",
+  "detect_packs": [
+   "infy",
+   "unc3890"
+  ],
+  "hunt_packs": []
+ },
+ "T1543.001": {
+  "name": "Launch Agent",
+  "detect_packs": [
+   "dark-caracal"
+  ],
+  "hunt_packs": []
+ },
+ "T1543.003": {
+  "name": "Windows Service",
+  "detect_packs": [
+   "agrius",
+   "ballistic-bobcat",
+   "copykittens",
+   "greenbug",
+   "homeland-justice",
+   "imperial-kitten",
+   "infy",
+   "moses-staff",
+   "oilrig",
+   "scarred-manticore",
+   "strongpity",
+   "tortoiseshell",
+   "tropic-trooper",
+   "unc1860",
+   "unc3890"
+  ],
+  "hunt_packs": []
+ },
+ "T1546.003": {
+  "name": "Windows Management Instrumentation Event Subscription",
+  "detect_packs": [
+   "apt33",
+   "hexane"
+  ],
+  "hunt_packs": []
+ },
+ "T1546.008": {
+  "name": "Accessibility Features",
+  "detect_packs": [
+   "pioneer-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1546.010": {
+  "name": "AppInit DLLs",
+  "detect_packs": [
+   "apt39"
+  ],
+  "hunt_packs": []
+ },
+ "T1546.015": {
+  "name": "Component Object Model Hijacking",
+  "detect_packs": [],
+  "hunt_packs": [
+   "wirte"
+  ]
+ },
+ "T1547": {
+  "name": "Boot or Logon Autostart Execution",
+  "detect_packs": [],
+  "hunt_packs": [
+   "domestic-kitten"
+  ]
+ },
+ "T1547.001": {
+  "name": "Registry Run Keys / Startup Folder",
+  "detect_packs": [
+   "apt33",
+   "apt39",
+   "arid-viper",
+   "bahamut",
+   "charming-kitten",
+   "copykittens",
+   "dark-caracal",
+   "domestic-kitten",
+   "ferocious-kitten",
+   "gaza-cybergang",
+   "hexane",
+   "homeland-justice",
+   "imperial-kitten",
+   "infy",
+   "muddywater",
+   "rocket-kitten",
+   "sidewinder",
+   "strongpity",
+   "tortoiseshell",
+   "tropic-trooper"
+  ],
+  "hunt_packs": []
+ },
+ "T1547.009": {
+  "name": "Shortcut Modification",
+  "detect_packs": [
+   "apt39",
+   "arid-viper",
+   "ferocious-kitten",
+   "polonium",
+   "rocket-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1547.013": {
+  "name": "XDG Autostart Entries",
+  "detect_packs": [
+   "dark-caracal"
+  ],
+  "hunt_packs": []
+ },
+ "T1548.002": {
+  "name": "Bypass User Account Control",
+  "detect_packs": [
+   "greenbug",
+   "muddywater",
+   "sidewinder"
+  ],
+  "hunt_packs": []
+ },
+ "T1550.002": {
+  "name": "Pass the Hash",
+  "detect_packs": [
+   "pioneer-kitten",
+   "volatile-cedar"
+  ],
+  "hunt_packs": []
+ },
+ "T1550.004": {
+  "name": "Web Session Cookie",
+  "detect_packs": [
+   "charming-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1552": {
+  "name": "Unsecured Credentials",
+  "detect_packs": [],
+  "hunt_packs": [
+   "imperial-kitten"
+  ]
+ },
+ "T1552.001": {
+  "name": "Credentials In Files",
+  "detect_packs": [
+   "greenbug"
+  ],
+  "hunt_packs": [
+   "apt33",
+   "muddywater",
+   "oilrig",
+   "pioneer-kitten",
+   "tortoiseshell"
+  ]
+ },
+ "T1552.006": {
+  "name": "Group Policy Preferences",
+  "detect_packs": [
+   "apt33"
+  ],
+  "hunt_packs": []
+ },
+ "T1553.002": {
+  "name": "Code Signing",
+  "detect_packs": [
+   "copykittens",
+   "dark-caracal",
+   "strongpity",
+   "tortoiseshell",
+   "unc1549",
+   "void-manticore"
+  ],
+  "hunt_packs": [
+   "gaza-cybergang",
+   "oilrig"
+  ]
+ },
+ "T1553.004": {
+  "name": "Install Root Certificate",
+  "detect_packs": [
+   "cavern-manticore"
+  ],
+  "hunt_packs": []
+ },
+ "T1553.006": {
+  "name": "Code Signing Policy Modification",
+  "detect_packs": [
+   "apt39"
+  ],
+  "hunt_packs": []
+ },
+ "T1554": {
+  "name": "Compromise Host Software Binary",
+  "detect_packs": [
+   "domestic-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1555": {
+  "name": "Credentials from Password Stores",
+  "detect_packs": [
+   "apt33",
+   "apt39",
+   "hexane",
+   "muddywater",
+   "oilrig",
+   "tortoiseshell"
+  ],
+  "hunt_packs": []
+ },
+ "T1555.003": {
+  "name": "Credentials from Web Browsers",
+  "detect_packs": [
+   "apt33",
+   "arid-viper",
+   "ballistic-bobcat",
+   "domestic-kitten",
+   "gaza-cybergang",
+   "hexane",
+   "infy",
+   "muddywater",
+   "oilrig",
+   "sidewinder",
+   "stealth-falcon",
+   "tortoiseshell",
+   "unc1549",
+   "unc3890"
+  ],
+  "hunt_packs": []
+ },
+ "T1555.004": {
+  "name": "Windows Credential Manager",
+  "detect_packs": [
+   "oilrig",
+   "stealth-falcon",
+   "tortoiseshell"
+  ],
+  "hunt_packs": []
+ },
+ "T1555.005": {
+  "name": "Password Managers",
+  "detect_packs": [
+   "domestic-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1556": {
+  "name": "Modify Authentication Process",
+  "detect_packs": [],
+  "hunt_packs": [
+   "sea-turtle"
+  ]
+ },
+ "T1556.002": {
+  "name": "Password Filter DLL",
+  "detect_packs": [
+   "oilrig"
+  ],
+  "hunt_packs": []
+ },
+ "T1556.006": {
+  "name": "Multi-Factor Authentication",
+  "detect_packs": [
+   "charming-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1557": {
+  "name": "Adversary-in-the-Middle",
+  "detect_packs": [],
+  "hunt_packs": [
+   "sea-turtle",
+   "strongpity"
+  ]
+ },
+ "T1558.003": {
+  "name": "Kerberoasting",
+  "detect_packs": [
+   "unc1549"
+  ],
+  "hunt_packs": []
+ },
+ "T1559.001": {
+  "name": "Component Object Model",
+  "detect_packs": [],
+  "hunt_packs": [
+   "muddywater"
+  ]
+ },
+ "T1559.002": {
+  "name": "Dynamic Data Exchange",
+  "detect_packs": [
+   "muddywater",
+   "sidewinder"
+  ],
+  "hunt_packs": []
+ },
+ "T1560": {
+  "name": "Archive Collected Data",
+  "detect_packs": [
+   "cadelle",
+   "hexane",
+   "tropic-trooper"
+  ],
+  "hunt_packs": [
+   "bahamut",
+   "domestic-kitten",
+   "homeland-justice"
+  ]
+ },
+ "T1560.001": {
+  "name": "Archive via Utility",
+  "detect_packs": [
+   "apt33",
+   "apt39",
+   "arid-viper",
+   "cavern-manticore",
+   "charming-kitten",
+   "copykittens",
+   "hexane",
+   "infy",
+   "muddywater",
+   "pioneer-kitten",
+   "sea-turtle",
+   "tortoiseshell"
+  ],
+  "hunt_packs": [
+   "agrius"
+  ]
+ },
+ "T1560.002": {
+  "name": "Archive via Library",
+  "detect_packs": [],
+  "hunt_packs": [
+   "polonium"
+  ]
+ },
+ "T1560.003": {
+  "name": "Archive via Custom Method",
+  "detect_packs": [
+   "strongpity"
+  ],
+  "hunt_packs": [
+   "copykittens"
+  ]
+ },
+ "T1561": {
+  "name": "Disk Wipe",
+  "detect_packs": [
+   "apt33"
+  ],
+  "hunt_packs": []
+ },
+ "T1561.001": {
+  "name": "Disk Content Wipe",
+  "detect_packs": [
+   "agrius",
+   "homeland-justice",
+   "void-manticore"
+  ],
+  "hunt_packs": [
+   "apt33"
+  ]
+ },
+ "T1561.002": {
+  "name": "Disk Structure Wipe",
+  "detect_packs": [
+   "agrius",
+   "homeland-justice",
+   "moses-staff",
+   "predatory-sparrow",
+   "void-manticore"
+  ],
+  "hunt_packs": [
+   "apt33"
+  ]
+ },
+ "T1563.002": {
+  "name": "RDP Hijacking",
+  "detect_packs": [
+   "unc1549"
+  ],
+  "hunt_packs": []
+ },
+ "T1564.001": {
+  "name": "Hidden Files and Directories",
+  "detect_packs": [],
+  "hunt_packs": [
+   "tropic-trooper"
+  ]
+ },
+ "T1564.003": {
+  "name": "Hidden Window",
+  "detect_packs": [
+   "charming-kitten",
+   "copykittens"
+  ],
+  "hunt_packs": [
+   "strongpity"
+  ]
+ },
+ "T1564.004": {
+  "name": "NTFS File Attributes",
+  "detect_packs": [
+   "greenbug"
+  ],
+  "hunt_packs": []
+ },
+ "T1564.008": {
+  "name": "Email Hiding Rules",
+  "detect_packs": [
+   "charming-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1564.011": {
+  "name": "Ignore Process Interrupts",
+  "detect_packs": [
+   "sea-turtle"
+  ],
+  "hunt_packs": []
+ },
+ "T1565.001": {
+  "name": "Stored Data Manipulation",
+  "detect_packs": [
+   "cyberav3ngers"
+  ],
+  "hunt_packs": []
+ },
+ "T1565.003": {
+  "name": "Runtime Data Manipulation",
+  "detect_packs": [
+   "predatory-sparrow"
+  ],
+  "hunt_packs": []
+ },
+ "T1566": {
+  "name": "Phishing",
+  "detect_packs": [],
+  "hunt_packs": [
+   "muddywater"
+  ]
+ },
+ "T1566.001": {
+  "name": "Spearphishing Attachment",
+  "detect_packs": [
+   "apt33",
+   "apt39",
+   "bahamut",
+   "copykittens",
+   "dark-caracal",
+   "ferocious-kitten",
+   "gaza-cybergang",
+   "greenbug",
+   "group5",
+   "hexane",
+   "imperial-kitten",
+   "infy",
+   "madi",
+   "oilrig",
+   "rocket-kitten",
+   "sidewinder",
+   "stealth-falcon",
+   "wirte"
+  ],
+  "hunt_packs": [
+   "muddywater"
+  ]
+ },
+ "T1566.002": {
+  "name": "Spearphishing Link",
+  "detect_packs": [
+   "apt33",
+   "apt39",
+   "charming-kitten",
+   "copykittens",
+   "dark-caracal",
+   "domestic-kitten",
+   "gaza-cybergang",
+   "hexane",
+   "oilrig",
+   "rocket-kitten",
+   "sidewinder",
+   "unc1549",
+   "unc3890"
+  ],
+  "hunt_packs": [
+   "arid-viper",
+   "bahamut",
+   "muddywater",
+   "oilalpha",
+   "stealth-falcon",
+   "wirte"
+  ]
+ },
+ "T1566.003": {
+  "name": "Spearphishing via Service",
+  "detect_packs": [],
+  "hunt_packs": [
+   "arid-viper",
+   "bahamut",
+   "charming-kitten",
+   "dark-caracal",
+   "oilrig",
+   "rocket-kitten",
+   "tortoiseshell"
+  ]
+ },
+ "T1567": {
+  "name": "Exfiltration Over Web Service",
+  "detect_packs": [
+   "charming-kitten",
+   "sea-turtle"
+  ],
+  "hunt_packs": [
+   "cotton-sandstorm",
+   "gaza-cybergang",
+   "moses-staff",
+   "predatory-sparrow",
+   "tortoiseshell"
+  ]
+ },
+ "T1567.002": {
+  "name": "Exfiltration to Cloud Storage",
+  "detect_packs": [
+   "hexane",
+   "muddywater",
+   "pioneer-kitten",
+   "polonium"
+  ],
+  "hunt_packs": [
+   "gaza-cybergang"
+  ]
+ },
+ "T1568": {
+  "name": "Dynamic Resolution",
+  "detect_packs": [
+   "oilalpha"
+  ],
+  "hunt_packs": []
+ },
+ "T1568.002": {
+  "name": "Domain Generation Algorithms",
+  "detect_packs": [
+   "infy",
+   "volatile-cedar"
+  ],
+  "hunt_packs": []
+ },
+ "T1569.002": {
+  "name": "Service Execution",
+  "detect_packs": [
+   "apt39",
+   "ballistic-bobcat",
+   "moses-staff",
+   "strongpity",
+   "tropic-trooper",
+   "unc3890"
+  ],
+  "hunt_packs": []
+ },
+ "T1570": {
+  "name": "Lateral Tool Transfer",
+  "detect_packs": [
+   "charming-kitten",
+   "homeland-justice",
+   "imperial-kitten",
+   "moses-staff",
+   "volatile-cedar",
+   "wirte"
+  ],
+  "hunt_packs": [
+   "agrius"
+  ]
+ },
+ "T1571": {
+  "name": "Non-Standard Port",
+  "detect_packs": [
+   "apt33",
+   "bahamut",
+   "charming-kitten",
+   "greenbug",
+   "hexane",
+   "oilalpha",
+   "polonium",
+   "strongpity",
+   "unc3890",
+   "wirte"
+  ],
+  "hunt_packs": [
+   "muddywater"
+  ]
+ },
+ "T1572": {
+  "name": "Protocol Tunneling",
+  "detect_packs": [
+   "ballistic-bobcat",
+   "cavern-manticore",
+   "greenbug",
+   "hexane",
+   "oilrig",
+   "pioneer-kitten",
+   "polonium",
+   "tropic-trooper",
+   "unc1549",
+   "unc3890",
+   "void-manticore"
+  ],
+  "hunt_packs": [
+   "apt33",
+   "charming-kitten",
+   "scarred-manticore",
+   "unc1860"
+  ]
+ },
+ "T1573": {
+  "name": "Encrypted Channel",
+  "detect_packs": [],
+  "hunt_packs": [
+   "charming-kitten",
+   "unc1549",
+   "volatile-cedar"
+  ]
+ },
+ "T1573.001": {
+  "name": "Symmetric Cryptography",
+  "detect_packs": [
+   "ballistic-bobcat",
+   "dark-caracal",
+   "rocket-kitten",
+   "sidewinder",
+   "stealth-falcon",
+   "unc3890"
+  ],
+  "hunt_packs": [
+   "apt33",
+   "hexane",
+   "moses-staff",
+   "muddywater",
+   "polonium",
+   "scarred-manticore",
+   "tortoiseshell",
+   "unc1860"
+  ]
+ },
+ "T1573.002": {
+  "name": "Asymmetric Cryptography",
+  "detect_packs": [
+   "bahamut",
+   "infy",
+   "sea-turtle",
+   "strongpity",
+   "tropic-trooper"
+  ],
+  "hunt_packs": [
+   "cyberav3ngers",
+   "greenbug",
+   "oilrig"
+  ]
+ },
+ "T1574.001": {
+  "name": "DLL",
+  "detect_packs": [
+   "apt33",
+   "infy",
+   "pioneer-kitten",
+   "scarred-manticore",
+   "sidewinder",
+   "tortoiseshell",
+   "tropic-trooper",
+   "unc1549",
+   "volatile-cedar",
+   "wirte"
+  ],
+  "hunt_packs": [
+   "muddywater"
+  ]
+ },
+ "T1574.014": {
+  "name": "AppDomainManager",
+  "detect_packs": [
+   "imperial-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1583": {
+  "name": "Acquire Infrastructure",
+  "detect_packs": [],
+  "hunt_packs": [
+   "agrius",
+   "cotton-sandstorm",
+   "void-manticore"
+  ]
+ },
+ "T1583.001": {
+  "name": "Domains",
+  "detect_packs": [],
+  "hunt_packs": [
+   "arid-viper",
+   "bahamut",
+   "cavern-manticore",
+   "charming-kitten",
+   "copykittens",
+   "cotton-sandstorm",
+   "cyberav3ngers",
+   "dark-caracal",
+   "group5",
+   "hexane",
+   "imperial-kitten",
+   "muddywater",
+   "oilalpha",
+   "oilrig",
+   "rocket-kitten",
+   "sea-turtle",
+   "sidewinder",
+   "stealth-falcon",
+   "strongpity",
+   "tortoiseshell",
+   "tropic-trooper",
+   "unc1549",
+   "unc3890",
+   "volatile-cedar",
+   "wirte"
+  ]
+ },
+ "T1583.002": {
+  "name": "DNS Server",
+  "detect_packs": [],
+  "hunt_packs": [
+   "hexane",
+   "sea-turtle"
+  ]
+ },
+ "T1583.003": {
+  "name": "Virtual Private Server",
+  "detect_packs": [],
+  "hunt_packs": [
+   "polonium",
+   "sea-turtle"
+  ]
+ },
+ "T1583.006": {
+  "name": "Web Services",
+  "detect_packs": [],
+  "hunt_packs": [
+   "arid-viper",
+   "bahamut",
+   "charming-kitten",
+   "cotton-sandstorm",
+   "muddywater",
+   "pioneer-kitten",
+   "polonium",
+   "rocket-kitten",
+   "tortoiseshell",
+   "unc1549"
+  ]
+ },
+ "T1584.001": {
+  "name": "Domains",
+  "detect_packs": [],
+  "hunt_packs": [
+   "charming-kitten"
+  ]
+ },
+ "T1584.002": {
+  "name": "DNS Server",
+  "detect_packs": [],
+  "hunt_packs": [
+   "sea-turtle"
+  ]
+ },
+ "T1584.004": {
+  "name": "Server",
+  "detect_packs": [],
+  "hunt_packs": [
+   "copykittens",
+   "imperial-kitten",
+   "oilrig",
+   "strongpity"
+  ]
+ },
+ "T1585": {
+  "name": "Establish Accounts",
+  "detect_packs": [],
+  "hunt_packs": [
+   "bahamut",
+   "tortoiseshell"
+  ]
+ },
+ "T1585.001": {
+  "name": "Social Media Accounts",
+  "detect_packs": [],
+  "hunt_packs": [
+   "arid-viper",
+   "bahamut",
+   "charming-kitten",
+   "copykittens",
+   "cotton-sandstorm",
+   "domestic-kitten",
+   "hexane",
+   "homeland-justice",
+   "imperial-kitten",
+   "pioneer-kitten",
+   "predatory-sparrow",
+   "rocket-kitten",
+   "stealth-falcon",
+   "tortoiseshell",
+   "void-manticore"
+  ]
+ },
+ "T1585.002": {
+  "name": "Email Accounts",
+  "detect_packs": [],
+  "hunt_packs": [
+   "bahamut",
+   "charming-kitten",
+   "cotton-sandstorm",
+   "hexane",
+   "imperial-kitten",
+   "rocket-kitten",
+   "stealth-falcon",
+   "tortoiseshell",
+   "unc3890"
+  ]
+ },
+ "T1585.003": {
+  "name": "Cloud Accounts",
+  "detect_packs": [],
+  "hunt_packs": [
+   "oilrig"
+  ]
+ },
+ "T1586.001": {
+  "name": "Social Media Accounts",
+  "detect_packs": [],
+  "hunt_packs": [
+   "bahamut"
+  ]
+ },
+ "T1586.002": {
+  "name": "Email Accounts",
+  "detect_packs": [],
+  "hunt_packs": [
+   "charming-kitten",
+   "hexane",
+   "oilrig",
+   "rocket-kitten",
+   "wirte"
+  ]
+ },
+ "T1587.001": {
+  "name": "Malware",
+  "detect_packs": [],
+  "hunt_packs": [
+   "arid-viper",
+   "bahamut",
+   "ballistic-bobcat",
+   "copykittens",
+   "cyberav3ngers",
+   "dark-caracal",
+   "imperial-kitten",
+   "moses-staff",
+   "oilrig",
+   "polonium",
+   "predatory-sparrow",
+   "rocket-kitten",
+   "scarred-manticore",
+   "sidewinder",
+   "stealth-falcon",
+   "tortoiseshell",
+   "tropic-trooper",
+   "unc1549",
+   "unc1860",
+   "unc3890",
+   "volatile-cedar",
+   "wirte"
+  ]
+ },
+ "T1587.002": {
+  "name": "Code Signing Certificates",
+  "detect_packs": [],
+  "hunt_packs": [
+   "strongpity"
+  ]
+ },
+ "T1587.003": {
+  "name": "Digital Certificates",
+  "detect_packs": [],
+  "hunt_packs": [
+   "copykittens",
+   "infy",
+   "strongpity"
+  ]
+ },
+ "T1587.004": {
+  "name": "Exploits",
+  "detect_packs": [],
+  "hunt_packs": [
+   "cotton-sandstorm"
+  ]
+ },
+ "T1588.001": {
+  "name": "Malware",
+  "detect_packs": [],
+  "hunt_packs": [
+   "muddywater",
+   "polonium"
+  ]
+ },
+ "T1588.002": {
+  "name": "Tool",
+  "detect_packs": [
+   "charming-kitten",
+   "cotton-sandstorm",
+   "unc1860"
+  ],
+  "hunt_packs": [
+   "apt33",
+   "apt39",
+   "ballistic-bobcat",
+   "cavern-manticore",
+   "copykittens",
+   "group5",
+   "hexane",
+   "muddywater",
+   "oilalpha",
+   "oilrig",
+   "pioneer-kitten",
+   "polonium",
+   "rocket-kitten",
+   "scarred-manticore",
+   "sea-turtle",
+   "tortoiseshell",
+   "unc3890",
+   "wirte"
+  ]
+ },
+ "T1588.003": {
+  "name": "Code Signing Certificates",
+  "detect_packs": [],
+  "hunt_packs": [
+   "dark-caracal",
+   "oilrig",
+   "unc1549"
+  ]
+ },
+ "T1588.004": {
+  "name": "Digital Certificates",
+  "detect_packs": [],
+  "hunt_packs": [
+   "sea-turtle"
+  ]
+ },
+ "T1588.005": {
+  "name": "Exploits",
+  "detect_packs": [],
+  "hunt_packs": [
+   "bahamut"
+  ]
+ },
+ "T1588.006": {
+  "name": "Vulnerabilities",
+  "detect_packs": [],
+  "hunt_packs": [
+   "bahamut"
+  ]
+ },
+ "T1589": {
+  "name": "Gather Victim Identity Information",
+  "detect_packs": [],
+  "hunt_packs": [
+   "bahamut",
+   "charming-kitten",
+   "cotton-sandstorm",
+   "hexane",
+   "rocket-kitten"
+  ]
+ },
+ "T1589.001": {
+  "name": "Credentials",
+  "detect_packs": [],
+  "hunt_packs": [
+   "charming-kitten"
+  ]
+ },
+ "T1589.002": {
+  "name": "Email Addresses",
+  "detect_packs": [],
+  "hunt_packs": [
+   "charming-kitten",
+   "cotton-sandstorm",
+   "hexane"
+  ]
+ },
+ "T1589.003": {
+  "name": "Employee Names",
+  "detect_packs": [],
+  "hunt_packs": [
+   "cotton-sandstorm"
+  ]
+ },
+ "T1590.001": {
+  "name": "Domain Properties",
+  "detect_packs": [],
+  "hunt_packs": [
+   "cotton-sandstorm"
+  ]
+ },
+ "T1590.002": {
+  "name": "DNS",
+  "detect_packs": [],
+  "hunt_packs": [
+   "sea-turtle"
+  ]
+ },
+ "T1590.004": {
+  "name": "Network Topology",
+  "detect_packs": [],
+  "hunt_packs": [
+   "muddywater"
+  ]
+ },
+ "T1590.005": {
+  "name": "IP Addresses",
+  "detect_packs": [],
+  "hunt_packs": [
+   "charming-kitten",
+   "unc1549"
+  ]
+ },
+ "T1591": {
+  "name": "Gather Victim Org Information",
+  "detect_packs": [],
+  "hunt_packs": [
+   "bahamut",
+   "rocket-kitten",
+   "sea-turtle"
+  ]
+ },
+ "T1591.001": {
+  "name": "Determine Physical Locations",
+  "detect_packs": [],
+  "hunt_packs": [
+   "charming-kitten",
+   "cotton-sandstorm"
+  ]
+ },
+ "T1591.004": {
+  "name": "Identify Roles",
+  "detect_packs": [],
+  "hunt_packs": [
+   "hexane"
+  ]
+ },
+ "T1592": {
+  "name": "Gather Victim Host Information",
+  "detect_packs": [],
+  "hunt_packs": [
+   "predatory-sparrow",
+   "tortoiseshell"
+  ]
+ },
+ "T1592.002": {
+  "name": "Software",
+  "detect_packs": [],
+  "hunt_packs": [
+   "charming-kitten",
+   "tortoiseshell"
+  ]
+ },
+ "T1593.001": {
+  "name": "Social Media",
+  "detect_packs": [],
+  "hunt_packs": [
+   "unc1549"
+  ]
+ },
+ "T1595": {
+  "name": "Active Scanning",
+  "detect_packs": [],
+  "hunt_packs": [
+   "imperial-kitten"
+  ]
+ },
+ "T1595.001": {
+  "name": "Scanning IP Blocks",
+  "detect_packs": [
+   "cotton-sandstorm"
+  ],
+  "hunt_packs": [
+   "volatile-cedar"
+  ]
+ },
+ "T1595.002": {
+  "name": "Vulnerability Scanning",
+  "detect_packs": [
+   "charming-kitten",
+   "cotton-sandstorm",
+   "pioneer-kitten"
+  ],
+  "hunt_packs": [
+   "ballistic-bobcat",
+   "cavern-manticore",
+   "tropic-trooper",
+   "volatile-cedar"
+  ]
+ },
+ "T1596": {
+  "name": "Search Open Technical Databases",
+  "detect_packs": [],
+  "hunt_packs": [
+   "cotton-sandstorm",
+   "pioneer-kitten"
+  ]
+ },
+ "T1598.003": {
+  "name": "Spearphishing Link",
+  "detect_packs": [
+   "charming-kitten",
+   "unc1549"
+  ],
+  "hunt_packs": [
+   "bahamut",
+   "rocket-kitten",
+   "sidewinder"
+  ]
+ },
+ "T1606.002": {
+  "name": "SAML Tokens",
+  "detect_packs": [],
+  "hunt_packs": [
+   "apt33"
+  ]
+ },
+ "T1608.001": {
+  "name": "Upload Malware",
+  "detect_packs": [],
+  "hunt_packs": [
+   "arid-viper",
+   "bahamut",
+   "cavern-manticore",
+   "cotton-sandstorm",
+   "dark-caracal",
+   "greenbug",
+   "group5",
+   "hexane",
+   "oilrig",
+   "rocket-kitten",
+   "strongpity",
+   "tortoiseshell",
+   "wirte"
+  ]
+ },
+ "T1608.002": {
+  "name": "Upload Tool",
+  "detect_packs": [],
+  "hunt_packs": [
+   "sidewinder"
+  ]
+ },
+ "T1608.003": {
+  "name": "Install Digital Certificate",
+  "detect_packs": [],
+  "hunt_packs": [
+   "bahamut",
+   "sea-turtle"
+  ]
+ },
+ "T1608.004": {
+  "name": "Drive-by Target",
+  "detect_packs": [],
+  "hunt_packs": [
+   "dark-caracal",
+   "imperial-kitten",
+   "strongpity",
+   "tortoiseshell",
+   "unc3890"
+  ]
+ },
+ "T1608.005": {
+  "name": "Link Target",
+  "detect_packs": [],
+  "hunt_packs": [
+   "stealth-falcon"
+  ]
+ },
+ "T1608.006": {
+  "name": "SEO Poisoning",
+  "detect_packs": [],
+  "hunt_packs": [
+   "domestic-kitten"
+  ]
+ },
+ "T1614.001": {
+  "name": "System Language Discovery",
+  "detect_packs": [],
+  "hunt_packs": [
+   "ballistic-bobcat",
+   "ferocious-kitten",
+   "gaza-cybergang",
+   "infy",
+   "wirte"
+  ]
+ },
+ "T1620": {
+  "name": "Reflective Code Loading",
+  "detect_packs": [
+   "sidewinder",
+   "tortoiseshell"
+  ],
+  "hunt_packs": [
+   "scarred-manticore",
+   "unc1860"
+  ]
+ },
+ "T1621": {
+  "name": "Multi-Factor Authentication Request Generation",
+  "detect_packs": [
+   "charming-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1649": {
+  "name": "Steal or Forge Authentication Certificates",
+  "detect_packs": [
+   "unc1549"
+  ],
+  "hunt_packs": []
+ },
+ "T1650": {
+  "name": "Acquire Access",
+  "detect_packs": [],
+  "hunt_packs": [
+   "cotton-sandstorm"
+  ]
+ },
+ "T1657": {
+  "name": "Financial Theft",
+  "detect_packs": [],
+  "hunt_packs": [
+   "cavern-manticore",
+   "pioneer-kitten",
+   "predatory-sparrow"
+  ]
+ },
+ "T1659": {
+  "name": "Content Injection",
+  "detect_packs": [],
+  "hunt_packs": [
+   "strongpity"
+  ]
+ },
+ "T1680": {
+  "name": "Local Storage Discovery",
+  "detect_packs": [],
+  "hunt_packs": [
+   "strongpity"
+  ]
+ },
+ "T1684.001": {
+  "name": "Impersonation",
+  "detect_packs": [],
+  "hunt_packs": [
+   "muddywater",
+   "wirte"
+  ]
+ },
+ "T1685": {
+  "name": "Disable or Modify Tools",
+  "detect_packs": [
+   "agrius",
+   "apt33",
+   "cavern-manticore",
+   "charming-kitten",
+   "hexane",
+   "homeland-justice",
+   "muddywater",
+   "pioneer-kitten",
+   "predatory-sparrow",
+   "strongpity",
+   "tropic-trooper"
+  ],
+  "hunt_packs": [
+   "arid-viper",
+   "unc1860"
+  ]
+ },
+ "T1685.001": {
+  "name": "Disable or Modify Windows Event Log",
+  "detect_packs": [
+   "charming-kitten",
+   "scarred-manticore",
+   "unc1860"
+  ],
+  "hunt_packs": []
+ },
+ "T1685.005": {
+  "name": "Clear Windows Event Logs",
+  "detect_packs": [
+   "agrius",
+   "apt33",
+   "predatory-sparrow"
+  ],
+  "hunt_packs": []
+ },
+ "T1685.006": {
+  "name": "Clear Linux or Mac System Logs",
+  "detect_packs": [
+   "sea-turtle"
+  ],
+  "hunt_packs": []
+ },
+ "T1686.003": {
+  "name": "Windows Host Firewall",
+  "detect_packs": [
+   "charming-kitten",
+   "oilrig"
+  ],
+  "hunt_packs": []
+ },
+ "T1689": {
+  "name": "Downgrade Attack",
+  "detect_packs": [
+   "pioneer-kitten"
+  ],
+  "hunt_packs": []
+ },
+ "T1690": {
+  "name": "Prevent Command History Logging",
+  "detect_packs": [
+   "sea-turtle"
+  ],
+  "hunt_packs": []
+ }
+}

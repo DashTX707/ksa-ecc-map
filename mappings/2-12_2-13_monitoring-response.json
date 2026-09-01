@@ -1,0 +1,594 @@
+[
+  {
+    "attack_technique_id": "T1071.001",
+    "ecc_control_id": "2-12-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "charming-kitten",
+      "ballistic-bobcat",
+      "gaza-cybergang",
+      "homeland-justice"
+    ],
+    "rationale": "Web-protocol C2 detections fire on outbound HTTP(S) beaconing captured from network/proxy telemetry, demonstrating that a log-collection and continuous-monitoring capability (SIEM) is actually implemented and operating on network events - the operational evidence 2-12-2 requires beyond a written policy.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1071.001->CA-07,SI-04",
+      "NCA ECC-1:2018 §2-12-2"
+    ]
+  },
+  {
+    "attack_technique_id": "T1046",
+    "ecc_control_id": "2-12-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt39",
+      "ballistic-bobcat",
+      "charming-kitten",
+      "oilrig",
+      "pioneer-kitten"
+    ],
+    "rationale": "Network service/port scanning detections require east-west network event collection to be live and correlated, evidencing that the defined monitoring requirements are implemented across internal traffic rather than only at the perimeter.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1046->CA-07,SI-04",
+      "NCA ECC-1:2018 §2-12-2"
+    ]
+  },
+  {
+    "attack_technique_id": "T1571",
+    "ecc_control_id": "2-12-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "charming-kitten",
+      "greenbug",
+      "hexane",
+      "polonium"
+    ],
+    "rationale": "Non-standard-port C2 detections depend on baselined connection logging being ingested and analysed continuously, showing the log-collection/monitoring implementation is functioning against anomalous network behaviour.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1571->CA-07,SI-04",
+      "NCA ECC-1:2018 §2-12-2"
+    ]
+  },
+  {
+    "attack_technique_id": "T1078",
+    "ecc_control_id": "2-12-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "apt39",
+      "greenbug",
+      "hexane",
+      "tortoiseshell"
+    ],
+    "rationale": "Valid/privileged account misuse detections evidence the 2-12-3 sub-clause requiring event logs for privileged accounts - anomalous authentication and session activity on legitimate accounts is exactly what continuous account monitoring must surface.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1078->SI-04",
+      "NCA ECC-1:2018 §2-12-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1078.002",
+    "ecc_control_id": "2-12-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "charming-kitten",
+      "oilrig",
+      "pioneer-kitten",
+      "tortoiseshell"
+    ],
+    "rationale": "Domain-account abuse detections directly evidence privileged-account event logging on directory services, a named 2-12-3 sub-clause, by monitoring logons and authentications of high-value domain identities.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1078.002->SI-04",
+      "NCA ECC-1:2018 §2-12-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1098",
+    "ecc_control_id": "2-12-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "cavern-manticore"
+    ],
+    "rationale": "Account-manipulation detections monitor privileged directory changes (permission grants, credential additions), evidencing the privileged-account logging and continuous-monitoring sub-clause of 2-12-3.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1098->SI-04",
+      "NCA ECC-1:2018 §2-12-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1003.001",
+    "ecc_control_id": "2-12-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "apt33",
+      "muddywater",
+      "oilrig",
+      "pioneer-kitten"
+    ],
+    "rationale": "LSASS credential-theft detections rely on privileged-process and endpoint event logs being collected and monitored; they evidence 2-12-3's requirement to log and continuously monitor activity targeting privileged accounts on critical assets.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1003.001->CA-07,SI-04",
+      "NCA ECC-1:2018 §2-12-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1136.001",
+    "ecc_control_id": "2-12-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt39",
+      "cavern-manticore",
+      "charming-kitten",
+      "pioneer-kitten"
+    ],
+    "rationale": "Local-account creation detections evidence event logging of account-lifecycle changes on critical assets - a monitoring capability 2-12-3 expects so that unauthorized privileged-account creation is captured in the log store.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1136.001->SI-04,SI-07",
+      "NCA ECC-1:2018 §2-12-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1021.001",
+    "ecc_control_id": "2-12-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "apt33",
+      "charming-kitten",
+      "hexane",
+      "pioneer-kitten"
+    ],
+    "rationale": "RDP detections evidence the explicit 2-12-3 sub-clause requiring logs for remote access - they consume remote-session and logon telemetry that the control mandates be collected and monitored.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1021.001->SI-04",
+      "NCA ECC-1:2018 §2-12-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1219",
+    "ecc_control_id": "2-12-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "cotton-sandstorm",
+      "oilrig",
+      "pioneer-kitten",
+      "sidewinder"
+    ],
+    "rationale": "Remote-access-tool detections monitor unsanctioned remote-control channels, evidencing 2-12-3's remote-access logging and continuous-monitoring sub-clause against tooling that bypasses approved remote paths.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1219->CA-07,SI-04",
+      "NCA ECC-1:2018 §2-12-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1071.004",
+    "ecc_control_id": "2-12-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt39",
+      "copykittens",
+      "cyberav3ngers",
+      "greenbug",
+      "hexane"
+    ],
+    "rationale": "DNS C2/tunneling detections require DNS query logs to be collected and continuously analysed, evidencing the network event-log and continuous-monitoring elements of 2-12-3 on a channel commonly used to evade coarse monitoring.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1071.004->CA-07,SI-04",
+      "NCA ECC-1:2018 §2-12-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1572",
+    "ecc_control_id": "2-12-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "ballistic-bobcat",
+      "cavern-manticore",
+      "greenbug",
+      "oilrig",
+      "pioneer-kitten"
+    ],
+    "rationale": "Protocol-tunneling detections evidence continuous monitoring of network events by surfacing covert channels hidden inside allowed protocols, a capability 2-12-3 expects the SIEM/log-collection stack to support.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1572->CA-07,SI-04",
+      "NCA ECC-1:2018 §2-12-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1041",
+    "ecc_control_id": "2-12-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "arid-viper",
+      "ballistic-bobcat",
+      "copykittens",
+      "scarred-manticore"
+    ],
+    "rationale": "Exfiltration-over-C2 detections evidence continuous monitoring of outbound data flows on critical assets, consuming the network and egress logs 2-12-3 requires be collected and watched.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1041->CA-07,SI-04",
+      "NCA ECC-1:2018 §2-12-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1048.003",
+    "ecc_control_id": "2-12-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "copykittens",
+      "infy",
+      "oilrig",
+      "rocket-kitten"
+    ],
+    "rationale": "Detections for exfiltration over unencrypted non-C2 protocols evidence continuous monitoring of anomalous egress on critical assets, drawing on the network event logs 2-12-3 mandates.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1048.003->CA-07,SI-04",
+      "NCA ECC-1:2018 §2-12-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1090",
+    "ecc_control_id": "2-12-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "ballistic-bobcat",
+      "cavern-manticore",
+      "copykittens",
+      "greenbug",
+      "pioneer-kitten"
+    ],
+    "rationale": "Proxy/redirection detections evidence continuous network monitoring by identifying traffic laundered through intermediaries, a use case the 2-12-3 log-collection and monitoring capability must cover.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1090->CA-07,SI-04",
+      "NCA ECC-1:2018 §2-12-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1110",
+    "ecc_control_id": "2-12-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "apt33",
+      "apt39",
+      "cyberav3ngers",
+      "hexane"
+    ],
+    "rationale": "Brute-force detections depend on authentication/failed-logon event logs (especially on remote-access and privileged accounts) being collected and continuously monitored - the exact telemetry 2-12-3 requires be retained and watched.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1110->CA-07,SI-04",
+      "NCA ECC-1:2018 §2-12-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1110.003",
+    "ecc_control_id": "2-12-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "apt33",
+      "hexane",
+      "unc1549"
+    ],
+    "rationale": "Password-spraying detections correlate low-and-slow failed authentications across many accounts, evidencing continuous monitoring of privileged/remote authentication logs called for in 2-12-3.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1110.003->CA-07,SI-04",
+      "NCA ECC-1:2018 §2-12-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1685.001",
+    "ecc_control_id": "2-12-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "charming-kitten",
+      "scarred-manticore",
+      "unc1860"
+    ],
+    "rationale": "Detecting attempts to disable or modify the Windows Event Log directly protects the integrity of the audit trail 2-12-3 mandates; a firing rule proves the monitoring pipeline itself is being watched for tampering. No CTID ATT&CK->NIST anchor exists for this newer technique ID, so confidence is medium on control-intent alignment alone.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "No CTID ATT&CK->NIST 800-53 anchor for T1685.001 (renumbered log-defense technique); mapped on 2-12-3 log-integrity intent",
+      "NCA ECC-1:2018 §2-12-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1685.005",
+    "ecc_control_id": "2-12-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "apt33",
+      "predatory-sparrow"
+    ],
+    "rationale": "Detecting clearing of Windows event logs safeguards the retained-log requirement (minimum 12-month retention) of 2-12-3 by alerting when an adversary destroys the record. No CTID ATT&CK->NIST anchor for this newer technique ID, hence medium confidence on intent alignment.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "No CTID ATT&CK->NIST 800-53 anchor for T1685.005 (renumbered log-defense technique); mapped on 2-12-3 log-retention/integrity intent",
+      "NCA ECC-1:2018 §2-12-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1190",
+    "ecc_control_id": "2-13-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "apt39",
+      "cavern-manticore",
+      "homeland-justice",
+      "pioneer-kitten"
+    ],
+    "rationale": "Exploit-public-facing-application detections are a primary intrusion trigger; a firing rule is what initiates the incident-handling process, evidencing that incident/threat detection is implemented per 2-13-2. SI-04 corroborates; note CTID carries no IR-family control. (Downgraded to medium per final audit: same detection also evidences 2-10/2-15; a detection triggers on the technique but does not evidence 2-13-2 incident-detection *implementation* at full strength.)",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1190->CA-07,SI-04 (no IR-* in CTID set)",
+      "NCA ECC-1:2018 §2-13-2"
+    ]
+  },
+  {
+    "attack_technique_id": "T1505.003",
+    "ecc_control_id": "2-13-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "apt39",
+      "ballistic-bobcat",
+      "charming-kitten",
+      "oilrig"
+    ],
+    "rationale": "Web-shell detections surface an active compromise on internet-facing infrastructure, feeding the incident classification and response workflow that 2-13-2 requires be operational. SI-04 corroborates; CTID has no IR-family control to cite. (Downgraded to medium per final audit: same detection also evidences 2-10/2-15; a detection triggers on the technique but does not evidence 2-13-2 incident-detection *implementation* at full strength.)",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1505.003->SI-04 (no IR-* in CTID set)",
+      "NCA ECC-1:2018 §2-13-2"
+    ]
+  },
+  {
+    "attack_technique_id": "T1566.001",
+    "ecc_control_id": "2-13-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "apt39",
+      "gaza-cybergang",
+      "oilrig",
+      "sidewinder"
+    ],
+    "rationale": "Spearphishing-attachment detections provide the initial-access alerting that feeds incident classification under 2-13-2. Confidence is medium because the primary control home for phishing defense is email protection (2-4-3); here it is evidence of the detection-to-incident pipeline, not the email control itself.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1566.001->CA-07,SI-04 (no IR-* in CTID set)",
+      "NCA ECC-1:2018 §2-13-2"
+    ]
+  },
+  {
+    "attack_technique_id": "T1204.002",
+    "ecc_control_id": "2-13-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "apt39",
+      "charming-kitten",
+      "muddywater",
+      "oilrig"
+    ],
+    "rationale": "Malicious-file execution detections generate the endpoint alerts that initiate incident handling under 2-13-2. Medium confidence: the primary control home is host protection (2-3-3); the mapping evidences the detection-to-incident-response linkage rather than endpoint anti-malware itself.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1204.002->CA-07,SI-04 (no IR-* in CTID set)",
+      "NCA ECC-1:2018 §2-13-2"
+    ]
+  },
+  {
+    "attack_technique_id": "T1486",
+    "ecc_control_id": "2-13-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "cavern-manticore",
+      "charming-kitten"
+    ],
+    "rationale": "Ransomware (data-encrypted-for-impact) detections trigger the highest-severity path of the incident classification, escalation, and NCA-reporting clauses of 2-13-3; the detection is the entry point to those response procedures. SI-04/CP-* corroborate.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1486->SI-04,CP-02,CP-10 (no IR-* in CTID set)",
+      "NCA ECC-1:2018 §2-13-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1485",
+    "ecc_control_id": "2-13-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "apt33",
+      "predatory-sparrow",
+      "wirte"
+    ],
+    "rationale": "Data-destruction detections evidence incident-response readiness for destructive attacks under 2-13-3, driving classification and mandatory NCA notification when integrity/availability of critical data is attacked. SI-04/CP-* corroborate.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1485->SI-04,CP-02,CP-10 (no IR-* in CTID set)",
+      "NCA ECC-1:2018 §2-13-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1490",
+    "ecc_control_id": "2-13-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "apt33",
+      "cavern-manticore",
+      "homeland-justice",
+      "predatory-sparrow"
+    ],
+    "rationale": "Inhibit-system-recovery detections (shadow-copy/backup deletion) are a strong pre-ransom incident indicator, evidencing 2-13-3's incident-response and escalation clauses that must activate before destructive impact completes. SI-04/CP-* corroborate.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1490->SI-04,CP-10 (no IR-* in CTID set)",
+      "NCA ECC-1:2018 §2-13-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1489",
+    "ecc_control_id": "2-13-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "homeland-justice",
+      "predatory-sparrow"
+    ],
+    "rationale": "Service-stop detections surface availability-impacting sabotage of security/business services, evidencing the incident classification and escalation procedures 2-13-3 requires. CA-07/SI-04 corroborate.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1489->CA-07,SI-04 (no IR-* in CTID set)",
+      "NCA ECC-1:2018 §2-13-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1561.002",
+    "ecc_control_id": "2-13-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "homeland-justice",
+      "moses-staff",
+      "predatory-sparrow",
+      "void-manticore"
+    ],
+    "rationale": "Disk-structure-wipe detections evidence incident-response readiness for wiper campaigns (a recurring regional threat), driving 2-13-3 classification and mandatory NCA reporting. SI-04/CP-* corroborate.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1561.002->SI-04,CP-10 (no IR-* in CTID set)",
+      "NCA ECC-1:2018 §2-13-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1491.001",
+    "ecc_control_id": "2-13-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "cyberav3ngers",
+      "homeland-justice",
+      "predatory-sparrow",
+      "wirte"
+    ],
+    "rationale": "Internal-defacement detections evidence the incident classification and escalation clauses of 2-13-3 for integrity/availability-impacting hacktivist and destructive activity that must be reported to the NCA. SI-04/CP-* corroborate.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID ATT&CK->NIST 800-53: T1491.001->SI-04,CP-10 (no IR-* in CTID set)",
+      "NCA ECC-1:2018 §2-13-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1583.001",
+    "ecc_control_id": "2-13-3",
+    "evidence_type": "hunt",
+    "library_pack_refs": [
+      "arid-viper",
+      "charming-kitten",
+      "muddywater",
+      "oilrig",
+      "sea-turtle"
+    ],
+    "rationale": "Actor-attributed adversary-domain hunt content evidences the 2-13-3 clause on collecting/handling threat-intelligence feeds and sharing indicators with the NCA - the packs ARE the curated IOC/TI catalog. Flagged risk_reduction=false: possessing infrastructure IOCs is nominal compliance for the TI clause; it materially reduces risk only once operationalized into blocking/detection, which this mapping alone does not demonstrate. No CTID anchor (pre-compromise technique).",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "No CTID ATT&CK->NIST 800-53 anchor for T1583.001 (pre-compromise resource development); mapped on 2-13-3 threat-intelligence/indicator-sharing intent",
+      "NCA ECC-1:2018 §2-13-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1588.002",
+    "ecc_control_id": "2-13-3",
+    "evidence_type": "hunt",
+    "library_pack_refs": [
+      "apt33",
+      "apt39",
+      "muddywater",
+      "oilrig",
+      "scarred-manticore"
+    ],
+    "rationale": "Adversary-tooling hunt content evidences the threat-intelligence collection/handling clause of 2-13-3 by cataloging known offensive tools per actor. Flagged risk_reduction=false: the tool-TI catalog is nominal evidence for the clause; risk is reduced only when the intel is turned into deployed detections. No CTID anchor (pre-compromise technique).",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "No CTID ATT&CK->NIST 800-53 anchor for T1588.002 (pre-compromise resource development); mapped on 2-13-3 threat-intelligence intent",
+      "NCA ECC-1:2018 §2-13-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1587.001",
+    "ecc_control_id": "2-13-3",
+    "evidence_type": "hunt",
+    "library_pack_refs": [
+      "arid-viper",
+      "oilrig",
+      "scarred-manticore",
+      "unc1860",
+      "wirte"
+    ],
+    "rationale": "Adversary-developed-malware hunt content evidences the 2-13-3 threat-intelligence feed/handling clause by tracking actor malware families and their indicators. Flagged risk_reduction=false: holding malware TI satisfies the clause nominally but does not itself reduce risk until fed into detection/response. No CTID anchor (pre-compromise technique).",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "No CTID ATT&CK->NIST 800-53 anchor for T1587.001 (pre-compromise resource development); mapped on 2-13-3 threat-intelligence intent",
+      "NCA ECC-1:2018 §2-13-3"
+    ]
+  }
+]

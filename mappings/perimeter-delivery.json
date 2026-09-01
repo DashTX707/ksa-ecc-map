@@ -1,0 +1,268 @@
+[
+  {
+    "attack_technique_id": "T1566.001",
+    "ecc_control_id": "2-4-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "apt39",
+      "gaza-cybergang",
+      "oilrig",
+      "sidewinder"
+    ],
+    "rationale": "Detections for spearphishing attachments directly evidence the anti-phishing and APT/zero-day attachment filtering capability required by the core email-defense control; these packs ship attachment-delivery detections for Iran/MENA actors targeting the region.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53 (SI-08 spam protection, SC-44 detonation chamber, SC-07, SI-03)",
+      "MITRE ATT&CK T1566.001"
+    ]
+  },
+  {
+    "attack_technique_id": "T1566.002",
+    "ecc_control_id": "2-4-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "charming-kitten",
+      "apt33",
+      "oilrig",
+      "unc1549",
+      "hexane"
+    ],
+    "rationale": "Spearphishing-link detections evidence the phishing/spam filtering and malicious-URL inspection intent of the core email-defense control; CTID anchors it to SI-08 and SC-20 (secure name resolution) which map to the anti-phishing and domain-validation requirements.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53 (SI-08, SC-44, SC-20, SC-07)",
+      "MITRE ATT&CK T1566.002"
+    ]
+  },
+  {
+    "attack_technique_id": "T1204.002",
+    "ecc_control_id": "2-4-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "charming-kitten",
+      "muddywater",
+      "oilrig",
+      "gaza-cybergang",
+      "arid-viper"
+    ],
+    "rationale": "Detection of malicious-file execution catches weaponized email attachments after delivery, evidencing the APT/zero-day and anti-malware layer of email protection; the CTID SI-08 anchor confirms alignment with email-borne payload defense.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53 (SI-08, SC-44, SI-10, SI-03)",
+      "MITRE ATT&CK T1204.002"
+    ]
+  },
+  {
+    "attack_technique_id": "T1204.001",
+    "ecc_control_id": "2-4-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "charming-kitten",
+      "oilrig",
+      "sidewinder",
+      "unc1549"
+    ],
+    "rationale": "Malicious-link user-execution detections evidence the anti-phishing filtering intent by surfacing users following emailed links; CTID aligns the technique to SI-08 and SC-44, the email-filtering/detonation anchors.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53 (SI-08, SC-44, SC-07)",
+      "MITRE ATT&CK T1204.001"
+    ]
+  },
+  {
+    "attack_technique_id": "T1598.003",
+    "ecc_control_id": "2-4-2",
+    "evidence_type": "hunt",
+    "library_pack_refs": [
+      "charming-kitten",
+      "unc1549",
+      "bahamut",
+      "rocket-kitten",
+      "sidewinder"
+    ],
+    "rationale": "Hunts for phishing-for-information via spearphishing links evidence the implemented email-protection program's ability to surface pre-compromise credential-harvest lures; CTID anchors it to SI-08, but because this is reconnaissance rather than payload delivery the fit is to the implementation control (2-4-2) at medium confidence.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53 (SI-08, SC-44, SC-20)",
+      "MITRE ATT&CK T1598.003"
+    ]
+  },
+  {
+    "attack_technique_id": "T1071.001",
+    "ecc_control_id": "2-5-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "apt39",
+      "charming-kitten",
+      "greenbug",
+      "hexane"
+    ],
+    "rationale": "Web-protocol C2 detections evidence the IPS, protocol/port restriction and browsing-APT-protection requirements of the core network-defense control; CTID anchors it to SC-07 boundary protection plus SC-10/SC-20-23 and SI-04, strongly aligned to network security management.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53 (SC-07, SC-10, SC-20, SC-21, SC-23, SI-04)",
+      "MITRE ATT&CK T1071.001"
+    ]
+  },
+  {
+    "attack_technique_id": "T1090",
+    "ecc_control_id": "2-5-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "ballistic-bobcat",
+      "cavern-manticore",
+      "greenbug",
+      "pioneer-kitten",
+      "sea-turtle"
+    ],
+    "rationale": "Proxy/relayed-traffic detection evidences firewall segmentation, information-flow enforcement and egress restriction in the core network control; CTID aligns to AC-04, SC-07 and SI-10/SI-15, the network flow-control anchors.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53 (AC-03, AC-04, SC-07, SC-08, SI-10, SI-15)",
+      "MITRE ATT&CK T1090"
+    ]
+  },
+  {
+    "attack_technique_id": "T1572",
+    "ecc_control_id": "2-5-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "ballistic-bobcat",
+      "greenbug",
+      "hexane",
+      "oilrig",
+      "pioneer-kitten"
+    ],
+    "rationale": "Protocol-tunneling detection evidences the service/protocol/port restriction and IPS/DNS-inspection intent of the network-defense control by catching traffic that evades segmentation; CTID anchors to SC-07 and SI-10/SI-15 confirm alignment.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53 (AC-04, SC-07, CM-07, SI-10, SI-15)",
+      "MITRE ATT&CK T1572"
+    ]
+  },
+  {
+    "attack_technique_id": "T1071.004",
+    "ecc_control_id": "2-5-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt39",
+      "copykittens",
+      "cyberav3ngers",
+      "greenbug",
+      "hexane"
+    ],
+    "rationale": "DNS-based C2 detection directly evidences the DNS-security requirement explicitly named in the core network-defense control; CTID anchors it to the secure-name-resolution family SC-20/SC-21/SC-22 plus SC-07, a precise mapping.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53 (SC-07, SC-20, SC-21, SC-22, SI-04)",
+      "MITRE ATT&CK T1071.004"
+    ]
+  },
+  {
+    "attack_technique_id": "T1048.003",
+    "ecc_control_id": "2-5-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "copykittens",
+      "infy",
+      "oilrig",
+      "rocket-kitten"
+    ],
+    "rationale": "Detection of exfiltration over unencrypted non-C2 protocols evidences egress protocol/port restriction and information-flow enforcement in the core network control; CTID anchors to AC-04, SC-07 and SI-10/SI-15.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53 (AC-04, SC-07, SC-46, SI-10, SI-15)",
+      "MITRE ATT&CK T1048.003"
+    ]
+  },
+  {
+    "attack_technique_id": "T1219",
+    "ecc_control_id": "2-5-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "cotton-sandstorm",
+      "imperial-kitten",
+      "oilrig",
+      "pioneer-kitten"
+    ],
+    "rationale": "Remote-access-tool detection evidences the service/protocol restriction and browsing-APT-protection intent by surfacing unsanctioned remote-access channels crossing network boundaries; CTID aligns to AC-04, SC-07 and SI-04. Medium because RAT use also spans endpoint controls.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53 (AC-03, AC-04, SC-07, SI-04, SI-10)",
+      "MITRE ATT&CK T1219"
+    ]
+  },
+  {
+    "attack_technique_id": "T1021.001",
+    "ecc_control_id": "2-5-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "apt39",
+      "charming-kitten",
+      "greenbug",
+      "pioneer-kitten"
+    ],
+    "rationale": "RDP detection is a nominal fit to network-security implementation: it is lateral-movement inside the perimeter rather than the boundary/segmentation controls the subdomain centers on, and functions as compensating detective monitoring, not the preventive segmentation the control intends. Flagged compliance-only despite a valid SC-07/SI-04 CTID overlap.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53 (AC-04, AC-17, SC-07, SI-04)",
+      "MITRE ATT&CK T1021.001"
+    ]
+  },
+  {
+    "attack_technique_id": "T1190",
+    "ecc_control_id": "2-15-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "cavern-manticore",
+      "cyberav3ngers",
+      "pioneer-kitten",
+      "scarred-manticore"
+    ],
+    "rationale": "Detection of exploitation of public-facing applications directly evidences the WAF and secure-architecture requirements of the core web-app control; CTID anchors it to SC-07, SI-10 (input validation) and RA-05, the precise web-application-security triad.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53 (SC-07, SI-10, RA-05, SC-18, SI-03)",
+      "MITRE ATT&CK T1190"
+    ]
+  },
+  {
+    "attack_technique_id": "T1505.003",
+    "ecc_control_id": "2-15-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "charming-kitten",
+      "oilrig",
+      "scarred-manticore",
+      "unc1860"
+    ],
+    "rationale": "Web-shell detection evidences implemented web-application protection by catching post-exploitation persistence on web servers; genuinely risk-reducing, but confidence is medium because CTID anchors it to RA-05/CM-06/SI-04 (config and vuln management) rather than the SC-07/SI-10 WAF/input-validation controls at the heart of the subdomain.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53 (RA-05, SI-04, CM-06, AC-03 - partial, no SC-07/SI-10 web anchor)",
+      "MITRE ATT&CK T1505.003"
+    ]
+  }
+]

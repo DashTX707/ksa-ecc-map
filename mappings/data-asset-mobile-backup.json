@@ -1,0 +1,199 @@
+[
+  {
+    "attack_technique_id": "T1071",
+    "ecc_control_id": "2-6-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "oilalpha",
+      "charming-kitten",
+      "cyberav3ngers"
+    ],
+    "rationale": "OilAlpha is a mobile-focused actor; detecting its application-layer C2 identifies beaconing from compromised (potentially BYOD) devices, evidencing that mobile-device threat monitoring is implemented and can trigger containment/remote wipe. NIST anchors sit in the SC-* family (SC-07/SC-10/SC-20-23), aligned with 2-6's mobile-communications protection intent.",
+    "mapping_confidence": "low",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: T1071 -> SC-07, SC-10, SC-20, SC-21, SC-22, SC-23, SC-31, SI-04",
+      "NCA ECC-1:2018 §2-6-2"
+    ]
+  },
+  {
+    "attack_technique_id": "T1204.002",
+    "ecc_control_id": "2-6-3",
+    "evidence_type": "hunt",
+    "library_pack_refs": [
+      "domestic-kitten",
+      "oilalpha"
+    ],
+    "rationale": "Both Domestic Kitten and OilAlpha deliver malicious mobile apps/files that users are lured into installing. Hunting for this malicious-file execution directly evidences the 2-6-3 intent around controlled use of mobile devices and user awareness against rogue apps; detection reduces real mobile-compromise risk.",
+    "mapping_confidence": "low",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: T1204.002 -> SC-44, SI-03, SI-04, SI-07, SI-08, SI-10",
+      "NCA ECC-1:2018 §2-6-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1125",
+    "ecc_control_id": "2-6-3",
+    "evidence_type": "hunt",
+    "library_pack_refs": [
+      "domestic-kitten",
+      "oilalpha",
+      "group5"
+    ],
+    "rationale": "Camera/video surveillance is a signature capability of these mobile surveillanceware actors. Hunting for it detects active compromise of a mobile device and genuinely reduces risk, but CTID publishes no NIST 800-53 mapping for T1125, so there is no framework anchor and confidence stays low.",
+    "mapping_confidence": "low",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: no mapping published for T1125 (no NIST anchor)",
+      "NCA ECC-1:2018 §2-6-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1005",
+    "ecc_control_id": "2-7-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "charming-kitten",
+      "pioneer-kitten",
+      "stealth-falcon",
+      "tortoiseshell",
+      "dark-caracal"
+    ],
+    "rationale": "Detecting bulk collection of data from the local system evidences monitoring of unauthorized access to protected/classified data (the confidentiality outcome of 2-7). NIST anchors include SC-28 (data at rest), SC-13, AC-16 and AC-23, which align to data-and-information protection; detection surfaces theft-in-progress but does not itself implement classification/labeling.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: T1005 -> AC-16, AC-23, CM-12, CP-09, SC-13, SC-28, SC-38, SI-03, SI-04",
+      "NCA ECC-1:2018 §2-7-2"
+    ]
+  },
+  {
+    "attack_technique_id": "T1041",
+    "ecc_control_id": "2-7-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "gaza-cybergang",
+      "imperial-kitten",
+      "stealth-falcon",
+      "tortoiseshell"
+    ],
+    "rationale": "Exfiltration over the C2 channel is the direct loss event 2-7 protects against. Detecting it strongly evidences the data-and-information protection intent (preventing unauthorized disclosure), backed by SC-28/SC-13/SC-31 data-confidentiality anchors, and genuinely reduces data-loss risk.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: T1041 -> AC-16, AC-23, SC-07, SC-13, SC-28, SC-31, SI-03, SI-04, SR-04",
+      "NCA ECC-1:2018 §2-7-2"
+    ]
+  },
+  {
+    "attack_technique_id": "T1048.003",
+    "ecc_control_id": "2-7-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "copykittens",
+      "infy",
+      "oilrig",
+      "rocket-kitten"
+    ],
+    "rationale": "Exfiltration over an unencrypted non-C2 protocol is a data-disclosure event; detecting it evidences protection of data confidentiality per 2-7. NIST anchors include SC-13 and SC-28, aligned to the data-protection intent; detection reduces real exfiltration risk.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: T1048.003 -> AC-16, AC-23, SC-07, SC-13, SC-28, SC-31, SI-03, SI-04, SR-04",
+      "NCA ECC-1:2018 §2-7-2"
+    ]
+  },
+  {
+    "attack_technique_id": "T1567",
+    "ecc_control_id": "2-7-2",
+    "evidence_type": "hunt",
+    "library_pack_refs": [
+      "cotton-sandstorm",
+      "gaza-cybergang",
+      "moses-staff",
+      "predatory-sparrow",
+      "tortoiseshell"
+    ],
+    "rationale": "Hunting for exfiltration over legitimate web services detects covert data egress that bypasses perimeter controls, evidencing 2-7 data-protection monitoring. SC-28 anchors it to data confidentiality; as a hunt rather than a standing detection, confidence is medium but the risk reduction is genuine.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: T1567 -> AC-16, AC-23, SC-07, SC-28, SC-31, SI-03, SI-04, SR-04",
+      "NCA ECC-1:2018 §2-7-2"
+    ]
+  },
+  {
+    "attack_technique_id": "T1490",
+    "ecc_control_id": "2-9-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "homeland-justice",
+      "predatory-sparrow",
+      "cavern-manticore",
+      "apt33"
+    ],
+    "rationale": "Inhibit System Recovery (e.g. deleting volume shadow copies/backup catalogs) is the one destructive technique that directly attacks the recovery mechanism 2-9 protects. Early detection can stop backup destruction before recoverability is lost, so it genuinely reduces risk. NIST anchors CP-09 (backup) and CP-10 (recovery) align tightly with the subdomain.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: T1490 -> CP-02, CP-07, CP-09, CP-10, CM-06, SI-03, SI-04, SI-07",
+      "NCA ECC-1:2018 §2-9-2"
+    ]
+  },
+  {
+    "attack_technique_id": "T1485",
+    "ecc_control_id": "2-9-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "apt33",
+      "predatory-sparrow",
+      "wirte"
+    ],
+    "rationale": "Data destruction detection alerts to a recovery-triggering event, and CTID anchors it to CP-09/CP-10, but detecting destruction does not itself provide or test backups. 2-9's protective value is having recoverable, tested backups; detection is nominal against that intent, so the flag is false despite the strong-looking control-family match.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: T1485 -> CP-02, CP-07, CP-09, CP-10, AC-03, AC-06, SI-07",
+      "NCA ECC-1:2018 §2-9-2"
+    ]
+  },
+  {
+    "attack_technique_id": "T1486",
+    "ecc_control_id": "2-9-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "cavern-manticore",
+      "charming-kitten"
+    ],
+    "rationale": "Ransomware encryption for impact is the classic driver for restore-from-backup. CTID anchors it to CP-09/CP-10, but detecting encryption does not evidence that backups exist or that restore has been tested (2-9-3). The mapping is nominal for the backup control: the control is satisfied by tested backups, not by ransomware detection.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: T1486 -> CP-02, CP-06, CP-07, CP-09, CP-10, AC-03, AC-06, SI-07",
+      "NCA ECC-1:2018 §2-9-2"
+    ]
+  },
+  {
+    "attack_technique_id": "T1561.001",
+    "ecc_control_id": "2-9-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "homeland-justice",
+      "void-manticore"
+    ],
+    "rationale": "Disk content wipe is a destructive precursor to needing recovery; CTID anchors it to CP-09/CP-10. As with other destruction techniques, wiper detection does not create or validate backups, so it is nominal against 2-9's recoverability intent and the flag is false.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: T1561.001 -> CP-02, CP-07, CP-09, CP-10, AC-03, AC-06, SI-07",
+      "NCA ECC-1:2018 §2-9-2"
+    ]
+  }
+]

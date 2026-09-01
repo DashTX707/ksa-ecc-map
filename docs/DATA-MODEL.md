@@ -62,6 +62,16 @@ ECC control that technique's detection/hunt provides **evidence** for.
 - **Compliant ≠ secure** — a `high`-confidence mapping flagged nominal/no-risk-reduction is surfaced for reconciliation.
 - **Bilingual** — AR + EN titles expected; gaps flagged.
 
+## ATT&CK dataset caveat (ID numbering)
+Technique IDs are validated against the **bundled pySigma ATT&CK dataset** used by
+the MENA Detection Library's CI — a reorganized build that renumbers part of the
+Impair-Defenses family (e.g. this dataset's **T1685** ≈ public ATT&CK **T1562**,
+**T1685.005** ≈ **T1070.001**) and renames the defense-evasion tactic to `stealth`.
+Consequently a few technique IDs here **will not have a CTID ATT&CK→NIST anchor**
+(the CTID data uses public ATT&CK numbering), and that absence is expected — not a
+gap in corroboration. Downstream consumers on public ATT&CK should translate these
+IDs. `scripts/audit_eccmap.py` uses the bundled dataset as its source of truth.
+
 ## Not an attestation
 This is community guidance mapping public detection content to ECC control
 *intent*. It is **not** an NCA-endorsed compliance attestation, and evidence of

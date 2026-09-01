@@ -1,0 +1,508 @@
+[
+  {
+    "attack_technique_id": "T1078",
+    "ecc_control_id": "2-2-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "apt39",
+      "greenbug",
+      "tortoiseshell",
+      "unc1549"
+    ],
+    "rationale": "Detecting abuse of valid accounts evidences the core IAM control's need-to-know/least-privilege authorization and periodic access-review intent by surfacing accounts used outside expected scope.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1078->AC-2,AC-3,AC-6,IA-2,IA-5",
+      "NCA ECC-1:2018 §2-2-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1078.002",
+    "ecc_control_id": "2-2-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "charming-kitten",
+      "oilrig",
+      "pioneer-kitten",
+      "tortoiseshell"
+    ],
+    "rationale": "Detection of domain-account misuse evidences that implemented IAM authorization and access-management requirements are operating on directory identities.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1078.002->AC-2,AC-3,AC-6,IA-2,IA-5",
+      "NCA ECC-1:2018 §2-2-2"
+    ]
+  },
+  {
+    "attack_technique_id": "T1078.001",
+    "ecc_control_id": "2-2-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "cavern-manticore",
+      "charming-kitten",
+      "cyberav3ngers"
+    ],
+    "rationale": "Detecting use of default accounts evidences the IAM least-privilege and account-hygiene intent (default credentials are a direct least-privilege/authorization failure).",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1078.001->AC-2,AC-5,AC-6",
+      "NCA ECC-1:2018 §2-2-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1003",
+    "ecc_control_id": "2-2-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt39",
+      "homeland-justice",
+      "volatile-cedar"
+    ],
+    "rationale": "OS credential-dumping detection evidences protection of authentication material central to the IAM privileged-access-management and authentication intent.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1003->AC-3,AC-6,IA-2,IA-4,IA-5",
+      "NCA ECC-1:2018 §2-2-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1003.001",
+    "ecc_control_id": "2-2-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "muddywater",
+      "oilrig",
+      "apt33",
+      "imperial-kitten",
+      "tortoiseshell"
+    ],
+    "rationale": "LSASS-memory dumping detection directly evidences protection of privileged credentials underpinning the IAM PAM and authentication controls.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1003.001->AC-3,AC-6,IA-2,IA-5",
+      "NCA ECC-1:2018 §2-2-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1110",
+    "ecc_control_id": "2-2-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "apt33",
+      "apt39",
+      "hexane",
+      "pioneer-kitten"
+    ],
+    "rationale": "Brute-force detection evidences the IAM authentication control (username/password strength, lockout) and directly reduces credential-guessing risk.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1110->AC-7,IA-2,IA-5,IA-11",
+      "NCA ECC-1:2018 §2-2-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1110.003",
+    "ecc_control_id": "2-2-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "apt33",
+      "hexane",
+      "unc1549"
+    ],
+    "rationale": "Password-spraying detection evidences authentication monitoring and lockout controls within the core IAM set.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1110.003->AC-7,IA-2,IA-5,IA-11",
+      "NCA ECC-1:2018 §2-2-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1098",
+    "ecc_control_id": "2-2-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "cavern-manticore"
+    ],
+    "rationale": "Account-manipulation detection evidences the IAM authorization and segregation-of-duties intent by surfacing unauthorized privilege/credential changes.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1098->AC-2,AC-5,AC-6,IA-2",
+      "NCA ECC-1:2018 §2-2-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1021.001",
+    "ecc_control_id": "2-2-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "charming-kitten",
+      "hexane",
+      "pioneer-kitten",
+      "unc1549"
+    ],
+    "rationale": "RDP-abuse detection evidences the IAM control's MFA-for-remote-access and privileged-access requirements on interactive remote logons.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1021.001->AC-2,AC-6,AC-17,IA-2,IA-5",
+      "NCA ECC-1:2018 §2-2-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1133",
+    "ecc_control_id": "2-2-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "cavern-manticore",
+      "cyberav3ngers",
+      "pioneer-kitten",
+      "polonium",
+      "sea-turtle"
+    ],
+    "rationale": "External-remote-services detection evidences that implemented IAM requirements (remote-access authentication and MFA) are operating at the perimeter.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1133->AC-17,IA-2,IA-5",
+      "NCA ECC-1:2018 §2-2-2"
+    ]
+  },
+  {
+    "attack_technique_id": "T1136.001",
+    "ecc_control_id": "2-2-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt39",
+      "cavern-manticore",
+      "charming-kitten",
+      "pioneer-kitten"
+    ],
+    "rationale": "Detecting rogue local-account creation evidences that implemented IAM provisioning/authorization controls catch out-of-process identity creation.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1136.001->AC-2,AC-3,IA-2,IA-5",
+      "NCA ECC-1:2018 §2-2-2"
+    ]
+  },
+  {
+    "attack_technique_id": "T1204.002",
+    "ecc_control_id": "2-3-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "charming-kitten",
+      "gaza-cybergang",
+      "muddywater",
+      "oilrig"
+    ],
+    "rationale": "Malicious-file execution detection evidences the host-protection control's advanced anti-malware defense on servers and workstations.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1204.002->SI-3,SI-8,SC-44,SI-7",
+      "NCA ECC-1:2018 §2-3-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1204.001",
+    "ecc_control_id": "2-3-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "charming-kitten",
+      "hexane",
+      "oilrig",
+      "sidewinder"
+    ],
+    "rationale": "Malicious-link user-execution detection evidences the anti-malware and safe-content intent of the core host-protection set.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1204.001->SI-3,SI-8,SC-44",
+      "NCA ECC-1:2018 §2-3-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1027",
+    "ecc_control_id": "2-3-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "ballistic-bobcat",
+      "copykittens",
+      "hexane",
+      "imperial-kitten",
+      "tortoiseshell"
+    ],
+    "rationale": "Detecting obfuscated files/information evidences advanced malware defense (SI-3) and file-integrity checks that the host-protection control requires.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1027->SI-2,SI-3,SI-4,SI-7",
+      "NCA ECC-1:2018 §2-3-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1105",
+    "ecc_control_id": "2-3-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "muddywater",
+      "oilrig",
+      "cavern-manticore",
+      "homeland-justice"
+    ],
+    "rationale": "Ingress-tool-transfer detection evidences the anti-malware protection intent by catching delivery of malicious tooling to protected hosts.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1105->SI-3,SI-4,SC-7,CM-7",
+      "NCA ECC-1:2018 §2-3-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1055",
+    "ecc_control_id": "2-3-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "copykittens",
+      "gaza-cybergang",
+      "tortoiseshell",
+      "tropic-trooper"
+    ],
+    "rationale": "Process-injection detection evidences advanced malware/defense-evasion protection on endpoints beyond signature AV.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1055->SI-2,SI-3,SI-4,SC-18",
+      "NCA ECC-1:2018 §2-3-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1027.002",
+    "ecc_control_id": "2-3-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt39",
+      "dark-caracal",
+      "madi"
+    ],
+    "rationale": "Software-packing detection evidences that the host anti-malware layer inspects packed/evasive binaries, per the core protection set.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1027.002->SI-2,SI-3,SI-4,SI-7",
+      "NCA ECC-1:2018 §2-3-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1027.002",
+    "ecc_control_id": "2-3-2",
+    "evidence_type": "hunt",
+    "library_pack_refs": [
+      "gaza-cybergang",
+      "scarred-manticore",
+      "unc1860"
+    ],
+    "rationale": "Hunting packed malware evidences that the implemented system-protection requirements (anti-malware operating and tuned) are effective in practice.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1027.002->SI-2,SI-3,SI-4,SI-7",
+      "NCA ECC-1:2018 §2-3-2"
+    ]
+  },
+  {
+    "attack_technique_id": "T1189",
+    "ecc_control_id": "2-3-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "charming-kitten",
+      "copykittens",
+      "group5",
+      "imperial-kitten",
+      "tortoiseshell"
+    ],
+    "rationale": "Drive-by-compromise detection evidences the anti-malware/APT-protection intent for browsing that the host-protection control mandates.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1189->SI-2,SI-3,SI-4,SC-18",
+      "NCA ECC-1:2018 §2-3-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1027.010",
+    "ecc_control_id": "2-3-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "hexane",
+      "muddywater",
+      "pioneer-kitten",
+      "sidewinder",
+      "stealth-falcon"
+    ],
+    "rationale": "Command-obfuscation detection evidences advanced malware/defense-evasion protection on endpoints under the core host-protection set.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1027.010->CM-6,SI-3,SI-4,SI-10",
+      "NCA ECC-1:2018 §2-3-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1055.001",
+    "ecc_control_id": "2-3-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "domestic-kitten",
+      "imperial-kitten",
+      "tropic-trooper"
+    ],
+    "rationale": "DLL-injection detection evidences that implemented endpoint malware-protection requirements catch in-memory evasion techniques.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1055.001->SI-2,SI-3,SI-4,SC-18",
+      "NCA ECC-1:2018 §2-3-2"
+    ]
+  },
+  {
+    "attack_technique_id": "T1129",
+    "ecc_control_id": "2-3-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "polonium",
+      "volatile-cedar"
+    ],
+    "rationale": "Shared-module/DLL-load detection evidences malware execution defense and configuration hardening on protected hosts.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1129->CM-2,CM-7,SI-3,SI-4,SI-7",
+      "NCA ECC-1:2018 §2-3-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1053.005",
+    "ecc_control_id": "2-3-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "apt33",
+      "muddywater",
+      "oilrig",
+      "pioneer-kitten"
+    ],
+    "rationale": "Scheduled-task detection evidences host hardening and configuration-integrity monitoring that support the system-protection intent; CTID anchor is CM/AC-centric rather than anti-malware; 2-3-3 core is anti-malware/media/patch, so this is low-confidence adjacency, not direct evidence.",
+    "mapping_confidence": "low",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "CTID: T1053.005->CM-2,CM-6,CM-7,SI-4",
+      "NCA ECC-1:2018 §2-3-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1190",
+    "ecc_control_id": "2-10-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "cavern-manticore",
+      "cotton-sandstorm",
+      "pioneer-kitten",
+      "tortoiseshell"
+    ],
+    "rationale": "Detecting exploitation of public-facing applications evidences the vulnerability-management control's assessment, risk-based remediation and patch-management intent for exposed services.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1190->RA-5,RA-10,SI-2,CA-2,CM-8",
+      "NCA ECC-1:2018 §2-10-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1210",
+    "ecc_control_id": "2-10-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "pioneer-kitten",
+      "tropic-trooper"
+    ],
+    "rationale": "Exploitation-of-remote-services detection evidences that unpatched internal service vulnerabilities are being scanned/remediated under the vuln-management control.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1210->RA-5,RA-10,SI-2,CA-2",
+      "NCA ECC-1:2018 §2-10-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1203",
+    "ecc_control_id": "2-10-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "group5",
+      "muddywater",
+      "oilrig",
+      "sidewinder"
+    ],
+    "rationale": "Exploitation-for-client-execution detection evidences the patch-management and remediation intent for client-side application vulnerabilities.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1203->SI-2,SI-3,SI-4,SC-18",
+      "NCA ECC-1:2018 §2-10-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1068",
+    "ecc_control_id": "2-10-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "oilrig"
+    ],
+    "rationale": "Privilege-escalation-exploit detection evidences the vuln-management control's criticality-based classification and risk-based patching of exploitable kernel/driver flaws.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1068->RA-5,RA-10,SI-2,SC-30",
+      "NCA ECC-1:2018 §2-10-3"
+    ]
+  },
+  {
+    "attack_technique_id": "T1190",
+    "ecc_control_id": "2-10-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "homeland-justice",
+      "imperial-kitten",
+      "moses-staff",
+      "scarred-manticore",
+      "sea-turtle"
+    ],
+    "rationale": "Perimeter-exploitation detection evidences that implemented vulnerability-management requirements (scanning and remediation of internet-facing weaknesses) are operating in production.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1190->RA-5,RA-10,SI-2,CA-2,CM-8",
+      "NCA ECC-1:2018 §2-10-2"
+    ]
+  }
+]
