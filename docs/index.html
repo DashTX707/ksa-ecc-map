@@ -38,9 +38,11 @@
   --sh:0 1px 2px rgba(0,0,0,.3),0 10px 30px -16px rgba(0,0,0,.6);
 }
 *{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:clip}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;
   font-size:15px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+img{max-width:100%}
 a{color:var(--bronze);text-decoration:none}a:hover{text-decoration:underline}
 h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;text-wrap:balance;margin:0}
 .mono{font-family:var(--mono)}
@@ -55,8 +57,8 @@ header.hero{border-bottom:1px solid var(--line);background:
 h1{font-size:40px;letter-spacing:-.01em}
 .h1ar{font-family:var(--ar);font-size:26px;color:var(--slate);font-weight:500}
 .lede{margin:14px 0 0;max-width:60ch;color:var(--ink);font-size:16px}
-.fwsel{display:inline-flex;gap:5px;margin-top:22px;background:var(--card2);border:1px solid var(--line);
-  border-radius:11px;padding:5px}
+.fwsel{display:inline-flex;flex-wrap:wrap;gap:5px;margin-top:22px;background:var(--card2);border:1px solid var(--line);
+  border-radius:11px;padding:5px;max-width:100%}
 .fwbtn{border:0;background:transparent;color:var(--muted);font-family:var(--sans);cursor:pointer;
   padding:8px 16px;border-radius:8px;text-align:left;line-height:1.2}
 .fwbtn b{display:block;font-size:14px;font-weight:600}
@@ -156,7 +158,8 @@ h2{font-size:23px}
 .pill.nominal{color:var(--nominal);border-color:color-mix(in srgb,var(--nominal) 45%,transparent);background:color-mix(in srgb,var(--nominal) 10%,transparent)}
 
 /* technique table */
-.ttbl{width:100%;border-collapse:collapse;font-size:13.5px}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:10px}
+.ttbl{width:100%;min-width:560px;border-collapse:collapse;font-size:13.5px}
 .ttbl th{text-align:left;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);
   padding:9px 12px;border-bottom:1px solid var(--line2)}
 .ttbl td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
@@ -180,7 +183,7 @@ footer a{display:block;margin-bottom:5px}
 .usebar{background:color-mix(in srgb,var(--nominal) 8%,var(--card));border:1px solid color-mix(in srgb,var(--nominal) 30%,var(--line));
   border-radius:12px;padding:14px 18px;margin:22px 0 0;display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
 .usebar .ic{font-size:18px;line-height:1.3}
-.usebar .tx{flex:1;min-width:260px;font-size:13px;color:var(--ink)}
+.usebar .tx{flex:1 1 240px;min-width:0;font-size:13px;color:var(--ink)}
 .usebar .tx b{color:var(--nominal)}
 .usebar a{font-weight:600;white-space:nowrap}
 .chip.warn{color:var(--nominal);border-color:color-mix(in srgb,var(--nominal) 45%,transparent);font-weight:600}
@@ -430,8 +433,8 @@ footer a{display:block;margin-bottom:5px}
         '<td><div class="tctrls">'+mc.map(function(c){return '<span class="cc '+c.cf+(c.rr?'':' nom')+'" title="'+(c.rr?'':'nominal (risk-flag off)')+'">'+c.c+'</span>';}).join('')+'</div></td>'+
         '<td>'+t.ev.map(function(e){return '<span class="pill '+e+'">'+e+'</span>';}).join(' ')+'</td></tr>';
     }).filter(Boolean).join('');
-    document.getElementById('view-t').innerHTML='<table class="ttbl"><thead><tr><th>Technique</th><th>Name</th><th>Evidences (controls)</th><th>Evidence</th></tr></thead><tbody>'+
-      (rows||'<tr><td colspan="4">No techniques match these filters.</td></tr>')+'</tbody></table>';
+    document.getElementById('view-t').innerHTML='<div class="tscroll"><table class="ttbl"><thead><tr><th>Technique</th><th>Name</th><th>Evidences (controls)</th><th>Evidence</th></tr></thead><tbody>'+
+      (rows||'<tr><td colspan="4">No techniques match these filters.</td></tr>')+'</tbody></table></div>';
   }
   function render(){renderStats();renderDom();renderGaps();renderC();renderT();}
   function setFW(i){ci=i;d=FW[i];S=d.stats;render();}
