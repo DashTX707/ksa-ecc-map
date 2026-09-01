@@ -51,6 +51,13 @@ silent skip). It enforces:
 - every mapping carries rationale, confidence, a **risk-reduction flag**, and a source;
 - a `high`-confidence mapping flagged as *nominal* is surfaced (**compliant ≠ secure**).
 
+**One command runs the whole pipeline** — audit + data-reproducibility + a
+**real-browser** responsive check — and CI runs it on every push (a red check blocks
+the merge). See **[docs/PIPELINE.md](docs/PIPELINE.md)**:
+```bash
+npm install && python scripts/verify.py
+```
+
 ## Sourcing & licensing
 Control IDs are referenced and each control's intent is **paraphrased** (≤40 words)
 with a link to the official NCA document. This repo does **not** redistribute the

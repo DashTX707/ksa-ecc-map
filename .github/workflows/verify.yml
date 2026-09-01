@@ -1,0 +1,32 @@
+name: verify
+
+# Runs the full KSA ECC-Map pipeline gate on every push and PR.
+# A red check blocks the merge — the pipeline is enforced, not optional.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Playwright + Chromium (for the browser gate)
+        run: |
+          npm install
+          npx playwright install --with-deps chromium
+
+      - name: Run the verification pipeline
+        run: python scripts/verify.py

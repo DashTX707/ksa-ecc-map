@@ -1,0 +1,12 @@
+{
+  "name": "ksa-ecc-map",
+  "private": true,
+  "description": "Tooling deps for the KSA ECC-Map verification pipeline (browser responsive check).",
+  "scripts": {
+    "verify": "python scripts/verify.py",
+    "postinstall": "playwright install chromium"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}
