@@ -20,12 +20,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 CATALOG_DIR = os.path.join(REPO, "catalog")
 MAPDIR = os.path.join(REPO, "mappings")
-ATTACK_DUMP = os.environ.get(
-    "ATTACK_DUMP",
-    "C:/Users/IbrahimAbdlrazik/AppData/Local/Temp/attack_dump.json")
-LIBRARY = os.environ.get(
-    "MENA_LIBRARY",
-    "C:/Users/IbrahimAbdlrazik/Desktop/mena-detection-library")
+# Self-contained by default: both dependencies are VENDORED into the repo so the
+# gate is reproducible from a clean checkout / CI. Env vars override for maintainers.
+ATTACK_DUMP = os.environ.get("ATTACK_DUMP", os.path.join(REPO, "vendor", "attack_dump.json"))
+LIBRARY_MANIFEST = os.environ.get("LIBRARY_MANIFEST", os.path.join(REPO, "vendor", "library_manifest.json"))
 
 CONTROL_ID_RE = re.compile(r"^\d+(-\d+)+$")     # variable depth: 2-3 or 2-3-1 or 2-3-1-1
 INTENT_MAX_WORDS = 40
@@ -41,13 +39,30 @@ def load_json(path, what):
     except Exception as e:
         P("ERR", what, f"parse fail: {e}"); return None
 
-# ---------------- load ATT&CK source of truth ----------------
+# ---------------- load ATT&CK source of truth (FAIL-CLOSED) ----------------
+# A missing dataset is a hard ERR, never a silent skip: the technique-validity
+# guarantee must hold everywhere, not only where the file happens to exist.
 TECH = set()
-if os.path.exists(ATTACK_DUMP):
-    dump = load_json(ATTACK_DUMP, "attack_dump")
-    if dump: TECH = set(dump.get("techniques", {}))
+if not os.path.exists(ATTACK_DUMP):
+    P("ERR", "attack_dump", f"vendored ATT&CK dataset missing at {ATTACK_DUMP} — cannot validate technique IDs (run scripts/build_library_manifest.py env or restore vendor/). FAIL-CLOSED.")
 else:
-    P("WARN", "attack_dump", f"ATT&CK dataset not found at {ATTACK_DUMP} — technique-id validation skipped")
+    dump = load_json(ATTACK_DUMP, "attack_dump")
+    if dump:
+        TECH = set(dump.get("techniques", {}))
+    if not TECH:
+        P("ERR", "attack_dump", "ATT&CK dataset present but empty — technique validation cannot run. FAIL-CLOSED.")
+
+# ---------------- load library manifest (FAIL-CLOSED) ----------------
+# Vendored per-actor detection/hunt file index; used to validate library refs
+# WITHOUT needing the external Detection Library on disk.
+MANIFEST = {}
+if not os.path.exists(LIBRARY_MANIFEST):
+    P("ERR", "library_manifest", f"vendored library manifest missing at {LIBRARY_MANIFEST} — cannot validate library refs. FAIL-CLOSED.")
+else:
+    mf = load_json(LIBRARY_MANIFEST, "library_manifest")
+    MANIFEST = (mf or {}).get("actors", {})
+    if not MANIFEST:
+        P("ERR", "library_manifest", "library manifest present but has no actors. FAIL-CLOSED.")
 
 # ---------------- load + validate every catalog ----------------
 # framework name -> set(control_ids)
@@ -101,7 +116,11 @@ for cf in catalog_files:
 
 # ---------------- mappings integrity ----------------
 REQUIRED = ("attack_technique_id", "framework", "control_id", "evidence_type",
-            "rationale", "mapping_confidence", "risk_reduction_flag", "source_refs")
+            "rationale", "mapping_confidence", "risk_reduction_flag", "source_refs",
+            "library_pack_refs", "library_rule_refs")
+
+def _related(a, b):  # manifest technique key a relates to mapping technique b
+    return a == b or a.startswith(b + ".") or b.startswith(a + ".")
 seen_pairs = set()
 map_files = sorted(glob.glob(os.path.join(MAPDIR, "**", "*.json"), recursive=True))
 n_map = 0
@@ -132,10 +151,33 @@ for mf in map_files:
             P("REVIEW", tag, f"mapping_confidence should be high|medium|low, got {r.get('mapping_confidence')!r}")
         if r.get("mapping_confidence") == "high" and r.get("risk_reduction_flag") in (False, "none", "nominal"):
             P("REVIEW", tag, "high-confidence mapping flagged nominal/no-risk-reduction — reconcile")
+        # pack refs: the actor slug must exist in the vendored manifest
         for ref in (r.get("library_pack_refs") or []):
-            if not (os.path.exists(os.path.join(LIBRARY, "actors", ref))
-                    or os.path.isdir(os.path.join(LIBRARY, "actors", ref.split("/")[0]))):
-                P("ERR", tag, f"library_pack_ref does not exist on disk: {ref}")
+            slug = ref.split("/")[0]
+            if MANIFEST and slug not in MANIFEST:
+                P("ERR", tag, f"library_pack_ref actor not in manifest: {ref}")
+        # rule refs (drill-down): 'slug/detections/FILE.yml' or 'slug/hunts/FILE.md'
+        # must exist in the manifest AND the file must actually cover this technique.
+        rule_refs = r.get("library_rule_refs") or []
+        if not rule_refs:
+            P("REVIEW", tag, f"no library_rule_refs (drill-down) resolved for {tid}")
+        for ref in rule_refs:
+            parts = ref.split("/")
+            if len(parts) != 3 or parts[1] not in ("detections", "hunts"):
+                P("ERR", tag, f"malformed library_rule_ref: {ref}"); continue
+            slug, sub, fn = parts
+            if MANIFEST:
+                a = MANIFEST.get(slug)
+                if not a:
+                    P("ERR", tag, f"library_rule_ref actor not in manifest: {ref}"); continue
+                files = a["detections"] if sub == "detections" else a["hunts"]
+                if fn not in files:
+                    P("ERR", tag, f"library_rule_ref file not in manifest: {ref}"); continue
+                # the referenced file must actually tag/cite this technique (or a parent/sub)
+                bytech = a["detect_by_tech"] if sub == "detections" else a["hunt_by_tech"]
+                covers = any(fn in v for k, v in bytech.items() if _related(k, tid))
+                if not covers:
+                    P("ERR", tag, f"library_rule_ref {ref} does not cover technique {tid}")
         pair = (fw, tid, cid)
         if pair in seen_pairs:
             P("REVIEW", tag, f"duplicate mapping {fw}:{tid}->{cid}")

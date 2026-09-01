@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <title>KSA ECC-Map</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="A community crosswalk mapping deployable detection content to the control clauses of Saudi Arabia's NCA ECC-1:2018 — audited, honest about coverage, not an NCA attestation.">
+<meta name="description" content="A community crosswalk mapping deployable detection content to NCA ECC-1:2018 and CSCC-1:2019 control clauses — audited, honest that most controls carry no detection evidence, and not an NCA attestation.">
 <meta property="og:title" content="KSA ECC-Map">
-<meta property="og:description" content="Which detections give audit evidence for which NCA ECC-1:2018 control. 85 audited mappings across 20 controls; honest about the 94 with none.">
+<meta property="og:description" content="Which detections give candidate audit evidence for which NCA ECC-1:2018 / CSCC-1:2019 control — audited, and honest that most controls carry no detection evidence at all. Not an NCA attestation.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='4' width='20' height='24' rx='2' fill='none' stroke='%239a6a2f' stroke-width='2'/%3E%3Cpath d='M10 11h9M10 16h9M10 21h5' stroke='%239a6a2f' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpath d='M19 22.5l2.2 2.2 4-4.4' fill='none' stroke='%232e6f4e' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
@@ -115,7 +115,7 @@ h2{font-size:23px}
 .fbtn{border:1px solid var(--line2);background:var(--card);color:var(--ink);font-family:var(--sans);font-size:12.5px;
   padding:5px 11px;border-radius:999px;cursor:pointer}
 .fbtn[aria-pressed="true"]{background:var(--slate);color:#fff;border-color:var(--slate)}
-:root[data-theme="dark"] .fbtn[aria-pressed="true"],
+:root[data-theme="dark"] .fbtn[aria-pressed="true"]{color:#10141a}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .fbtn[aria-pressed="true"]{color:#10141a}}
 
 .subgroup{margin-top:24px}
@@ -166,6 +166,7 @@ h2{font-size:23px}
 .cc.high{border-color:color-mix(in srgb,var(--high) 45%,transparent);color:var(--high)}
 .cc.medium{border-color:color-mix(in srgb,var(--med) 45%,transparent);color:var(--med)}
 .cc.low{border-color:color-mix(in srgb,var(--low) 45%,transparent);color:var(--low)}
+.cc.nom{opacity:.6;text-decoration:line-through}
 .hide{display:none !important}
 
 footer{border-top:1px solid var(--line);padding:30px 0 50px;color:var(--muted);font-size:13px}
@@ -175,8 +176,28 @@ footer a{display:block;margin-bottom:5px}
 .foot-note{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;line-height:1.6}
 .theme-tog{position:fixed;top:14px;right:14px;z-index:10;background:var(--card);border:1px solid var(--line2);
   color:var(--muted);border-radius:8px;width:34px;height:34px;cursor:pointer;font-size:15px;box-shadow:var(--sh)}
+/* honesty banner */
+.usebar{background:color-mix(in srgb,var(--nominal) 8%,var(--card));border:1px solid color-mix(in srgb,var(--nominal) 30%,var(--line));
+  border-radius:12px;padding:14px 18px;margin:22px 0 0;display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
+.usebar .ic{font-size:18px;line-height:1.3}
+.usebar .tx{flex:1;min-width:260px;font-size:13px;color:var(--ink)}
+.usebar .tx b{color:var(--nominal)}
+.usebar a{font-weight:600;white-space:nowrap}
+.chip.warn{color:var(--nominal);border-color:color-mix(in srgb,var(--nominal) 45%,transparent);font-weight:600}
+.stat.zero .n{color:var(--nominal)}
+.stat.zero{background:color-mix(in srgb,var(--nominal) 7%,var(--card))}
+/* rule-ref drill-down links */
+.rulerefs{margin-top:6px;display:flex;flex-direction:column;gap:3px}
+.rulerefs a{font-family:var(--mono);font-size:10.5px;color:var(--detect);display:inline-flex;gap:5px;align-items:baseline;word-break:break-all}
+.rulerefs a::before{content:"↳";color:var(--muted)}
+.rulerefs .huntref{color:var(--hunt)}
+/* gap list */
+.gaps{display:flex;flex-wrap:wrap;gap:8px}
+.gapc{background:var(--card);border:1px dashed var(--line2);border-radius:9px;padding:9px 12px;font-size:12.5px}
+.gapc b{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-right:7px}
 @media(max-width:720px){h1{font-size:32px}.mrow{grid-template-columns:1fr;gap:8px}.tags{flex-direction:row;align-items:center}
-  footer .grid{grid-template-columns:1fr}.covwrap .covn small{display:none}}
+  footer .grid{grid-template-columns:1fr}.covwrap .covn small{display:none}
+  .domrow{grid-template-columns:1fr;gap:9px}.domname b{overflow-wrap:anywhere}}
 </style>
 </head>
 <body>
@@ -203,6 +224,14 @@ footer a{display:block;margin-bottom:5px}
 </header>
 
 <div class="wrap">
+  <div class="usebar">
+    <span class="ic">⚠️</span>
+    <span class="tx"><b>Read before using.</b> A mapping means a detection provides <em>candidate evidence</em> that a
+      control's capability is <em>operating</em> — <b>not</b> that the control is implemented, <b>not</b> that risk is
+      reduced (read the nominal flag), and <b>not</b> that an NCA assessor accepts it. Coverage is not compliance:
+      "controls covered" and "% compliant" are unrelated numbers.</span>
+    <a href="https://github.com/DashTX707/ksa-ecc-map/blob/main/docs/USING.md">How to use / how NOT to use →</a>
+  </div>
   <div class="stats" id="stats"></div>
 </div>
 
@@ -230,6 +259,16 @@ footer a{display:block;margin-bottom:5px}
       (5,264 technique→control edges). Every mapping records rationale, a confidence grade, a
       <strong>risk‑reduction flag</strong> (the “compliant ≠ secure” check), and its sources. Full sign‑off in
       <a id="auditlink" href="https://github.com/DashTX707/ksa-ecc-map/blob/main/docs/AUDIT-REPORT.md">the audit report</a>.</p>
+  </div>
+</section>
+
+<section id="gaps">
+  <div class="wrap">
+    <div class="sec-h"><h2>Detection gap list</h2></div>
+    <p class="sec-sub">Domain-2 (Cybersecurity Defense) controls where detection <em>could</em> evidence something but
+      no library rule exists yet — an actionable detection-engineering backlog, distinct from the governance/process
+      controls detection can never evidence. <span id="gapcount"></span></p>
+    <div class="gaps" id="gaplist"></div>
   </div>
 </section>
 
@@ -308,17 +347,28 @@ footer a{display:block;margin-bottom:5px}
 
   function renderStats(){
     document.getElementById('badges').innerHTML=
-      '<span class="verdict">'+d.name+' · audit PASS</span>'+
-      '<span class="chip">'+S.mappings+' evidence mappings</span>'+
-      '<span class="chip">'+S.controls_covered+' of '+S.controls_total+' controls</span>'+
-      '<span class="chip">'+S.detect+' detect · '+S.hunt+' hunt</span>';
-    var stat=[['',S.mappings,'evidence mappings'],['',S.controls_covered+' / '+S.controls_total,'controls covered'],
-      ['',S.high,'high confidence'],['',S.medium,'medium'],['',S.low,'low'],
-      ['',S.nominal,'nominal (risk‑flag ✗)'],['',(CTID).toLocaleString(),'CTID corroboration edges']];
-    document.getElementById('stats').innerHTML=stat.map(function(s,i){
-      return '<div class="stat'+(i===1?' hl':'')+'"><div class="n">'+s[1]+'</div><div class="k">'+s[2]+'</div></div>';}).join('');
+      '<span class="chip">'+d.name+' · mapping audit: PASS — not a compliance pass</span>'+
+      '<span class="chip warn">NOT an NCA attestation</span>'+
+      '<span class="chip">reconciled '+(d.reconciled_on||'')+'</span>';
+    // honesty-first: the zero-evidence count leads, coverage is reframed as "has detection evidence"
+    var stat=[
+      [S.controls_zero+' / '+S.controls_total,'controls with ZERO detection evidence (by nature)','zero'],
+      [S.controls_covered,'controls that HAVE detection evidence','hl'],
+      [S.mappings,'evidence mappings',''],
+      [S.high,'high confidence',''],[S.medium,'medium',''],[S.low,'low',''],
+      [S.nominal,'nominal — risk‑flag ✗ (checkbox only)','']];
+    document.getElementById('stats').innerHTML=stat.map(function(s){
+      return '<div class="stat '+s[2]+'"><div class="n">'+s[0]+'</div><div class="k">'+s[1]+'</div></div>';}).join('');
     var cv=document.getElementById('chain-val'); if(cv&&VAL[d.key])cv.textContent=VAL[d.key];
     var al=document.getElementById('auditlink'); if(al&&AUDIT[d.key])al.href=AUDIT[d.key];
+  }
+  var GH='https://github.com/DashTX707/mena-detection-library/blob/main/actors/';
+  function renderGaps(){
+    var g=d.d2_gaps||[];
+    document.getElementById('gapcount').textContent=g.length? '('+g.length+' uncovered Domain-2 controls in '+d.short+')':'';
+    document.getElementById('gaplist').innerHTML=g.length? g.map(function(x){
+      return '<div class="gapc"><b>'+x.id+'</b>'+esc(x.subdomain_en)+' — '+esc(x.title_en)+'</div>';}).join('')
+      : '<p class="sec-sub">No Domain-2 gaps — every Defense control carries at least one mapping.</p>';
   }
   function renderDom(){
   document.getElementById('dom').innerHTML=d.domain_summary.map(function(x){
@@ -349,33 +399,41 @@ footer a{display:block;margin-bottom:5px}
       var cards=g.items.map(function(o){
         var c=o.c;
         var rows=o.vis.map(function(m){
+          var refs=(m.refs&&m.refs.length)
+            ? m.refs.slice(0,6).map(function(rf){var hunt=rf.indexOf('/hunts/')>-1;var fn=rf.split('/').pop();
+                return '<a class="'+(hunt?'huntref':'')+'" href="'+GH+rf+'" target="_blank" rel="noopener">'+esc(fn)+'</a>';}).join('')
+            : m.packs.map(function(p){return '<span class="pk">'+p+'</span>';}).join('');
           return '<div class="mrow"><div class="tid"><b>'+m.t+'</b><span>'+esc(m.tn)+'</span></div>'+
-            '<div class="mwhy">'+esc(m.why)+'<div class="packs">'+m.packs.slice(0,6).map(function(p){return '<span class="pk">'+p+'</span>';}).join('')+'</div></div>'+
+            '<div class="mwhy">'+esc(m.why)+'<div class="rulerefs">'+refs+'</div></div>'+
             '<div class="tags"><span class="pill '+m.cf+'">'+m.cf+'</span><span class="pill '+m.ev+'">'+m.ev+'</span>'+
             (m.rr?'':'<span class="pill nominal">nominal</span>')+'</div></div>';}).join('');
-        return '<div class="ctrl"><div class="ctrl-h"><span class="cid">'+c.id+'</span><div class="ctrl-t"><b>'+esc(c.title_en)+
+        return '<div class="ctrl"><div class="ctrl-h" role="button" tabindex="0" aria-expanded="false"><span class="cid">'+c.id+'</span><div class="ctrl-t"><b>'+esc(c.title_en)+
           '</b><p>'+esc(c.intent)+'</p></div><div class="covwrap"><span class="covn">'+o.vis.length+'<small> map'+(o.vis.length>1?'s':'')+'</small></span>'+
           '<span class="caret">▸</span></div></div><div class="maprows">'+rows+'</div></div>';
       }).join('');
       return '<div class="subgroup"><h3>'+sid+' · '+esc(g.en)+'</h3><div class="sar">'+esc(g.ar)+'</div>'+cards+'</div>';
     }).join('');
     document.getElementById('view-c').innerHTML=html||'<p class="sec-sub">No mappings match these filters.</p>';
-    document.querySelectorAll('.ctrl-h').forEach(function(h){h.onclick=function(){h.parentNode.classList.toggle('open');};});
+    function toggle(h){var open=h.parentNode.classList.toggle('open');h.setAttribute('aria-expanded',open?'true':'false');}
+    document.querySelectorAll('.ctrl-h').forEach(function(h){
+      h.onclick=function(){toggle(h);};
+      h.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(h);}};});
   }
   // technique view
   function renderT(){
+    var nomOnly=F.rr.has('nominal');
     var rows=d.techniques.map(function(t){
-      var mc=t.controls.filter(function(c){return !F.cf.size||F.cf.has(c.cf);});
-      if(F.cf.size&&!mc.length)return '';
+      var mc=t.controls.filter(function(c){return (!F.cf.size||F.cf.has(c.cf))&&(!nomOnly||!c.rr);});
+      if((F.cf.size||nomOnly)&&!mc.length)return '';
       if(F.ev.size&&!t.ev.some(function(e){return F.ev.has(e);}))return '';
       return '<tr><td class="mono"><b>'+t.id+'</b></td><td>'+esc(t.name)+'</td>'+
-        '<td><div class="tctrls">'+mc.map(function(c){return '<span class="cc '+c.cf+'">'+c.c+'</span>';}).join('')+'</div></td>'+
+        '<td><div class="tctrls">'+mc.map(function(c){return '<span class="cc '+c.cf+(c.rr?'':' nom')+'" title="'+(c.rr?'':'nominal (risk-flag off)')+'">'+c.c+'</span>';}).join('')+'</div></td>'+
         '<td>'+t.ev.map(function(e){return '<span class="pill '+e+'">'+e+'</span>';}).join(' ')+'</td></tr>';
     }).filter(Boolean).join('');
-    document.getElementById('view-t').innerHTML='<table class="ttbl"><thead><tr><th>Technique</th><th>Name</th><th>Evidences (ECC controls)</th><th>Evidence</th></tr></thead><tbody>'+
+    document.getElementById('view-t').innerHTML='<table class="ttbl"><thead><tr><th>Technique</th><th>Name</th><th>Evidences (controls)</th><th>Evidence</th></tr></thead><tbody>'+
       (rows||'<tr><td colspan="4">No techniques match these filters.</td></tr>')+'</tbody></table>';
   }
-  function render(){renderStats();renderDom();renderC();renderT();}
+  function render(){renderStats();renderDom();renderGaps();renderC();renderT();}
   function setFW(i){ci=i;d=FW[i];S=d.stats;render();}
   // tabs
   var tabc=document.getElementById('tab-c'),tabt=document.getElementById('tab-t');

@@ -1,5 +1,8 @@
 # KSA ECC-Map — Independent Audit & Sign-Off
 
+> **Post-assessment note (2026-09-01):** after this sign-off, an independent full assessment prompted further changes (confidence downgrades, dropped review-control rows, rule-file drill-down, a fail-closed gate). Current totals and the full remediation log are in [ASSESSMENT.md](ASSESSMENT.md); this report reflects the state at audit time.
+
+
 **Framework audited against:** NCA ECC-1:2018 (5 domains, 29 subdomains, 114 main controls)
 **Artifact audited:** 85 vetted technique→control mappings (post deterministic gate + adversarial pass: 10 rejected, 19 downgraded)
 **Auditor role:** Independent final auditor, harnessed with the full ECC-1:2018 catalog as ground truth

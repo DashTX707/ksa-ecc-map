@@ -8,8 +8,7 @@ import json, glob, os, collections
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
-ATTACK_DUMP = os.environ.get("ATTACK_DUMP",
-    "C:/Users/IbrahimAbdlrazik/AppData/Local/Temp/attack_dump.json")
+ATTACK_DUMP = os.environ.get("ATTACK_DUMP", os.path.join(REPO, "vendor", "attack_dump.json"))
 
 DUMP = json.load(open(ATTACK_DUMP, encoding="utf-8"))["techniques"]
 CTID = json.load(open(os.path.join(REPO, "corroboration", "technique_to_nist80053.json"), encoding="utf-8"))
@@ -53,15 +52,26 @@ def build_framework(key, catalog_path):
             "mappings": [{"t": m["attack_technique_id"], "tn": DUMP.get(m["attack_technique_id"], ""),
                           "ev": m["evidence_type"], "cf": m["mapping_confidence"],
                           "rr": m["risk_reduction_flag"], "packs": m.get("library_pack_refs", []),
+                          "refs": m.get("library_rule_refs", []),
                           "why": m["rationale"]} for m in rows]})
 
     by_tech = collections.defaultdict(lambda: {"controls": [], "ev": set(), "packs": set()})
     for m in maps:
         t = by_tech[m["attack_technique_id"]]
-        t["controls"].append({"c": m["control_id"], "cf": m["mapping_confidence"]})
+        t["controls"].append({"c": m["control_id"], "cf": m["mapping_confidence"],
+                              "rr": m["risk_reduction_flag"]})
         t["ev"].add(m["evidence_type"])
         for p in m.get("library_pack_refs", []):
             t["packs"].add(p)
+
+    # gap list: Domain-2 (Cybersecurity Defense) controls with ZERO mappings —
+    # candidate detection backlog (detection-relevant domain, no evidence yet),
+    # distinct from the governance/process domains detection cannot evidence.
+    gaps = []
+    for c in cat["controls"]:
+        if c["domain_id"] == "2" and c["control_id"] not in by_control:
+            gaps.append({"id": c["control_id"], "subdomain_en": c["subdomain_en"],
+                         "title_en": c["title_en"]})
     tech_view = [{"id": tid, "name": DUMP.get(tid, ""), "ev": sorted(v["ev"]),
                   "packs": sorted(v["packs"]), "controls": v["controls"]}
                  for tid, v in sorted(by_tech.items())]
@@ -72,11 +82,14 @@ def build_framework(key, catalog_path):
     return {
         "key": key, "name": cat["framework"], "ar": AR_TITLE.get(key, ""),
         "short": SHORT.get(key, key.upper()), "official_source": cat["official_source"],
+        "reconciled_on": cat.get("reconciled_on", ""),
         "stats": {"mappings": len(maps), "controls_covered": len(by_control),
-                  "controls_total": len(cat["controls"]), "high": conf["high"],
-                  "medium": conf["medium"], "low": conf["low"], "detect": ev["detect"],
-                  "hunt": ev["hunt"], "nominal": nominal},
-        "domain_summary": domain_summary, "controls": control_view, "techniques": tech_view}
+                  "controls_total": len(cat["controls"]),
+                  "controls_zero": len(cat["controls"]) - len(by_control),
+                  "high": conf["high"], "medium": conf["medium"], "low": conf["low"],
+                  "detect": ev["detect"], "hunt": ev["hunt"], "nominal": nominal},
+        "d2_gaps": gaps, "domain_summary": domain_summary,
+        "controls": control_view, "techniques": tech_view}
 
 # order: ecc first, then cscc, then any others alphabetically
 order = {"ecc": 0, "cscc": 1}

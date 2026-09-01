@@ -411,5 +411,7 @@
       "source_ref": "NCA CSCC-1:2019 §4-2-1 / https://cdn.nca.gov.sa/api/public/cms/files/f15af01c-dc59-4281-95e2-03a770655937_Critical-Systems-Cybersecurity-Controls.pdf",
       "verified": true
     }
-  ]
+  ],
+  "reconciled_on": "2026-09-01",
+  "revision_note": "Reconciled against the framework as published by NCA; re-verify against current NCA text before operational reliance."
 }

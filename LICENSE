@@ -1,0 +1,23 @@
+KSA ECC-Map — Licensing
+
+This project mixes original content, code, and third-party data under different terms.
+
+1. ORIGINAL MAPPING DATA & DOCUMENTATION
+   The technique->control mappings (mappings/), the control-intent PARAPHRASES and
+   structure we authored (catalog/*.json), and the documentation (docs/, README)
+   are licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+   https://creativecommons.org/licenses/by/4.0/
+
+2. CODE
+   The scripts (scripts/) are licensed under the MIT License.
+
+3. THIRD-PARTY CONTENT — see NOTICE for full attribution:
+   - NCA ECC-1:2018 and CSCC-1:2019 control IDs, numbering, and Arabic/English
+     control TEXT are the property of the National Cybersecurity Authority (NCA),
+     Kingdom of Saudi Arabia. They are REFERENCED here (IDs cited, intent
+     paraphrased) and are NOT relicensed. The binding Arabic text governs.
+   - The ATT&CK->NIST 800-53 corroboration data (corroboration/) is from MITRE
+     Center for Threat-Informed Defense, under Apache License 2.0.
+   - MITRE ATT&CK(R) technique IDs/names are used under the MITRE ATT&CK Terms of Use.
+
+This project is community guidance and is NOT an NCA-endorsed compliance attestation.

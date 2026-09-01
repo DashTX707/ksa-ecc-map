@@ -80,6 +80,19 @@ Consequently a few technique IDs here **will not have a CTID ATT&CK→NIST ancho
 gap in corroboration. Downstream consumers on public ATT&CK should translate these
 IDs. `scripts/audit_eccmap.py` uses the bundled dataset as its source of truth.
 
+## Methodology limits (disclosed, from the independent assessment)
+- **The CTID corroboration axis is a permissive sanity-check, not strong triangulation.** CTID maps each technique to a *broad* set of NIST 800-53 controls (often 15-25, spanning many families). With that breadth it rarely *fails* to find an overlapping family, so it cannot by itself distinguish a strong mapping from a weak one. **Rule:** a `high` confidence requires BOTH the control's core NIST family present in the technique's CTID set AND a named control-intent element the detection hits; corroboration presence alone can never lift a row above `medium`.
+- **The monitoring subdomain (ECC 2-12) is a legitimate secondary home for almost any detection.** Many network/endpoint detections are booked to both their technical-home control and 2-12. Each row is defensible, but do **not** count one Sigma rule as N controls' worth of independent evidence — a 2-12 row is the *same physical detection* as its technical-home row, credited for its monitoring value.
+- **CSCC is enhanced-vs-base.** A detection firing on a critical system trivially evidences the *base ECC* capability; to earn a CSCC row it must evidence the *named enhancement* (e.g. geo-blocked remote access, application whitelisting). Rows that only credit the ECC baseline are downgraded/dropped.
+
+## ATT&CK ID translation (bundled vs canonical)
+The bundled dataset renumbers part of the Impair-Defenses family and renames the
+defense-evasion tactic to `stealth`. Known translations to canonical public ATT&CK:
+`T1685`≈`T1562` (Impair Defenses), `T1685.005`≈`T1070.001` (Clear Windows Event Logs).
+These IDs have no CTID/NIST anchor by construction. IDs *absent* from the CTID subset
+for unrelated reasons (e.g. `T1074`, `T1113`) are a coverage gap in that dataset, NOT
+this renumbering — do not conflate the two.
+
 ## Not an attestation
 This is community guidance mapping public detection content to ECC control
 *intent*. It is **not** an NCA-endorsed compliance attestation, and evidence of

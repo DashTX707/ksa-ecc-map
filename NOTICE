@@ -1,0 +1,34 @@
+KSA ECC-Map — Third-Party Notices & Attribution
+
+This project builds on, references, or redistributes the following third-party
+material. Each remains the property of its respective owner under its own terms.
+
+1. NCA ECC-1:2018 (Essential Cybersecurity Controls) and NCA CSCC-1:2019
+   (Critical Systems Cybersecurity Controls)
+   - Owner: National Cybersecurity Authority (NCA), Kingdom of Saudi Arabia
+   - Source: https://nca.gov.sa/en/regulatory-documents/controls-list/ecc/
+             https://nca.gov.sa/en/regulatory-documents/controls-list/cscc/
+   - Use here: control IDs and numbering are cited; each control's intent is our
+     own PARAPHRASE (<=40 words, enforced by scripts/audit_eccmap.py). Official
+     control TEXT is NOT reproduced verbatim and is NOT relicensed. The binding
+     Arabic version governs any interpretation.
+
+2. MITRE Center for Threat-Informed Defense — ATT&CK-to-NIST-800-53 Mappings
+   - File: corroboration/attack-16.1_nist-800-53-r5.csv (and the distilled
+     corroboration/technique_to_nist80053.json derived from it)
+   - Source: https://center-for-threat-informed-defense.github.io/mappings-explorer/external/nist/
+     (ATT&CK v16.1 Enterprise -> NIST 800-53 Rev 5)
+   - License: Apache License 2.0. (c) The MITRE Corporation / Center for
+     Threat-Informed Defense. Used as a corroboration signal only.
+
+3. MITRE ATT&CK(R)
+   - ATT&CK technique IDs and names are (c) The MITRE Corporation, used under the
+     MITRE ATT&CK Terms of Use: https://attack.mitre.org/resources/terms-of-use/
+   - Note: technique IDs are validated against a bundled pySigma ATT&CK dataset
+     (vendor/attack_dump.json), a reorganized build that renumbers part of the
+     Impair-Defenses family (see docs/DATA-MODEL.md).
+
+4. MENA Detection Library (DashTX707/mena-detection-library)
+   - The detection/hunt content the mappings cite. Its own license (DRL 1.1 for
+     detections/hunts, CC BY 4.0 docs) applies to that content. A file-level
+     manifest is vendored here as vendor/library_manifest.json.

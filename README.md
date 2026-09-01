@@ -12,28 +12,42 @@ team's actual question is *"my SIEM detects T1059 — which ECC control does tha
 evidence at a National Cybersecurity Authority assessment?"* This project answers
 it, in the region's own framework and language.
 
-> **Scope:** Phase 1 covers **NCA ECC-1:2018 only.** CSCC-1:2019, OTCC-1:2022 and
-> the SAMA CSF are later phases.
+> **Scope:** covers **NCA ECC-1:2018** and **CSCC-1:2019** (Critical Systems).
+> OTCC-1:2022 and the SAMA CSF are later phases.
+>
+> **Before you use it, read [docs/USING.md](docs/USING.md)** — how to (and how NOT to)
+> use this at an assessment. Coverage is not compliance.
 
 ## What's here
 ```
-catalog/ecc.json     canonical ECC-1:2018 control list (source of truth; bilingual)
-mappings/*.json      ATT&CK technique -> ECC control evidence links
+catalog/<fw>.json         canonical control lists (ecc, cscc) — source of truth, bilingual
+mappings/<fw>/*.json      ATT&CK technique -> control evidence links (+ rule-file drill-down)
+corroboration/            MITRE CTID ATT&CK->NIST 800-53 corroboration data
+vendor/                   pinned deps so the gate is self-contained (attack_dump, library_manifest)
 scripts/
-  audit_eccmap.py    deterministic audit gate (run before every merge)
-docs/DATA-MODEL.md   the schema + honesty invariants
+  audit_eccmap.py         deterministic, fail-closed audit gate (run before every merge)
+  build_site_data.py      regenerate docs/_data.js
+  build_library_manifest.py  refresh vendor/library_manifest.json when the library changes
+docs/DATA-MODEL.md        schema, honesty invariants, methodology limits
+docs/USING.md             how to / how NOT to use it
+docs/ASSESSMENT.md        independent assessment + remediation log
+docs/{AUDIT,CSCC-AUDIT}-REPORT.md   per-framework governance sign-offs
 ```
 
 ## How it's produced & audited
-Mappings run the same disciplined pipeline as the Detection Library:
+Mappings run a disciplined pipeline, per framework:
 **GRC extraction → classification (evidences-control vs nominal) → cross-check
-against MITRE CTID ATT&CK→NIST 800-53 → adversarial refutation → audit gate →
+against MITRE CTID ATT&CK→NIST 800-53 → adversarial refutation → governance audit →
 human-approved merge.**
 
-Every change must pass `python scripts/audit_eccmap.py` with **0 ERR**:
-- every ECC control ID exists in the catalog (no fabricated control numbers);
-- every ATT&CK technique ID is valid in the bundled ATT&CK dataset;
-- every referenced Detection-Library pack exists on disk;
+Every change must pass `python scripts/audit_eccmap.py` with **0 ERR**. The gate is
+**self-contained and fail-closed** — its dependencies are vendored into `vendor/`, so
+it runs identically on any checkout/CI, and a *missing* dependency is a hard ERR (never a
+silent skip). It enforces:
+- every control ID exists in that framework's catalog (no fabricated control numbers);
+- every ATT&CK technique ID is valid against the vendored ATT&CK dataset;
+- every `library_rule_refs` entry resolves to a real Detection-Library file **that actually
+  tags/cites the technique** (the last-mile evidence link, not just a pack name);
 - every mapping carries rationale, confidence, a **risk-reduction flag**, and a source;
 - a `high`-confidence mapping flagged as *nominal* is surfaced (**compliant ≠ secure**).
 
@@ -48,5 +62,6 @@ NCA-endorsed compliance attestation, and evidence of a control is not proof of
 risk reduction. Read the per-row `risk_reduction_flag`.
 
 ## License
-Mapping data & docs: CC BY 4.0. ECC control text/IDs are the property of the NCA
-(referenced, not relicensed).
+See [LICENSE](LICENSE) and [NOTICE](NOTICE). In short: original mapping data & docs
+under CC BY 4.0, scripts under MIT. NCA control text/IDs remain the property of the NCA
+(referenced, not relicensed); the MITRE CTID corroboration data is Apache-2.0.

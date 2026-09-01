@@ -11,12 +11,19 @@
       "hexane",
       "pioneer-kitten"
     ],
-    "rationale": "Brute-force detection evidences the enhanced IAM requirement for strong password policy, secure hashing and MFA on critical systems by catching credential-guessing that MFA/lockout must defeat.",
-    "mapping_confidence": "high",
+    "rationale": "Brute-force detection evidences the enhanced IAM requirement for strong password policy, secure hashing and MFA on critical systems by catching credential-guessing that MFA/lockout must defeat. (Assessment: downgraded to medium — evidences authentication MONITORING/base-ECC, not the 2-2-1 preventive enhancement [MFA-for-all, secure-hashing, geo-block]; a firing rule does not prove the enhancement is deployed.)",
+    "mapping_confidence": "medium",
     "risk_reduction_flag": true,
     "source_refs": [
       "CTID: T1110->AC-7,IA-2,IA-5,IA-11",
       "NCA CSCC-1:2019 §2-2-1 (extends ECC 2-2-3)"
+    ],
+    "library_rule_refs": [
+      "agrius/detections/T1110_T1110.003_smb-bruteforce-spray.yml",
+      "apt33/detections/T1110.003_apt33-password-spray-tor-gohttpclient.yml",
+      "apt39/detections/T1110_apt39-brute-force-auth-failures.yml",
+      "hexane/detections/T1110.003_hexane-password-spray-owa-o365.yml",
+      "pioneer-kitten/detections/T1110_pioneer-kitten-brute-force-auth-failures.yml"
     ]
   },
   {
@@ -30,12 +37,18 @@
       "hexane",
       "unc1549"
     ],
-    "rationale": "Password-spraying detection evidences the critical-systems MFA-for-all and lockout requirement, targeting the low-and-slow guessing that single-factor accounts on critical systems are most exposed to.",
-    "mapping_confidence": "high",
+    "rationale": "Password-spraying detection evidences the critical-systems MFA-for-all and lockout requirement, targeting the low-and-slow guessing that single-factor accounts on critical systems are most exposed to. (Assessment: downgraded to medium — evidences authentication MONITORING/base-ECC, not the 2-2-1 preventive enhancement [MFA-for-all, secure-hashing, geo-block]; a firing rule does not prove the enhancement is deployed.)",
+    "mapping_confidence": "medium",
     "risk_reduction_flag": true,
     "source_refs": [
       "CTID: T1110.003->AC-7,IA-2,IA-5,IA-11",
       "NCA CSCC-1:2019 §2-2-1 (extends ECC 2-2-3)"
+    ],
+    "library_rule_refs": [
+      "agrius/detections/T1110_T1110.003_smb-bruteforce-spray.yml",
+      "apt33/detections/T1110.003_apt33-password-spray-tor-gohttpclient.yml",
+      "hexane/detections/T1110.003_hexane-password-spray-owa-o365.yml",
+      "unc1549/detections/T1110.003_unc1549-password-spraying.yml"
     ]
   },
   {
@@ -50,12 +63,19 @@
       "pioneer-kitten",
       "polonium"
     ],
-    "rationale": "External-remote-services detection directly evidences the critical-systems-specific requirement to block remote access from outside KSA and restrict/monitor it inside, by surfacing inbound remote-service sessions to gate.",
-    "mapping_confidence": "high",
+    "rationale": "External-remote-services detection directly evidences the critical-systems-specific requirement to block remote access from outside KSA and restrict/monitor it inside, by surfacing inbound remote-service sessions to gate. (Assessment: downgraded to medium — evidences authentication MONITORING/base-ECC, not the 2-2-1 preventive enhancement [MFA-for-all, secure-hashing, geo-block]; a firing rule does not prove the enhancement is deployed.)",
+    "mapping_confidence": "medium",
     "risk_reduction_flag": true,
     "source_refs": [
       "CTID: T1133->AC-17,IA-2,IA-5,SC-7",
       "NCA CSCC-1:2019 §2-2-1 (extends ECC 2-2-3)"
+    ],
+    "library_rule_refs": [
+      "cavern-manticore/detections/T1133_cavern-manticore-netsh-rdp-firewall-rule.yml",
+      "cyberav3ngers/detections/T1190_cyberav3ngers-unitronics-plc-tcp20256-external-access.yml",
+      "imperial-kitten/detections/T1133_imperial-kitten-vpn-stolen-cred-logon.yml",
+      "pioneer-kitten/detections/T1505.003_pioneer-kitten-netscaler-webshell-credential-capture.yml",
+      "polonium/detections/T1133_polonium-fortinet-sslvpn-external-logon.yml"
     ]
   },
   {
@@ -76,6 +96,13 @@
     "source_refs": [
       "CTID: T1021.001->AC-17,IA-2,IA-5,SC-7",
       "NCA CSCC-1:2019 §2-2-1 (extends ECC 2-2-3)"
+    ],
+    "library_rule_refs": [
+      "apt33/detections/T1021.001_apt33-anomalous-rdp-lateral-movement.yml",
+      "charming-kitten/detections/T1021.001_charmingkitten-anomalous-rdp-logon.yml",
+      "hexane/detections/T1021.001_hexane-anomalous-rdp-lateral-movement.yml",
+      "pioneer-kitten/detections/T1021.001_pioneer-kitten-rdp-lateral-movement.yml",
+      "unc1549/detections/T1021.001_unc1549-internal-rdp-lateral.yml"
     ]
   },
   {
@@ -95,6 +122,12 @@
     "source_refs": [
       "CTID: T1021.004->AC-17,IA-2,IA-5",
       "NCA CSCC-1:2019 §2-2-1 (extends ECC 2-2-3)"
+    ],
+    "library_rule_refs": [
+      "apt39/detections/T1021.004_apt39-ssh-plink-tunneling.yml",
+      "ballistic-bobcat/detections/T1090_ballistic-bobcat-revsocks-gost-chisel-plink-tunneling.yml",
+      "oilrig/detections/T1572_T1021.004_plink-putty-ssh-tunnel.yml",
+      "pioneer-kitten/detections/T1021.004_pioneer-kitten-ssh-plink-pivoting.yml"
     ]
   },
   {
@@ -115,6 +148,14 @@
     "source_refs": [
       "CTID: T1003.001->AC-6,IA-2,IA-5,SC-28",
       "NCA CSCC-1:2019 §2-2-1 (extends ECC 2-2-3)"
+    ],
+    "library_rule_refs": [
+      "apt33/detections/T1003.001_apt33-lsass-memory-credential-access.yml",
+      "imperial-kitten/detections/T1003.001_imperial-kitten-lsass-procdump-dump.yml",
+      "muddywater/detections/T1003.001_lsass-dump-procdump.yml",
+      "muddywater/detections/T1003.001_mimikatz-indicators.yml",
+      "oilrig/detections/T1003.001_lsass-dump-mimikatz.yml",
+      "tortoiseshell/detections/T1003.001_tortoiseshell-lsass-memory-dump.yml"
     ]
   },
   {
@@ -133,6 +174,11 @@
     "source_refs": [
       "CTID: T1003.004->AC-6,IA-2,IA-5,SC-28",
       "NCA CSCC-1:2019 §2-2-1 (extends ECC 2-2-3)"
+    ],
+    "library_rule_refs": [
+      "apt33/detections/T1003.004_apt33-lsa-secrets-registry-hive-dump.yml",
+      "muddywater/detections/T1003.004_lazagne-credential-dumping.yml",
+      "oilrig/detections/T1003.004_T1003.005_T1555_lazagne-credential-dumping.yml"
     ]
   },
   {
@@ -151,6 +197,11 @@
     "source_refs": [
       "CTID: T1078.001->AC-2,AC-5,AC-6,IA-2",
       "NCA CSCC-1:2019 §2-2-1 (extends ECC 2-2-3)"
+    ],
+    "library_rule_refs": [
+      "cavern-manticore/detections/T1078.001_cavern-manticore-defaultaccount-logon.yml",
+      "charming-kitten/detections/T1078.004_charmingkitten-anomalous-cloud-signin-session-reuse.yml",
+      "cyberav3ngers/detections/T1078.001_cyberav3ngers-unitronics-default-account-logon.yml"
     ]
   },
   {
@@ -168,43 +219,10 @@
     "source_refs": [
       "CTID: T1098->AC-2,AC-3,AC-5,AC-6,IA-2",
       "NCA CSCC-1:2019 §2-2-1 (extends ECC 2-2-3)"
-    ]
-  },
-  {
-    "attack_technique_id": "T1078.003",
-    "framework": "NCA CSCC-1:2019",
-    "control_id": "2-2-2",
-    "evidence_type": "detect",
-    "library_pack_refs": [
-      "ballistic-bobcat",
-      "pioneer-kitten",
-      "sea-turtle"
     ],
-    "rationale": "Local-account abuse detection evidences that the three-monthly access-rights review catches out-of-band local identities on critical-systems hosts that a periodic entitlement review must reconcile.",
-    "mapping_confidence": "low",
-    "risk_reduction_flag": false,
-    "source_refs": [
-      "CTID: T1078.003->AC-2,AC-3,AC-6,IA-2",
-      "NCA CSCC-1:2019 §2-2-2 (extends ECC 2-2-3-5)"
-    ]
-  },
-  {
-    "attack_technique_id": "T1136.001",
-    "framework": "NCA CSCC-1:2019",
-    "control_id": "2-2-2",
-    "evidence_type": "detect",
-    "library_pack_refs": [
-      "apt39",
-      "cavern-manticore",
-      "charming-kitten",
-      "pioneer-kitten"
-    ],
-    "rationale": "Detecting rogue local-account creation evidences the quarterly identity-review intent by surfacing accounts provisioned outside process that the recurring access-rights review is designed to catch and revoke.",
-    "mapping_confidence": "low",
-    "risk_reduction_flag": false,
-    "source_refs": [
-      "CTID: T1136.001->AC-2,AC-3,IA-2,IA-5",
-      "NCA CSCC-1:2019 §2-2-2 (extends ECC 2-2-3-5)"
+    "library_rule_refs": [
+      "apt33/detections/T1098_apt33-cloud-account-manipulation-azure-arc.yml",
+      "cavern-manticore/detections/T1136.001_cavern-manticore-account-create-admin-add.yml"
     ]
   },
   {
@@ -225,6 +243,13 @@
     "source_refs": [
       "CTID: T1204.002->SC-44,SI-3,SI-7,SI-8",
       "NCA CSCC-1:2019 §2-3-1 (extends ECC 2-3-3)"
+    ],
+    "library_rule_refs": [
+      "apt33/detections/T1204.002_apt33-hta-office-malicious-file-execution.yml",
+      "charming-kitten/detections/T1204.002_charmingkitten-lnk-double-extension-user-execution.yml",
+      "gaza-cybergang/detections/T1204.002_office-xll-accdb-script-child.yml",
+      "muddywater/detections/T1204.002_malicious-office-pdf-child.yml",
+      "oilrig/detections/T1204.002_T0853_office-macro-script-child.yml"
     ]
   },
   {
@@ -245,6 +270,13 @@
     "source_refs": [
       "CTID: T1204.001->SC-44,SI-3,SI-8",
       "NCA CSCC-1:2019 §2-3-1 (extends ECC 2-3-3)"
+    ],
+    "library_rule_refs": [
+      "apt33/detections/T1566.002_apt33-spearphishing-lure-masquerading-domains.yml",
+      "charming-kitten/detections/T1566.002_charmingkitten-spearphishing-link-lookalike-domains.yml",
+      "hexane/detections/T1566.002_hexane-spearphishing-link-lookalike-domain.yml",
+      "oilrig/detections/T1566.002_T1204.001_spearphishing-link.yml",
+      "sidewinder/detections/T1218.005_sidewinder-mshta-remote-payload.yml"
     ]
   },
   {
@@ -265,6 +297,14 @@
     "source_refs": [
       "CTID: T1105->SI-3,SI-4,SC-7,CM-7",
       "NCA CSCC-1:2019 §2-3-1 (extends ECC 2-3-3)"
+    ],
+    "library_rule_refs": [
+      "apt33/detections/T1059.001_apt33-powerton-poshc2-powershell.yml",
+      "apt33/detections/T1071.001_apt33-web-c2-nonstandard-port-ingress.yml",
+      "cavern-manticore/detections/T1059.001_cavern-manticore-powershell-download-cradle.yml",
+      "homeland-justice/detections/T1071.001_homeland-justice-webshell-c2-socket-relay-ingress.yml",
+      "muddywater/detections/T1105_ingress-tool-transfer.yml",
+      "oilrig/detections/T1105_ingress-tool-transfer.yml"
     ]
   },
   {
@@ -285,6 +325,14 @@
     "source_refs": [
       "CTID: T1027->SI-2,SI-3,SI-4,SI-7",
       "NCA CSCC-1:2019 §2-3-1 (extends ECC 2-3-3)"
+    ],
+    "library_rule_refs": [
+      "ballistic-bobcat/detections/T1140_ballistic-bobcat-sponsor-config-artifacts.yml",
+      "copykittens/detections/T1048.003_copykittens-dns-tunnel-exfiltration.yml",
+      "hexane/detections/T1059.001_hexane-powershell-command-obfuscation.yml",
+      "hexane/detections/T1140_hexane-runtime-decode-obfuscated-payload.yml",
+      "imperial-kitten/detections/T1027_imperial-kitten-obfuscated-script-amsi.yml",
+      "tortoiseshell/detections/T1140_tortoiseshell-certutil-base64-decode-payload.yml"
     ]
   },
   {
@@ -304,6 +352,12 @@
     "source_refs": [
       "CTID: T1055->SI-2,SI-3,SI-4,SC-18",
       "NCA CSCC-1:2019 §2-3-1 (extends ECC 2-3-3)"
+    ],
+    "library_rule_refs": [
+      "copykittens/detections/T1055_copykittens-matryoshka-process-injection.yml",
+      "gaza-cybergang/detections/T1055_process-injection-ironwind.yml",
+      "tortoiseshell/detections/T1055_tortoiseshell-process-injection-reflective-loading.yml",
+      "tropic-trooper/detections/T1055.001_tropic-trooper-colorcpl-injection.yml"
     ]
   },
   {
@@ -322,6 +376,11 @@
     "source_refs": [
       "CTID: T1218.005->CM-7,SI-3,SI-4,SI-10",
       "NCA CSCC-1:2019 §2-3-1 (extends ECC 2-3-3)"
+    ],
+    "library_rule_refs": [
+      "muddywater/detections/T1218.005_mshta-payload-execution.yml",
+      "sidewinder/detections/T1218.005_sidewinder-mshta-remote-payload.yml",
+      "tortoiseshell/detections/T1218.005_tortoiseshell-mshta-hta-execution.yml"
     ]
   },
   {
@@ -342,6 +401,13 @@
     "source_refs": [
       "CTID: T1218.011->CA-7,SI-4,SI-7,SI-10",
       "NCA CSCC-1:2019 §2-3-1 (extends ECC 2-3-3)"
+    ],
+    "library_rule_refs": [
+      "cavern-manticore/detections/T1003.001_cavern-manticore-comsvcs-lsass-dump.yml",
+      "charming-kitten/detections/T1218.011_charmingkitten-rundll32-proxy-execution.yml",
+      "copykittens/detections/T1218.011_copykittens-rundll32-proxy-execution.yml",
+      "infy/detections/T1218.011_infy-rundll32-snaildriver-sideload.yml",
+      "muddywater/detections/T1218.011_rundll32-runkey-dll.yml"
     ]
   },
   {
@@ -362,6 +428,13 @@
     "source_refs": [
       "CTID: T1112->AC-6,CM-7,SI-7",
       "NCA CSCC-1:2019 §2-3-1 (extends ECC 2-3-3)"
+    ],
+    "library_rule_refs": [
+      "cavern-manticore/detections/T1112_cavern-manticore-wdigest-rdp-registry.yml",
+      "charming-kitten/detections/T1547.001_charmingkitten-run-key-registry-autostart.yml",
+      "copykittens/detections/T1547.001_copykittens-matryoshka-run-key-persistence.yml",
+      "homeland-justice/detections/T1112_homeland-justice-wallpaper-registry-internal-defacement.yml",
+      "predatory-sparrow/detections/T1112_predatory-sparrow-lockscreen-boot-registry.yml"
     ]
   },
   {
@@ -382,6 +455,13 @@
     "source_refs": [
       "CTID: T1036.005->SI-3,SI-4,SI-7,SI-10",
       "NCA CSCC-1:2019 §2-3-1 (extends ECC 2-3-3)"
+    ],
+    "library_rule_refs": [
+      "apt39/detections/T1036.005_apt39-masquerading-legit-name-anomalous-path.yml",
+      "ballistic-bobcat/detections/T1036.005_ballistic-bobcat-csrss-masquerade-revsocks.yml",
+      "cavern-manticore/detections/T1036.005_cavern-manticore-frpc-masquerade.yml",
+      "greenbug/detections/T1543.003_greenbug-vmwareupdate-service-masquerade.yml",
+      "muddywater/detections/T1036.005_defender-masquerade.yml"
     ]
   },
   {
@@ -402,6 +482,13 @@
     "source_refs": [
       "CTID: T1053.005->CM-2,CM-6,SI-4",
       "NCA CSCC-1:2019 §2-3-1 (extends ECC 2-3-3)"
+    ],
+    "library_rule_refs": [
+      "agrius/detections/T1053.005_scheduled-task-log-clear.yml",
+      "apt33/detections/T1053.005_apt33-scheduled-task-persistence.yml",
+      "muddywater/detections/T1053.005_scheduled-task-persistence.yml",
+      "oilrig/detections/T1053.005_scheduled-task-vbscript.yml",
+      "pioneer-kitten/detections/T1053.005_pioneer-kitten-spaceagent-scheduled-task.yml"
     ]
   },
   {
@@ -422,6 +509,13 @@
     "source_refs": [
       "CTID: T1190->RA-5,RA-10,SI-2,CA-2,CM-8",
       "NCA CSCC-1:2019 §2-9-1 (extends ECC 2-10-3)"
+    ],
+    "library_rule_refs": [
+      "agrius/detections/T1190_exploit-public-facing-fortios-sqli.yml",
+      "cavern-manticore/detections/T1190_cavern-manticore-web-service-child-process.yml",
+      "cotton-sandstorm/detections/T1190_cotton-sandstorm-sqli-public-app-exploitation.yml",
+      "pioneer-kitten/detections/T1190_pioneer-kitten-edge-appliance-cve-exploitation.yml",
+      "tortoiseshell/detections/T1190_tortoiseshell-webshell-server-process-chain.yml"
     ]
   },
   {
@@ -442,6 +536,14 @@
     "source_refs": [
       "CTID: T1203->SI-2,SI-3,SC-18",
       "NCA CSCC-1:2019 §2-9-1 (extends ECC 2-10-3)"
+    ],
+    "library_rule_refs": [
+      "apt33/detections/T1203_apt33-cve-2017-11774-outlook-homepage-registry.yml",
+      "apt33/detections/T1204.002_apt33-hta-office-malicious-file-execution.yml",
+      "group5/detections/T1203_group5-cve-2014-4114-powerpnt-ole-package.yml",
+      "muddywater/detections/T1203_office-exploit-cve-2017-0199.yml",
+      "oilrig/detections/T1203_office-exploit-anomalous-child.yml",
+      "sidewinder/detections/T1203_sidewinder-equation-editor-exploitation.yml"
     ]
   },
   {
@@ -459,6 +561,10 @@
     "source_refs": [
       "CTID: T1068->RA-5,RA-10,SI-2,SC-30",
       "NCA CSCC-1:2019 §2-9-1 (extends ECC 2-10-3)"
+    ],
+    "library_rule_refs": [
+      "apt33/detections/T1068_apt33-privilege-escalation-exploit-child-spawn.yml",
+      "oilrig/detections/T1068_kernel-eop-cve-2024-30088.yml"
     ]
   },
   {
@@ -476,6 +582,10 @@
     "source_refs": [
       "CTID: T1210->RA-5,RA-10,SI-2,CA-2",
       "NCA CSCC-1:2019 §2-9-1 (extends ECC 2-10-3)"
+    ],
+    "library_rule_refs": [
+      "pioneer-kitten/detections/T1210_pioneer-kitten-internal-remote-service-exploitation.yml",
+      "tropic-trooper/detections/T1046_tropic-trooper-fscan-network-discovery.yml"
     ]
   },
   {
@@ -496,6 +606,13 @@
     "source_refs": [
       "CTID: T1078->AC-2,IA-2,IA-5,SI-4",
       "NCA CSCC-1:2019 §2-11-1 (extends ECC 2-12-3)"
+    ],
+    "library_rule_refs": [
+      "cotton-sandstorm/detections/T1078_cotton-sandstorm-valid-account-vpn-login.yml",
+      "greenbug/detections/T1021.001_greenbug-tunneled-rdp-loopback-logon.yml",
+      "hexane/detections/T1078_hexane-valid-account-anomalous-signin.yml",
+      "polonium/detections/T1133_polonium-fortinet-sslvpn-external-logon.yml",
+      "sea-turtle/detections/T1078_sea-turtle-ssh-logon-from-actor-infra.yml"
     ]
   },
   {
@@ -516,6 +633,13 @@
     "source_refs": [
       "CTID: T1110->AC-7,IA-2,IA-5,SI-4",
       "NCA CSCC-1:2019 §2-11-1 (extends ECC 2-12-3)"
+    ],
+    "library_rule_refs": [
+      "agrius/detections/T1110_T1110.003_smb-bruteforce-spray.yml",
+      "apt33/detections/T1110.003_apt33-password-spray-tor-gohttpclient.yml",
+      "apt39/detections/T1110_apt39-brute-force-auth-failures.yml",
+      "hexane/detections/T1110.003_hexane-password-spray-owa-o365.yml",
+      "pioneer-kitten/detections/T1110_pioneer-kitten-brute-force-auth-failures.yml"
     ]
   },
   {
@@ -536,6 +660,14 @@
     "source_refs": [
       "CTID: T1071.001->SC-7,SI-3,SI-4,CA-7",
       "NCA CSCC-1:2019 §2-11-1 (extends ECC 2-12-3)"
+    ],
+    "library_rule_refs": [
+      "apt33/detections/T1071.001_apt33-web-c2-nonstandard-port-ingress.yml",
+      "ballistic-bobcat/detections/T1071.001_ballistic-bobcat-sponsor-http80-c2-beacon.yml",
+      "cavern-manticore/detections/T1071.001_cavern-manticore-c2-domain-beacon.yml",
+      "charming-kitten/detections/T1059.005_charmingkitten-nicecurl-vbscript-curl-c2-chain.yml",
+      "charming-kitten/detections/T1571_charmingkitten-nonstandard-port-web-c2.yml",
+      "gaza-cybergang/detections/T1071.001_T1041_web-c2-exfil.yml"
     ]
   },
   {
@@ -554,6 +686,11 @@
     "source_refs": [
       "CTID: T1489->CA-7,SI-4,SC-37",
       "NCA CSCC-1:2019 §2-11-1 (extends ECC 2-12-3)"
+    ],
+    "library_rule_refs": [
+      "agrius/detections/T1489_service-stop.yml",
+      "homeland-justice/detections/T1059.003_homeland-justice-destructive-batch-vssadmin-taskkill.yml",
+      "predatory-sparrow/detections/T1489_predatory-sparrow-service-stop-adapter-disable.yml"
     ]
   },
   {
@@ -574,6 +711,13 @@
     "source_refs": [
       "CTID: T1053.005->CM-2,CM-6,SI-4",
       "NCA CSCC-1:2019 §2-11-1 (extends ECC 2-12-3)"
+    ],
+    "library_rule_refs": [
+      "agrius/detections/T1053.005_scheduled-task-log-clear.yml",
+      "apt33/detections/T1053.005_apt33-scheduled-task-persistence.yml",
+      "muddywater/detections/T1053.005_scheduled-task-persistence.yml",
+      "oilrig/detections/T1053.005_scheduled-task-vbscript.yml",
+      "pioneer-kitten/detections/T1053.005_pioneer-kitten-spaceagent-scheduled-task.yml"
     ]
   },
   {
@@ -594,6 +738,13 @@
     "source_refs": [
       "CTID: T1190->SC-7,SI-10,RA-5,SI-2",
       "NCA CSCC-1:2019 §2-12-1 (extends ECC 2-15-3)"
+    ],
+    "library_rule_refs": [
+      "agrius/detections/T1190_exploit-public-facing-fortios-sqli.yml",
+      "ballistic-bobcat/detections/T1190_ballistic-bobcat-exchange-proxylogon-child-process.yml",
+      "charming-kitten/detections/T1190_charmingkitten-server-process-spawns-shell.yml",
+      "cyberav3ngers/detections/T1190_cyberav3ngers-unitronics-plc-tcp20256-external-access.yml",
+      "polonium/detections/T1190_polonium-fortinet-cve-2018-13379-path-traversal.yml"
     ]
   },
   {
@@ -614,6 +765,13 @@
     "source_refs": [
       "CTID: T1505.003->CM-2,CM-6,RA-5,SI-4",
       "NCA CSCC-1:2019 §2-12-1 (extends ECC 2-15-3)"
+    ],
+    "library_rule_refs": [
+      "agrius/detections/T1505.003_aspxspy-webshell-drop.yml",
+      "apt39/detections/T1505.003_apt39-iis-webshell-worker-spawn.yml",
+      "cavern-manticore/detections/T1505.003_cavern-manticore-aspx-webshell.yml",
+      "homeland-justice/detections/T1505.003_homeland-justice-aspx-webshell-encoded-payload.yml",
+      "oilrig/detections/T1505.003_webshell-iis-exchange.yml"
     ]
   },
   {
@@ -631,6 +789,10 @@
     "source_refs": [
       "CTID: T1539->AC-3,AC-6,IA-2,IA-5,SI-4",
       "NCA CSCC-1:2019 §2-12-1 (extends ECC 2-15-3)"
+    ],
+    "library_rule_refs": [
+      "infy/detections/T1555.003_infy-browser-credential-cookie-theft.yml",
+      "unc3890/detections/T1555.003_unc3890-sugardump-browser-credential-cookie-theft.yml"
     ]
   },
   {
@@ -651,6 +813,15 @@
     "source_refs": [
       "CTID: T1505.003->CM-2,CM-6,RA-5,SI-4",
       "NCA CSCC-1:2019 §2-13-2 (CSCC-only, no ECC equivalent)"
+    ],
+    "library_rule_refs": [
+      "ballistic-bobcat/detections/T1505.003_ballistic-bobcat-exchange-webroot-webshell-write.yml",
+      "charming-kitten/detections/T1190_charmingkitten-server-process-spawns-shell.yml",
+      "charming-kitten/detections/T1505.003_charmingkitten-webshell-file-write.yml",
+      "greenbug/detections/T1505.003_greenbug-webshell-webserver-child-process.yml",
+      "pioneer-kitten/detections/T1505.003_pioneer-kitten-netscaler-webshell-credential-capture.yml",
+      "pioneer-kitten/detections/T1505_pioneer-kitten-random-driver-service-install.yml",
+      "scarred-manticore/detections/T1505.003_iis-webshell-aspx-appweb-write.yml"
     ]
   },
   {
@@ -671,6 +842,13 @@
     "source_refs": [
       "CTID: T1190->SC-7,SI-10,RA-5,SI-2",
       "NCA CSCC-1:2019 §2-13-2 (CSCC-only, no ECC equivalent)"
+    ],
+    "library_rule_refs": [
+      "imperial-kitten/detections/T1190_imperial-kitten-sqli-public-facing-app.yml",
+      "moses-staff/detections/T1190_moses-staff-proxyshell-exchange-exploit.yml",
+      "scarred-manticore/detections/T1190_iis-worker-spawns-shell-recon.yml",
+      "tropic-trooper/detections/T1190_tropic-trooper-umbraco-exchange-exploitation.yml",
+      "void-manticore/detections/T1190_void-manticore-sharepoint-exploit-webserver-child.yml"
     ]
   },
   {
@@ -688,6 +866,10 @@
     "source_refs": [
       "CTID: T1505.004->CM-2,CM-6,SI-3,SI-4,SI-7,SI-14",
       "NCA CSCC-1:2019 §2-13-2 (CSCC-only, no ECC equivalent)"
+    ],
+    "library_rule_refs": [
+      "scarred-manticore/detections/T1505.004_iis-worker-servermanager-httplistener-assembly.yml",
+      "unc1860/detections/T1505.004_unc1860-httpsys-urlacl-passive-listener-install.yml"
     ]
   },
   {
@@ -705,6 +887,10 @@
     "source_refs": [
       "CTID: T1539->AC-3,AC-6,IA-2,IA-5,SI-4",
       "NCA CSCC-1:2019 §2-13-3 (CSCC-only, no ECC equivalent)"
+    ],
+    "library_rule_refs": [
+      "infy/detections/T1555.003_infy-browser-credential-cookie-theft.yml",
+      "unc3890/detections/T1555.003_unc3890-sugardump-browser-credential-cookie-theft.yml"
     ]
   }
 ]

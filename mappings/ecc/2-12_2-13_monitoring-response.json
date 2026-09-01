@@ -17,7 +17,15 @@
       "NCA ECC-1:2018 §2-12-2"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-12-2"
+    "control_id": "2-12-2",
+    "library_rule_refs": [
+      "apt33/detections/T1071.001_apt33-web-c2-nonstandard-port-ingress.yml",
+      "ballistic-bobcat/detections/T1071.001_ballistic-bobcat-sponsor-http80-c2-beacon.yml",
+      "charming-kitten/detections/T1059.005_charmingkitten-nicecurl-vbscript-curl-c2-chain.yml",
+      "charming-kitten/detections/T1571_charmingkitten-nonstandard-port-web-c2.yml",
+      "gaza-cybergang/detections/T1071.001_T1041_web-c2-exfil.yml",
+      "homeland-justice/detections/T1071.001_homeland-justice-webshell-c2-socket-relay-ingress.yml"
+    ]
   },
   {
     "attack_technique_id": "T1046",
@@ -37,7 +45,14 @@
       "NCA ECC-1:2018 §2-12-2"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-12-2"
+    "control_id": "2-12-2",
+    "library_rule_refs": [
+      "apt39/detections/T1046_apt39-discovery-recon-burst.yml",
+      "ballistic-bobcat/detections/T1018_ballistic-bobcat-host2ip-discovery-tools.yml",
+      "charming-kitten/detections/T1059.001_charmingkitten-powershell-huntsmbshares-decode.yml",
+      "oilrig/detections/T1046_network-service-discovery.yml",
+      "pioneer-kitten/detections/T1046_pioneer-kitten-network-host-file-discovery-burst.yml"
+    ]
   },
   {
     "attack_technique_id": "T1571",
@@ -57,7 +72,14 @@
       "NCA ECC-1:2018 §2-12-2"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-12-2"
+    "control_id": "2-12-2",
+    "library_rule_refs": [
+      "apt33/detections/T1071.001_apt33-web-c2-nonstandard-port-ingress.yml",
+      "charming-kitten/detections/T1571_charmingkitten-nonstandard-port-web-c2.yml",
+      "greenbug/detections/T1071.001_greenbug-http-c2-nonstandard-port.yml",
+      "hexane/detections/T1571_hexane-non-standard-port-c2.yml",
+      "polonium/detections/T1571_polonium-nonstandard-port-raw-tcp-egress.yml"
+    ]
   },
   {
     "attack_technique_id": "T1078",
@@ -77,7 +99,14 @@
       "NCA ECC-1:2018 §2-12-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-12-3"
+    "control_id": "2-12-3",
+    "library_rule_refs": [
+      "apt33/detections/T1078.004_apt33-anomalous-cloud-signin-tor-gohttpclient.yml",
+      "apt39/detections/T1078_apt39-valid-account-anomalous-logon.yml",
+      "greenbug/detections/T1021.001_greenbug-tunneled-rdp-loopback-logon.yml",
+      "hexane/detections/T1078_hexane-valid-account-anomalous-signin.yml",
+      "tortoiseshell/detections/T1078_tortoiseshell-valid-trusted-account-anomalous-logon.yml"
+    ]
   },
   {
     "attack_technique_id": "T1078.002",
@@ -96,7 +125,13 @@
       "NCA ECC-1:2018 §2-12-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-12-3"
+    "control_id": "2-12-3",
+    "library_rule_refs": [
+      "charming-kitten/detections/T1078.004_charmingkitten-anomalous-cloud-signin-session-reuse.yml",
+      "oilrig/detections/T1048.003_T1078.002_exchange-credential-exfil.yml",
+      "pioneer-kitten/detections/T1078.002_pioneer-kitten-valid-account-anomalous-logon.yml",
+      "tortoiseshell/detections/T1078_tortoiseshell-valid-trusted-account-anomalous-logon.yml"
+    ]
   },
   {
     "attack_technique_id": "T1098",
@@ -113,7 +148,11 @@
       "NCA ECC-1:2018 §2-12-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-12-3"
+    "control_id": "2-12-3",
+    "library_rule_refs": [
+      "apt33/detections/T1098_apt33-cloud-account-manipulation-azure-arc.yml",
+      "cavern-manticore/detections/T1136.001_cavern-manticore-account-create-admin-add.yml"
+    ]
   },
   {
     "attack_technique_id": "T1003.001",
@@ -133,7 +172,15 @@
       "NCA ECC-1:2018 §2-12-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-12-3"
+    "control_id": "2-12-3",
+    "library_rule_refs": [
+      "agrius/detections/T1003.001_lsass-dump-mimikatz-procdump.yml",
+      "apt33/detections/T1003.001_apt33-lsass-memory-credential-access.yml",
+      "muddywater/detections/T1003.001_lsass-dump-procdump.yml",
+      "muddywater/detections/T1003.001_mimikatz-indicators.yml",
+      "oilrig/detections/T1003.001_lsass-dump-mimikatz.yml",
+      "pioneer-kitten/detections/T1003.001_pioneer-kitten-lsass-mimikatz-dumping.yml"
+    ]
   },
   {
     "attack_technique_id": "T1136.001",
@@ -152,7 +199,13 @@
       "NCA ECC-1:2018 §2-12-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-12-3"
+    "control_id": "2-12-3",
+    "library_rule_refs": [
+      "apt39/detections/T1136.001_apt39-local-account-creation.yml",
+      "cavern-manticore/detections/T1136.001_cavern-manticore-account-create-admin-add.yml",
+      "charming-kitten/detections/T1136.001_charmingkitten-local-account-group-persistence.yml",
+      "pioneer-kitten/detections/T1136.001_pioneer-kitten-actor-account-creation.yml"
+    ]
   },
   {
     "attack_technique_id": "T1021.001",
@@ -172,7 +225,14 @@
       "NCA ECC-1:2018 §2-12-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-12-3"
+    "control_id": "2-12-3",
+    "library_rule_refs": [
+      "agrius/detections/T1021.001_rdp-tunnel-plink-webshell.yml",
+      "apt33/detections/T1021.001_apt33-anomalous-rdp-lateral-movement.yml",
+      "charming-kitten/detections/T1021.001_charmingkitten-anomalous-rdp-logon.yml",
+      "hexane/detections/T1021.001_hexane-anomalous-rdp-lateral-movement.yml",
+      "pioneer-kitten/detections/T1021.001_pioneer-kitten-rdp-lateral-movement.yml"
+    ]
   },
   {
     "attack_technique_id": "T1219",
@@ -192,7 +252,14 @@
       "NCA ECC-1:2018 §2-12-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-12-3"
+    "control_id": "2-12-3",
+    "library_rule_refs": [
+      "apt33/detections/T1219_apt33-anydesk-rmm-deployment.yml",
+      "cotton-sandstorm/detections/T1071.001_cotton-sandstorm-wezrat-http-c2-beacon.yml",
+      "oilrig/detections/T1219_ngrok-tunnel.yml",
+      "pioneer-kitten/detections/T1572_pioneer-kitten-ngrok-ligolo-rmm-tunneling.yml",
+      "sidewinder/detections/T1219_sidewinder-implant-reverse-shell.yml"
+    ]
   },
   {
     "attack_technique_id": "T1071.004",
@@ -212,7 +279,15 @@
       "NCA ECC-1:2018 §2-12-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-12-3"
+    "control_id": "2-12-3",
+    "library_rule_refs": [
+      "apt39/detections/T1071.004_apt39-dns-c2-tunneling.yml",
+      "copykittens/detections/T1071.004_copykittens-matryoshka-dns-c2-lookalike.yml",
+      "cyberav3ngers/detections/T1071.004_cyberav3ngers-iocontrol-doh-c2-resolution.yml",
+      "cyberav3ngers/detections/T1071_cyberav3ngers-iocontrol-mqtt-c2-8883.yml",
+      "greenbug/detections/T1071.004_greenbug-ismdoor-dns-covert-channel.yml",
+      "hexane/detections/T1071.004_hexane-danbot-dns-tunneling-c2.yml"
+    ]
   },
   {
     "attack_technique_id": "T1572",
@@ -232,7 +307,14 @@
       "NCA ECC-1:2018 §2-12-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-12-3"
+    "control_id": "2-12-3",
+    "library_rule_refs": [
+      "ballistic-bobcat/detections/T1090_ballistic-bobcat-revsocks-gost-chisel-plink-tunneling.yml",
+      "cavern-manticore/detections/T1572_cavern-manticore-frpc-plink-ngrok-tunnel.yml",
+      "greenbug/detections/T1572_greenbug-plink-bitvise-ssh-tunnel.yml",
+      "oilrig/detections/T1572_T1021.004_plink-putty-ssh-tunnel.yml",
+      "pioneer-kitten/detections/T1572_pioneer-kitten-ngrok-ligolo-rmm-tunneling.yml"
+    ]
   },
   {
     "attack_technique_id": "T1041",
@@ -252,7 +334,14 @@
       "NCA ECC-1:2018 §2-12-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-12-3"
+    "control_id": "2-12-3",
+    "library_rule_refs": [
+      "agrius/detections/T1041_pscp-winscp-ssh-exfil.yml",
+      "arid-viper/detections/T1041_arid-viper-exfiltration-over-c2.yml",
+      "ballistic-bobcat/detections/T1071.001_ballistic-bobcat-sponsor-http80-c2-beacon.yml",
+      "copykittens/detections/T1071.001_copykittens-tdtess-http-c2-beacon.yml",
+      "scarred-manticore/detections/T1041_sdd-heartbeat-download-c2-exfil.yml"
+    ]
   },
   {
     "attack_technique_id": "T1048.003",
@@ -272,7 +361,14 @@
       "NCA ECC-1:2018 §2-12-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-12-3"
+    "control_id": "2-12-3",
+    "library_rule_refs": [
+      "apt33/detections/T1048.003_apt33-exfil-unencrypted-non-c2-protocol.yml",
+      "copykittens/detections/T1048.003_copykittens-dns-tunnel-exfiltration.yml",
+      "infy/detections/T1048.003_infy-ftp-exfil-workstation.yml",
+      "oilrig/detections/T1048.003_T1078.002_exchange-credential-exfil.yml",
+      "rocket-kitten/detections/T1048.003_rocket-kitten-ftp-woolen-exfil.yml"
+    ]
   },
   {
     "attack_technique_id": "T1090",
@@ -292,7 +388,14 @@
       "NCA ECC-1:2018 §2-12-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-12-3"
+    "control_id": "2-12-3",
+    "library_rule_refs": [
+      "ballistic-bobcat/detections/T1090_ballistic-bobcat-revsocks-gost-chisel-plink-tunneling.yml",
+      "cavern-manticore/detections/T1572_cavern-manticore-frpc-plink-ngrok-tunnel.yml",
+      "copykittens/detections/T1071.004_copykittens-matryoshka-dns-c2-lookalike.yml",
+      "greenbug/detections/T1572_greenbug-plink-bitvise-ssh-tunnel.yml",
+      "pioneer-kitten/detections/T1572_pioneer-kitten-ngrok-ligolo-rmm-tunneling.yml"
+    ]
   },
   {
     "attack_technique_id": "T1110",
@@ -312,7 +415,14 @@
       "NCA ECC-1:2018 §2-12-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-12-3"
+    "control_id": "2-12-3",
+    "library_rule_refs": [
+      "agrius/detections/T1110_T1110.003_smb-bruteforce-spray.yml",
+      "apt33/detections/T1110.003_apt33-password-spray-tor-gohttpclient.yml",
+      "apt39/detections/T1110_apt39-brute-force-auth-failures.yml",
+      "cyberav3ngers/detections/T1110_cyberav3ngers-unitronics-plc-bruteforce-tcp20256.yml",
+      "hexane/detections/T1110.003_hexane-password-spray-owa-o365.yml"
+    ]
   },
   {
     "attack_technique_id": "T1110.003",
@@ -331,7 +441,13 @@
       "NCA ECC-1:2018 §2-12-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-12-3"
+    "control_id": "2-12-3",
+    "library_rule_refs": [
+      "agrius/detections/T1110_T1110.003_smb-bruteforce-spray.yml",
+      "apt33/detections/T1110.003_apt33-password-spray-tor-gohttpclient.yml",
+      "hexane/detections/T1110.003_hexane-password-spray-owa-o365.yml",
+      "unc1549/detections/T1110.003_unc1549-password-spraying.yml"
+    ]
   },
   {
     "attack_technique_id": "T1685.001",
@@ -349,7 +465,12 @@
       "NCA ECC-1:2018 §2-12-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-12-3"
+    "control_id": "2-12-3",
+    "library_rule_refs": [
+      "charming-kitten/detections/T1685_charmingkitten-impair-defenses-tools-eventlog-firewall.yml",
+      "scarred-manticore/detections/T1685.001_eventlog-thread-suspension-log-gap.yml",
+      "unc1860/detections/T1685.001_unc1860-templelock-eventlog-service-stop.yml"
+    ]
   },
   {
     "attack_technique_id": "T1685.005",
@@ -367,7 +488,15 @@
       "NCA ECC-1:2018 §2-12-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-12-3"
+    "control_id": "2-12-3",
+    "library_rule_refs": [
+      "agrius/detections/T1685.005_clear-windows-event-logs.yml",
+      "agrius/detections/T1685_byovd-vulnerable-driver-load.yml",
+      "apt33/detections/T1685.005_apt33-clear-event-logs-inhibit-recovery.yml",
+      "apt33/detections/T1685_apt33-impair-defenses-av-tool-tampering.yml",
+      "predatory-sparrow/detections/T1059.001_predatory-sparrow-powershell-defender-exclusion-adapter.yml",
+      "predatory-sparrow/detections/T1685.005_predatory-sparrow-wevtutil-clear-logs.yml"
+    ]
   },
   {
     "attack_technique_id": "T1190",
@@ -387,7 +516,14 @@
       "NCA ECC-1:2018 §2-13-2"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-13-2"
+    "control_id": "2-13-2",
+    "library_rule_refs": [
+      "agrius/detections/T1190_exploit-public-facing-fortios-sqli.yml",
+      "apt39/detections/T1190_apt39-sqli-public-facing-webshell-chain.yml",
+      "cavern-manticore/detections/T1190_cavern-manticore-web-service-child-process.yml",
+      "homeland-justice/detections/T1190_homeland-justice-sharepoint-cve-2019-0604-exploit.yml",
+      "pioneer-kitten/detections/T1190_pioneer-kitten-edge-appliance-cve-exploitation.yml"
+    ]
   },
   {
     "attack_technique_id": "T1505.003",
@@ -407,7 +543,15 @@
       "NCA ECC-1:2018 §2-13-2"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-13-2"
+    "control_id": "2-13-2",
+    "library_rule_refs": [
+      "agrius/detections/T1505.003_aspxspy-webshell-drop.yml",
+      "apt39/detections/T1505.003_apt39-iis-webshell-worker-spawn.yml",
+      "ballistic-bobcat/detections/T1505.003_ballistic-bobcat-exchange-webroot-webshell-write.yml",
+      "charming-kitten/detections/T1190_charmingkitten-server-process-spawns-shell.yml",
+      "charming-kitten/detections/T1505.003_charmingkitten-webshell-file-write.yml",
+      "oilrig/detections/T1505.003_webshell-iis-exchange.yml"
+    ]
   },
   {
     "attack_technique_id": "T1566.001",
@@ -427,7 +571,14 @@
       "NCA ECC-1:2018 §2-13-2"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-13-2"
+    "control_id": "2-13-2",
+    "library_rule_refs": [
+      "apt33/detections/T1566.002_apt33-spearphishing-lure-masquerading-domains.yml",
+      "apt39/detections/T1204.002_apt39-office-malicious-attachment-child-spawn.yml",
+      "gaza-cybergang/detections/T1566.001_spearphishing-attachment.yml",
+      "oilrig/detections/T1566.001_T0865_spearphishing-attachment.yml",
+      "sidewinder/detections/T1204.002_sidewinder-office-spawns-suspicious-child.yml"
+    ]
   },
   {
     "attack_technique_id": "T1204.002",
@@ -447,7 +598,14 @@
       "NCA ECC-1:2018 §2-13-2"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-13-2"
+    "control_id": "2-13-2",
+    "library_rule_refs": [
+      "apt33/detections/T1204.002_apt33-hta-office-malicious-file-execution.yml",
+      "apt39/detections/T1204.002_apt39-office-malicious-attachment-child-spawn.yml",
+      "charming-kitten/detections/T1204.002_charmingkitten-lnk-double-extension-user-execution.yml",
+      "muddywater/detections/T1204.002_malicious-office-pdf-child.yml",
+      "oilrig/detections/T1204.002_T0853_office-macro-script-child.yml"
+    ]
   },
   {
     "attack_technique_id": "T1486",
@@ -465,7 +623,12 @@
       "NCA ECC-1:2018 §2-13-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-13-3"
+    "control_id": "2-13-3",
+    "library_rule_refs": [
+      "agrius/detections/T1486_ransomware-note-encryption.yml",
+      "cavern-manticore/detections/T1486_cavern-manticore-bitlocker-diskcryptor-encryption.yml",
+      "charming-kitten/detections/T1486_charmingkitten-data-encrypted-for-impact.yml"
+    ]
   },
   {
     "attack_technique_id": "T1485",
@@ -484,7 +647,13 @@
       "NCA ECC-1:2018 §2-13-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-13-3"
+    "control_id": "2-13-3",
+    "library_rule_refs": [
+      "agrius/detections/T1485_data-destruction-wiper.yml",
+      "apt33/detections/T1561_apt33-shamoon-rawdisk-driver-load-wipe.yml",
+      "predatory-sparrow/detections/T1485_predatory-sparrow-meteor-wiper-masquerade.yml",
+      "wirte/detections/T1485_samecoin-wiper-masqueraded-drop-exec.yml"
+    ]
   },
   {
     "attack_technique_id": "T1490",
@@ -504,7 +673,14 @@
       "NCA ECC-1:2018 §2-13-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-13-3"
+    "control_id": "2-13-3",
+    "library_rule_refs": [
+      "agrius/detections/T1490_inhibit-recovery-vss.yml",
+      "apt33/detections/T1685.005_apt33-clear-event-logs-inhibit-recovery.yml",
+      "cavern-manticore/detections/T1486_cavern-manticore-bitlocker-diskcryptor-encryption.yml",
+      "homeland-justice/detections/T1059.003_homeland-justice-destructive-batch-vssadmin-taskkill.yml",
+      "predatory-sparrow/detections/T1490_predatory-sparrow-inhibit-recovery-shadow-boot.yml"
+    ]
   },
   {
     "attack_technique_id": "T1489",
@@ -522,7 +698,12 @@
       "NCA ECC-1:2018 §2-13-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-13-3"
+    "control_id": "2-13-3",
+    "library_rule_refs": [
+      "agrius/detections/T1489_service-stop.yml",
+      "homeland-justice/detections/T1059.003_homeland-justice-destructive-batch-vssadmin-taskkill.yml",
+      "predatory-sparrow/detections/T1489_predatory-sparrow-service-stop-adapter-disable.yml"
+    ]
   },
   {
     "attack_technique_id": "T1561.002",
@@ -542,7 +723,14 @@
       "NCA ECC-1:2018 §2-13-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-13-3"
+    "control_id": "2-13-3",
+    "library_rule_refs": [
+      "agrius/detections/T1561.001_T1561.002_disk-wipe-raw-physicaldrive.yml",
+      "homeland-justice/detections/T1543.003_homeland-justice-rawdisk-driver-service-nojustice-wipe.yml",
+      "moses-staff/detections/T1561.002_moses-staff-diskcryptor-driver-load-boot-overwrite.yml",
+      "predatory-sparrow/detections/T1561.002_predatory-sparrow-nti-mbr-physicaldrive-wipe.yml",
+      "void-manticore/detections/T1561.002_void-manticore-partition-wiper-physicaldrive-mbr-gpt.yml"
+    ]
   },
   {
     "attack_technique_id": "T1491.001",
@@ -561,7 +749,13 @@
       "NCA ECC-1:2018 §2-13-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-13-3"
+    "control_id": "2-13-3",
+    "library_rule_refs": [
+      "cyberav3ngers/detections/T1491.001_cyberav3ngers-hmi-defacement-splash-page.yml",
+      "homeland-justice/detections/T1112_homeland-justice-wallpaper-registry-internal-defacement.yml",
+      "predatory-sparrow/detections/T1491.001_predatory-sparrow-internal-defacement-boards-billboards.yml",
+      "wirte/detections/T1491.001_wallpaper-defacement-registry.yml"
+    ]
   },
   {
     "attack_technique_id": "T1583.001",
@@ -581,7 +775,14 @@
       "NCA ECC-1:2018 §2-13-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-13-3"
+    "control_id": "2-13-3",
+    "library_rule_refs": [
+      "arid-viper/hunts/HUNT-03_actor-infrastructure-domains-webservices-webshells.md",
+      "charming-kitten/hunts/HUNT-03_lookalike-typosquat-domain-infrastructure.md",
+      "muddywater/hunts/HUNT-04_external-infrastructure-and-resource-development.md",
+      "oilrig/hunts/HUNT-02_external-infrastructure-and-impersonation.md",
+      "sea-turtle/hunts/HUNT-04_off-victim-actor-infrastructure-and-tooling.md"
+    ]
   },
   {
     "attack_technique_id": "T1588.002",
@@ -601,7 +802,14 @@
       "NCA ECC-1:2018 §2-13-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-13-3"
+    "control_id": "2-13-3",
+    "library_rule_refs": [
+      "apt33/hunts/HUNT-06_off-victim-tooling-acquisition.md",
+      "apt39/hunts/HUNT-06_off-victim-tooling-downstream-use.md",
+      "muddywater/hunts/HUNT-04_external-infrastructure-and-resource-development.md",
+      "oilrig/hunts/HUNT-12_capability-development-and-tooling-acquisition.md",
+      "scarred-manticore/hunts/HUNT-07_toolset-code-similarity-and-open-source-lineage.md"
+    ]
   },
   {
     "attack_technique_id": "T1587.001",
@@ -621,6 +829,13 @@
       "NCA ECC-1:2018 §2-13-3"
     ],
     "framework": "NCA ECC-1:2018",
-    "control_id": "2-13-3"
+    "control_id": "2-13-3",
+    "library_rule_refs": [
+      "arid-viper/hunts/HUNT-03_actor-infrastructure-domains-webservices-webshells.md",
+      "oilrig/hunts/HUNT-12_capability-development-and-tooling-acquisition.md",
+      "scarred-manticore/hunts/HUNT-07_toolset-code-similarity-and-open-source-lineage.md",
+      "unc1860/hunts/HUNT-06_toolset-attribution-custom-crypto-yara.md",
+      "wirte/hunts/HUNT-01_off-victim-infrastructure-and-impersonation.md"
+    ]
   }
 ]
