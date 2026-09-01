@@ -1,0 +1,710 @@
+[
+  {
+    "attack_technique_id": "T1110",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-2-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "apt33",
+      "apt39",
+      "hexane",
+      "pioneer-kitten"
+    ],
+    "rationale": "Brute-force detection evidences the enhanced IAM requirement for strong password policy, secure hashing and MFA on critical systems by catching credential-guessing that MFA/lockout must defeat.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1110->AC-7,IA-2,IA-5,IA-11",
+      "NCA CSCC-1:2019 §2-2-1 (extends ECC 2-2-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1110.003",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-2-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "apt33",
+      "hexane",
+      "unc1549"
+    ],
+    "rationale": "Password-spraying detection evidences the critical-systems MFA-for-all and lockout requirement, targeting the low-and-slow guessing that single-factor accounts on critical systems are most exposed to.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1110.003->AC-7,IA-2,IA-5,IA-11",
+      "NCA CSCC-1:2019 §2-2-1 (extends ECC 2-2-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1133",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-2-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "cavern-manticore",
+      "cyberav3ngers",
+      "imperial-kitten",
+      "pioneer-kitten",
+      "polonium"
+    ],
+    "rationale": "External-remote-services detection directly evidences the critical-systems-specific requirement to block remote access from outside KSA and restrict/monitor it inside, by surfacing inbound remote-service sessions to gate.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1133->AC-17,IA-2,IA-5,SC-7",
+      "NCA CSCC-1:2019 §2-2-1 (extends ECC 2-2-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1021.001",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-2-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "charming-kitten",
+      "hexane",
+      "pioneer-kitten",
+      "unc1549"
+    ],
+    "rationale": "RDP-abuse detection evidences the enhanced requirement to restrict and monitor interactive remote access to critical systems and enforce MFA, catching lateral/inbound RDP that the isolation and MFA controls must contain.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1021.001->AC-17,IA-2,IA-5,SC-7",
+      "NCA CSCC-1:2019 §2-2-1 (extends ECC 2-2-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1021.004",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-2-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt39",
+      "ballistic-bobcat",
+      "oilrig",
+      "pioneer-kitten"
+    ],
+    "rationale": "SSH-session detection evidences the restrict-and-monitor-remote-access requirement for critical-systems administration, surfacing interactive remote logons that MFA and in-KSA-only policy must govern.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1021.004->AC-17,IA-2,IA-5",
+      "NCA CSCC-1:2019 §2-2-1 (extends ECC 2-2-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1003.001",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-2-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "muddywater",
+      "oilrig",
+      "apt33",
+      "imperial-kitten",
+      "tortoiseshell"
+    ],
+    "rationale": "LSASS-dumping detection evidences the enhanced secure-hashing and privileged-credential protection intent by catching theft of the authentication material that MFA and strong-hashing policy exist to protect.",
+    "mapping_confidence": "low",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "CTID: T1003.001->AC-6,IA-2,IA-5,SC-28",
+      "NCA CSCC-1:2019 §2-2-1 (extends ECC 2-2-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1003.004",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-2-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "muddywater",
+      "oilrig"
+    ],
+    "rationale": "LSA-secrets extraction detection evidences protection of cached service-account and machine credentials central to the managed-service-account and secure-hashing requirement for critical systems.",
+    "mapping_confidence": "low",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "CTID: T1003.004->AC-6,IA-2,IA-5,SC-28",
+      "NCA CSCC-1:2019 §2-2-1 (extends ECC 2-2-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1078.001",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-2-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "cavern-manticore",
+      "charming-kitten",
+      "cyberav3ngers"
+    ],
+    "rationale": "Default-account detection evidences the critical-systems requirement to remove default/backdoor passwords and to use managed service accounts with no interactive login, surfacing exactly those default credentials.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1078.001->AC-2,AC-5,AC-6,IA-2",
+      "NCA CSCC-1:2019 §2-2-1 (extends ECC 2-2-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1098",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-2-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "cavern-manticore"
+    ],
+    "rationale": "Account-manipulation detection evidences the managed-service-account and no-interactive-login requirement by surfacing unauthorized privilege/credential changes on critical-systems identities.",
+    "mapping_confidence": "low",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "CTID: T1098->AC-2,AC-3,AC-5,AC-6,IA-2",
+      "NCA CSCC-1:2019 §2-2-1 (extends ECC 2-2-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1078.003",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-2-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "ballistic-bobcat",
+      "pioneer-kitten",
+      "sea-turtle"
+    ],
+    "rationale": "Local-account abuse detection evidences that the three-monthly access-rights review catches out-of-band local identities on critical-systems hosts that a periodic entitlement review must reconcile.",
+    "mapping_confidence": "low",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "CTID: T1078.003->AC-2,AC-3,AC-6,IA-2",
+      "NCA CSCC-1:2019 §2-2-2 (extends ECC 2-2-3-5)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1136.001",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-2-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt39",
+      "cavern-manticore",
+      "charming-kitten",
+      "pioneer-kitten"
+    ],
+    "rationale": "Detecting rogue local-account creation evidences the quarterly identity-review intent by surfacing accounts provisioned outside process that the recurring access-rights review is designed to catch and revoke.",
+    "mapping_confidence": "low",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "CTID: T1136.001->AC-2,AC-3,IA-2,IA-5",
+      "NCA CSCC-1:2019 §2-2-2 (extends ECC 2-2-3-5)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1204.002",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-3-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "charming-kitten",
+      "gaza-cybergang",
+      "muddywater",
+      "oilrig"
+    ],
+    "rationale": "Malicious-file-execution detection evidences the enhanced host-protection requirement of application whitelisting plus approved endpoint protection on critical-systems servers, catching unauthorized binaries whitelisting must deny.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1204.002->SC-44,SI-3,SI-7,SI-8",
+      "NCA CSCC-1:2019 §2-3-1 (extends ECC 2-3-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1204.001",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-3-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "charming-kitten",
+      "hexane",
+      "oilrig",
+      "sidewinder"
+    ],
+    "rationale": "Malicious-link detection evidences the approved-endpoint-protection layer of the hardened host-protection set for critical systems, catching the initial user-execution vector.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1204.001->SC-44,SI-3,SI-8",
+      "NCA CSCC-1:2019 §2-3-1 (extends ECC 2-3-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1105",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-3-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "muddywater",
+      "oilrig",
+      "cavern-manticore",
+      "homeland-justice"
+    ],
+    "rationale": "Ingress-tool-transfer detection evidences application whitelisting and endpoint protection on hardened critical-systems servers by catching delivery of unapproved tooling that whitelisting must block from executing.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1105->SI-3,SI-4,SC-7,CM-7",
+      "NCA CSCC-1:2019 §2-3-1 (extends ECC 2-3-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1027",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-3-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "ballistic-bobcat",
+      "copykittens",
+      "hexane",
+      "imperial-kitten",
+      "tortoiseshell"
+    ],
+    "rationale": "Obfuscated-file detection evidences the advanced endpoint-protection and critical-file-integrity requirements of the hardened host-protection set, surfacing evasive artifacts signature AV alone would miss.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1027->SI-2,SI-3,SI-4,SI-7",
+      "NCA CSCC-1:2019 §2-3-1 (extends ECC 2-3-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1055",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-3-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "copykittens",
+      "gaza-cybergang",
+      "tortoiseshell",
+      "tropic-trooper"
+    ],
+    "rationale": "Process-injection detection evidences the approved-endpoint-protection requirement for critical-systems servers by catching in-memory evasion that bypasses whitelisting and file-based AV.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1055->SI-2,SI-3,SI-4,SC-18",
+      "NCA CSCC-1:2019 §2-3-1 (extends ECC 2-3-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1218.005",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-3-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "muddywater",
+      "sidewinder",
+      "tortoiseshell"
+    ],
+    "rationale": "Mshta LOLBin detection directly evidences the application-whitelisting requirement for critical systems, catching abuse of a signed interpreter used specifically to defeat allow-listing.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1218.005->CM-7,SI-3,SI-4,SI-10",
+      "NCA CSCC-1:2019 §2-3-1 (extends ECC 2-3-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1218.011",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-3-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "cavern-manticore",
+      "charming-kitten",
+      "copykittens",
+      "infy",
+      "muddywater"
+    ],
+    "rationale": "Rundll32 LOLBin detection evidences application whitelisting and hardening on critical systems by surfacing proxied execution through a trusted binary that allow-listing policy must constrain.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1218.011->CA-7,SI-4,SI-7,SI-10",
+      "NCA CSCC-1:2019 §2-3-1 (extends ECC 2-3-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1112",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-3-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "cavern-manticore",
+      "charming-kitten",
+      "copykittens",
+      "homeland-justice",
+      "predatory-sparrow"
+    ],
+    "rationale": "Registry-modification detection evidences the six-monthly hardening-baseline and critical-file protection intent by surfacing tampering with the configuration and integrity settings that hardening review must hold.",
+    "mapping_confidence": "low",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "CTID: T1112->AC-6,CM-7,SI-7",
+      "NCA CSCC-1:2019 §2-3-1 (extends ECC 2-3-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1036.005",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-3-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt39",
+      "ballistic-bobcat",
+      "cavern-manticore",
+      "greenbug",
+      "muddywater"
+    ],
+    "rationale": "Detecting binaries masquerading as legitimate names/locations evidences the application-whitelisting intent, since name/path spoofing is the primary means of slipping unapproved code past allow-listing on critical systems.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1036.005->SI-3,SI-4,SI-7,SI-10",
+      "NCA CSCC-1:2019 §2-3-1 (extends ECC 2-3-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1053.005",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-3-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "apt33",
+      "muddywater",
+      "oilrig",
+      "pioneer-kitten"
+    ],
+    "rationale": "Scheduled-task detection is only adjacency to the whitelisting/endpoint-hardening core of this control: its CTID anchor is CM/AC-centric configuration monitoring, not anti-malware or allow-listing, so it is nominal evidence and does not by itself reduce the risk 2-3-1 targets.",
+    "mapping_confidence": "low",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "CTID: T1053.005->CM-2,CM-6,SI-4",
+      "NCA CSCC-1:2019 §2-3-1 (extends ECC 2-3-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1190",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-9-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "cavern-manticore",
+      "cotton-sandstorm",
+      "pioneer-kitten",
+      "tortoiseshell"
+    ],
+    "rationale": "Exploit-public-facing-application detection evidences the enhanced monthly-remediation cadence for internet-connected critical systems, surfacing exploitation of the exposed vulnerabilities this control must patch fastest.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1190->RA-5,RA-10,SI-2,CA-2,CM-8",
+      "NCA CSCC-1:2019 §2-9-1 (extends ECC 2-10-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1203",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-9-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "group5",
+      "muddywater",
+      "oilrig",
+      "sidewinder"
+    ],
+    "rationale": "Exploitation-for-client-execution detection evidences the vulnerability-remediation cadence for client-side components of critical systems, catching exploitation of the unpatched application flaws this control governs.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1203->SI-2,SI-3,SC-18",
+      "NCA CSCC-1:2019 §2-9-1 (extends ECC 2-10-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1068",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-9-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "oilrig"
+    ],
+    "rationale": "Privilege-escalation-exploit detection evidences the immediate-remediation-of-critical-vulnerabilities requirement, surfacing exploitation of the high-severity kernel/driver flaws this control mandates fixing under emergency change.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1068->RA-5,RA-10,SI-2,SC-30",
+      "NCA CSCC-1:2019 §2-9-1 (extends ECC 2-10-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1210",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-9-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "pioneer-kitten",
+      "tropic-trooper"
+    ],
+    "rationale": "Exploitation-of-remote-services detection evidences the quarterly internal-remediation cadence, surfacing exploitation of unpatched internal service vulnerabilities that trusted assessment and updates must close.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1210->RA-5,RA-10,SI-2,CA-2",
+      "NCA CSCC-1:2019 §2-9-1 (extends ECC 2-10-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1078",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-11-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "cotton-sandstorm",
+      "greenbug",
+      "hexane",
+      "polonium",
+      "sea-turtle"
+    ],
+    "rationale": "Valid-account detection evidences the enhanced requirement to monitor and analyze user behavior on critical systems around the clock, surfacing anomalous authenticated activity for the 24/7 monitoring function.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1078->AC-2,IA-2,IA-5,SI-4",
+      "NCA CSCC-1:2019 §2-11-1 (extends ECC 2-12-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1110",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-11-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "apt33",
+      "apt39",
+      "hexane",
+      "pioneer-kitten"
+    ],
+    "rationale": "Brute-force detection evidences the event-log-and-monitoring requirement to enable and monitor authentication logs on all critical-systems components, feeding the round-the-clock security-event analysis.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1110->AC-7,IA-2,IA-5,SI-4",
+      "NCA CSCC-1:2019 §2-11-1 (extends ECC 2-12-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1071.001",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-11-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "charming-kitten",
+      "cavern-manticore",
+      "ballistic-bobcat",
+      "gaza-cybergang"
+    ],
+    "rationale": "Web-protocol C2 detection evidences the requirement to monitor critical-systems security events around the clock, providing the network telemetry the 24/7 monitoring function analyzes for beaconing.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1071.001->SC-7,SI-3,SI-4,CA-7",
+      "NCA CSCC-1:2019 §2-11-1 (extends ECC 2-12-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1489",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-11-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "homeland-justice",
+      "predatory-sparrow"
+    ],
+    "rationale": "Service-stop detection evidences monitoring of critical-systems security and availability events, surfacing attempts to disable services or logging that the 24/7 monitoring and log-protection requirement must catch.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1489->CA-7,SI-4,SC-37",
+      "NCA CSCC-1:2019 §2-11-1 (extends ECC 2-12-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1053.005",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-11-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "apt33",
+      "muddywater",
+      "oilrig",
+      "pioneer-kitten"
+    ],
+    "rationale": "Scheduled-task detection evidences event-log enablement and monitoring on critical-systems components, feeding privileged-persistence events into the around-the-clock analysis and file/change-integrity alerting this control requires.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1053.005->CM-2,CM-6,SI-4",
+      "NCA CSCC-1:2019 §2-11-1 (extends ECC 2-12-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1190",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-12-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "ballistic-bobcat",
+      "charming-kitten",
+      "cyberav3ngers",
+      "polonium"
+    ],
+    "rationale": "Exploit-public-facing-application detection evidences the OWASP-Top-Ten minimum-standard requirement for external critical-systems web apps by catching injection/exploitation of the very weakness classes OWASP hardening addresses.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1190->SC-7,SI-10,RA-5,SI-2",
+      "NCA CSCC-1:2019 §2-12-1 (extends ECC 2-15-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1505.003",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-12-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "apt39",
+      "cavern-manticore",
+      "homeland-justice",
+      "oilrig"
+    ],
+    "rationale": "Web-shell detection evidences the OWASP-aligned web-application security requirement by catching the post-exploitation implant that injection and upload flaws (OWASP A03/A01) enable on external critical-systems web apps.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1505.003->CM-2,CM-6,RA-5,SI-4",
+      "NCA CSCC-1:2019 §2-12-1 (extends ECC 2-15-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1539",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-12-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "infy",
+      "unc3890"
+    ],
+    "rationale": "Web-session-cookie-theft detection directly evidences the secure-session-management requirement (session authenticity, lockout and timeout) for external critical-systems web apps, targeting the session-hijack risk that control names.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1539->AC-3,AC-6,IA-2,IA-5,SI-4",
+      "NCA CSCC-1:2019 §2-12-1 (extends ECC 2-15-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1505.003",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-13-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "ballistic-bobcat",
+      "charming-kitten",
+      "greenbug",
+      "pioneer-kitten",
+      "scarred-manticore"
+    ],
+    "rationale": "Web-shell detection evidences implementation of the defined internal-application cybersecurity requirements (CSCC-only, no ECC equivalent) by catching malicious server components planted in critical-systems internal apps.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1505.003->CM-2,CM-6,RA-5,SI-4",
+      "NCA CSCC-1:2019 §2-13-2 (CSCC-only, no ECC equivalent)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1190",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-13-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "imperial-kitten",
+      "moses-staff",
+      "scarred-manticore",
+      "tropic-trooper",
+      "void-manticore"
+    ],
+    "rationale": "Application-exploitation detection evidences that the internal-application security requirements are implemented and effective, surfacing exploitation of the app-layer vulnerabilities those requirements exist to eliminate. (Audit: downgraded to medium — public-facing-exploit technique already high at its true home 2-12-1; not double-counted onto the internal-application control at full strength.)",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1190->SC-7,SI-10,RA-5,SI-2",
+      "NCA CSCC-1:2019 §2-13-2 (CSCC-only, no ECC equivalent)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1505.004",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-13-2",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "scarred-manticore",
+      "unc1860"
+    ],
+    "rationale": "IIS-component (malicious module) detection evidences implementation of internal-application security requirements by catching backdoored app-server extensions embedded in critical-systems internal applications.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1505.004->CM-2,CM-6,SI-3,SI-4,SI-7,SI-14",
+      "NCA CSCC-1:2019 §2-13-2 (CSCC-only, no ECC equivalent)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1539",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-13-3",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "infy",
+      "unc3890"
+    ],
+    "rationale": "Web-session-cookie-theft detection directly evidences the core internal-application control set's secure-session-management element (authenticity, lockout, timeout), targeting the exact session-hijack risk 2-13-3 enumerates.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "CTID: T1539->AC-3,AC-6,IA-2,IA-5,SI-4",
+      "NCA CSCC-1:2019 §2-13-3 (CSCC-only, no ECC equivalent)"
+    ]
+  }
+]

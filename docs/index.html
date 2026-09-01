@@ -55,7 +55,15 @@ header.hero{border-bottom:1px solid var(--line);background:
 h1{font-size:40px;letter-spacing:-.01em}
 .h1ar{font-family:var(--ar);font-size:26px;color:var(--slate);font-weight:500}
 .lede{margin:14px 0 0;max-width:60ch;color:var(--ink);font-size:16px}
-.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;align-items:center}
+.fwsel{display:inline-flex;gap:5px;margin-top:22px;background:var(--card2);border:1px solid var(--line);
+  border-radius:11px;padding:5px}
+.fwbtn{border:0;background:transparent;color:var(--muted);font-family:var(--sans);cursor:pointer;
+  padding:8px 16px;border-radius:8px;text-align:left;line-height:1.2}
+.fwbtn b{display:block;font-size:14px;font-weight:600}
+.fwbtn small{font-size:11px;opacity:.8}
+.fwbtn[aria-selected="true"]{background:var(--card);color:var(--ink);box-shadow:var(--sh)}
+.fwbtn[aria-selected="true"] b{color:var(--bronze)}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;align-items:center}
 .verdict{display:inline-flex;align-items:center;gap:7px;background:color-mix(in srgb,var(--high) 14%,transparent);
   color:var(--high);border:1px solid color-mix(in srgb,var(--high) 40%,transparent);
   padding:5px 12px;border-radius:999px;font-weight:600;font-size:13px}
@@ -182,15 +190,12 @@ footer a{display:block;margin-bottom:5px}
       <span class="h1ar">خريطة الضوابط الأساسية للأمن السيبراني</span>
     </div>
     <p class="lede">Which deployable detections give you <em>audit evidence</em> for which control of
-      Saudi Arabia's <strong>NCA ECC‑1:2018</strong> — the Essential Cybersecurity Controls. Built from the
+      Saudi Arabia's <strong>NCA</strong> cybersecurity frameworks — <strong>ECC‑1:2018</strong> (Essential) and
+      <strong>CSCC‑1:2019</strong> (Critical Systems). Built from the
       <a href="https://github.com/DashTX707/mena-detection-library">MENA Detection Library</a>, corroborated
-      against MITRE CTID's ATT&amp;CK→NIST 800‑53 mapping, and put through a four‑stage audit.</p>
-    <div class="badges">
-      <span class="verdict">Audit verdict: PASS</span>
-      <span class="chip">85 evidence mappings</span>
-      <span class="chip">20 of 114 controls</span>
-      <span class="chip">Domain 2 · Cybersecurity Defense</span>
-    </div>
+      against MITRE CTID's ATT&amp;CK→NIST 800‑53 mapping, and put through a four‑stage audit per framework.</p>
+    <div class="fwsel" id="fwsel" role="tablist"></div>
+    <div class="badges" id="badges"></div>
     <p class="disclaimer">Community guidance mapping public detection content to ECC control <em>intent</em>.
       It is <strong>not</strong> an NCA‑endorsed compliance attestation, and evidence of a control is not proof
       of risk reduction. The Arabic ECC is the binding text; English here is a paraphrase aid.</p>
@@ -217,14 +222,14 @@ footer a{display:block;margin-bottom:5px}
     <div class="chain" id="chain">
       <span class="step">Execution<small>4 governance agents, by subdomain</small></span><span class="arr">→</span>
       <span class="step">Deterministic gate<small>IDs · join integrity · fields</small></span><span class="arr">→</span>
-      <span class="step">Adversarial validation<small>10 rejected · 19 downgraded</small></span><span class="arr">→</span>
+      <span class="step">Adversarial validation<small id="chain-val">rejected · downgraded</small></span><span class="arr">→</span>
       <span class="step">Governance full audit<small>PASS · signed off</small></span>
     </div>
     <p class="sec-sub">Corroboration axis: MITRE Center for Threat‑Informed Defense
       <a href="https://center-for-threat-informed-defense.github.io/mappings-explorer/external/nist/">ATT&amp;CK→NIST 800‑53 R5</a>
       (5,264 technique→control edges). Every mapping records rationale, a confidence grade, a
       <strong>risk‑reduction flag</strong> (the “compliant ≠ secure” check), and its sources. Full sign‑off in
-      <a href="https://github.com/DashTX707/ksa-ecc-map/blob/main/docs/AUDIT-REPORT.md">AUDIT‑REPORT.md</a>.</p>
+      <a id="auditlink" href="https://github.com/DashTX707/ksa-ecc-map/blob/main/docs/AUDIT-REPORT.md">the audit report</a>.</p>
   </div>
 </section>
 
@@ -283,25 +288,46 @@ footer a{display:block;margin-bottom:5px}
 <script src="_data.js"></script>
 <script>
 (function(){
-  var d=ECCMAP, S=d.stats;
+  var FW=ECCMAP.frameworks, CTID=ECCMAP.ctid_edges;
+  var VAL={ecc:'10 rejected · 19 downgraded', cscc:'3 rejected · 14 downgraded'};
+  var AUDIT={ecc:'https://github.com/DashTX707/ksa-ecc-map/blob/main/docs/AUDIT-REPORT.md',
+             cscc:'https://github.com/DashTX707/ksa-ecc-map/blob/main/docs/CSCC-AUDIT-REPORT.md'};
+  var d, S, ci=0;
   // theme toggle
   var tt=document.getElementById('tt');
   tt.onclick=function(){var r=document.documentElement;
-    var cur=r.getAttribute('data-theme')|| (matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
-    r.setAttribute('data-theme',cur==='dark'?'light':'dark');};
-  // stats
-  var stat=[['n_mappings',S.mappings,'evidence mappings'],['controls',S.controls_covered+' / '+S.controls_total,'ECC controls covered'],
-    ['high',S.high,'high confidence'],['medium',S.medium,'medium'],['low',S.low,'low'],
-    ['nominal',S.nominal,'nominal (risk‑flag ✗)'],['ctid',(S.ctid_edges).toLocaleString(),'CTID corroboration edges']];
-  document.getElementById('stats').innerHTML=stat.map(function(s,i){
-    return '<div class="stat'+(i===1?' hl':'')+'"><div class="n">'+s[1]+'</div><div class="k">'+s[2]+'</div></div>';}).join('');
-  // domain concentration
+    var c=r.getAttribute('data-theme')|| (matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+    r.setAttribute('data-theme',c==='dark'?'light':'dark');};
+  // framework selector
+  document.getElementById('fwsel').innerHTML=FW.map(function(f,i){
+    return '<button class="fwbtn" role="tab" aria-selected="'+(i===0?'true':'false')+'" data-i="'+i+'">'+
+      '<b>'+f.short+'</b><small>'+(f.stats.controls_covered)+' controls · '+f.stats.mappings+' maps</small></button>';}).join('');
+  document.querySelectorAll('.fwbtn').forEach(function(b){b.onclick=function(){
+    document.querySelectorAll('.fwbtn').forEach(function(x){x.setAttribute('aria-selected','false');});
+    b.setAttribute('aria-selected','true'); setFW(+b.dataset.i);};});
+
+  function renderStats(){
+    document.getElementById('badges').innerHTML=
+      '<span class="verdict">'+d.name+' · audit PASS</span>'+
+      '<span class="chip">'+S.mappings+' evidence mappings</span>'+
+      '<span class="chip">'+S.controls_covered+' of '+S.controls_total+' controls</span>'+
+      '<span class="chip">'+S.detect+' detect · '+S.hunt+' hunt</span>';
+    var stat=[['',S.mappings,'evidence mappings'],['',S.controls_covered+' / '+S.controls_total,'controls covered'],
+      ['',S.high,'high confidence'],['',S.medium,'medium'],['',S.low,'low'],
+      ['',S.nominal,'nominal (risk‑flag ✗)'],['',(CTID).toLocaleString(),'CTID corroboration edges']];
+    document.getElementById('stats').innerHTML=stat.map(function(s,i){
+      return '<div class="stat'+(i===1?' hl':'')+'"><div class="n">'+s[1]+'</div><div class="k">'+s[2]+'</div></div>';}).join('');
+    var cv=document.getElementById('chain-val'); if(cv&&VAL[d.key])cv.textContent=VAL[d.key];
+    var al=document.getElementById('auditlink'); if(al&&AUDIT[d.key])al.href=AUDIT[d.key];
+  }
+  function renderDom(){
   document.getElementById('dom').innerHTML=d.domain_summary.map(function(x){
     var pct=x.total?Math.round(100*x.covered/x.total):0, zero=x.covered===0;
     var note=zero?'detection cannot evidence these':(x.covered+' of '+x.total+' carry evidence');
     return '<div class="domrow'+(zero?' zero':'')+'"><div class="domname"><b>Domain '+x.id+' · '+x.en+'</b>'+
       '<span class="a">'+x.ar+'</span></div><div class="dommeter"><div class="bar"><i style="width:'+pct+'%"></i></div>'+
       '<span class="lbl"><b>'+x.covered+'</b> / '+x.total+' — '+note+'</span></div></div>';}).join('');
+  }
 
   var F={cf:new Set(),ev:new Set(),rr:new Set()};
   function pass(m){
@@ -349,7 +375,8 @@ footer a{display:block;margin-bottom:5px}
     document.getElementById('view-t').innerHTML='<table class="ttbl"><thead><tr><th>Technique</th><th>Name</th><th>Evidences (ECC controls)</th><th>Evidence</th></tr></thead><tbody>'+
       (rows||'<tr><td colspan="4">No techniques match these filters.</td></tr>')+'</tbody></table>';
   }
-  function render(){renderC();renderT();}
+  function render(){renderStats();renderDom();renderC();renderT();}
+  function setFW(i){ci=i;d=FW[i];S=d.stats;render();}
   // tabs
   var tabc=document.getElementById('tab-c'),tabt=document.getElementById('tab-t');
   tabc.onclick=function(){tabc.setAttribute('aria-selected','true');tabt.setAttribute('aria-selected','false');
@@ -361,7 +388,7 @@ footer a{display:block;margin-bottom:5px}
     var on=b.getAttribute('aria-pressed')==='true';b.setAttribute('aria-pressed',on?'false':'true');
     var f=b.dataset.f,v=b.dataset.v; if(on)F[f].delete(v); else F[f].add(v); render();};});
   function esc(s){return (s==null?'':''+s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-  render();
+  setFW(0);
 })();
 </script>
 </body>

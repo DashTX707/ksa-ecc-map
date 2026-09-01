@@ -1,7 +1,6 @@
 [
   {
     "attack_technique_id": "T1071",
-    "ecc_control_id": "2-6-2",
     "evidence_type": "detect",
     "library_pack_refs": [
       "oilalpha",
@@ -14,11 +13,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53: T1071 -> SC-07, SC-10, SC-20, SC-21, SC-22, SC-23, SC-31, SI-04",
       "NCA ECC-1:2018 §2-6-2"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-6-2"
   },
   {
     "attack_technique_id": "T1204.002",
-    "ecc_control_id": "2-6-3",
     "evidence_type": "hunt",
     "library_pack_refs": [
       "domestic-kitten",
@@ -30,11 +30,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53: T1204.002 -> SC-44, SI-03, SI-04, SI-07, SI-08, SI-10",
       "NCA ECC-1:2018 §2-6-3"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-6-3"
   },
   {
     "attack_technique_id": "T1125",
-    "ecc_control_id": "2-6-3",
     "evidence_type": "hunt",
     "library_pack_refs": [
       "domestic-kitten",
@@ -47,11 +48,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53: no mapping published for T1125 (no NIST anchor)",
       "NCA ECC-1:2018 §2-6-3"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-6-3"
   },
   {
     "attack_technique_id": "T1005",
-    "ecc_control_id": "2-7-2",
     "evidence_type": "detect",
     "library_pack_refs": [
       "charming-kitten",
@@ -66,11 +68,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53: T1005 -> AC-16, AC-23, CM-12, CP-09, SC-13, SC-28, SC-38, SI-03, SI-04",
       "NCA ECC-1:2018 §2-7-2"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-7-2"
   },
   {
     "attack_technique_id": "T1041",
-    "ecc_control_id": "2-7-2",
     "evidence_type": "detect",
     "library_pack_refs": [
       "agrius",
@@ -85,11 +88,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53: T1041 -> AC-16, AC-23, SC-07, SC-13, SC-28, SC-31, SI-03, SI-04, SR-04",
       "NCA ECC-1:2018 §2-7-2"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-7-2"
   },
   {
     "attack_technique_id": "T1048.003",
-    "ecc_control_id": "2-7-2",
     "evidence_type": "detect",
     "library_pack_refs": [
       "apt33",
@@ -104,11 +108,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53: T1048.003 -> AC-16, AC-23, SC-07, SC-13, SC-28, SC-31, SI-03, SI-04, SR-04",
       "NCA ECC-1:2018 §2-7-2"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-7-2"
   },
   {
     "attack_technique_id": "T1567",
-    "ecc_control_id": "2-7-2",
     "evidence_type": "hunt",
     "library_pack_refs": [
       "cotton-sandstorm",
@@ -123,11 +128,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53: T1567 -> AC-16, AC-23, SC-07, SC-28, SC-31, SI-03, SI-04, SR-04",
       "NCA ECC-1:2018 §2-7-2"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-7-2"
   },
   {
     "attack_technique_id": "T1490",
-    "ecc_control_id": "2-9-2",
     "evidence_type": "detect",
     "library_pack_refs": [
       "agrius",
@@ -142,11 +148,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53: T1490 -> CP-02, CP-07, CP-09, CP-10, CM-06, SI-03, SI-04, SI-07",
       "NCA ECC-1:2018 §2-9-2"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-9-2"
   },
   {
     "attack_technique_id": "T1485",
-    "ecc_control_id": "2-9-2",
     "evidence_type": "detect",
     "library_pack_refs": [
       "agrius",
@@ -160,11 +167,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53: T1485 -> CP-02, CP-07, CP-09, CP-10, AC-03, AC-06, SI-07",
       "NCA ECC-1:2018 §2-9-2"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-9-2"
   },
   {
     "attack_technique_id": "T1486",
-    "ecc_control_id": "2-9-2",
     "evidence_type": "detect",
     "library_pack_refs": [
       "agrius",
@@ -177,11 +185,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53: T1486 -> CP-02, CP-06, CP-07, CP-09, CP-10, AC-03, AC-06, SI-07",
       "NCA ECC-1:2018 §2-9-2"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-9-2"
   },
   {
     "attack_technique_id": "T1561.001",
-    "ecc_control_id": "2-9-2",
     "evidence_type": "detect",
     "library_pack_refs": [
       "agrius",
@@ -194,6 +203,8 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53: T1561.001 -> CP-02, CP-07, CP-09, CP-10, AC-03, AC-06, SI-07",
       "NCA ECC-1:2018 §2-9-2"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-9-2"
   }
 ]

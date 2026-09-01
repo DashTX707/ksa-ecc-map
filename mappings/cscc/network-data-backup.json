@@ -1,0 +1,355 @@
+[
+  {
+    "attack_technique_id": "T1071.001",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-4-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "charming-kitten",
+      "apt33",
+      "cavern-manticore",
+      "homeland-justice",
+      "greenbug"
+    ],
+    "rationale": "Detecting adversary C2 over web protocols evidences the enhanced 2-4-1 network-layer defense: internet-egress blocking for internal critical systems and firewall whitelisting-only mean any outbound web-protocol C2 from a critical segment is anomalous and should be caught, directly exercising the stricter APT-protection requirement.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: SC-7, SC-21, SC-23, AC-4, SI-4",
+      "NCA CSCC-1:2019 §2-4-1 (extends ECC 2-5-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1090",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-4-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "ballistic-bobcat",
+      "cavern-manticore",
+      "copykittens",
+      "greenbug",
+      "pioneer-kitten"
+    ],
+    "rationale": "Proxy/relay detection evidences the strict logical-and-physical segregation and whitelist-only firewalling of 2-4-1: proxied traffic attempting to bridge isolated critical segments or reach the internet violates the enforced whitelist and is exactly what the enhanced APT-protection control targets.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: SC-7, AC-4, SI-4, SI-15",
+      "NCA CSCC-1:2019 §2-4-1 (extends ECC 2-5-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1572",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-4-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "ballistic-bobcat",
+      "cavern-manticore",
+      "greenbug",
+      "oilrig",
+      "pioneer-kitten"
+    ],
+    "rationale": "Protocol-tunneling detection is strong evidence for the 2-4-1 segregation and egress-blocking requirement: tunneling is the primary means to evade critical-network isolation and firewall whitelisting, so alerts on it directly demonstrate the enhanced control is exercisable.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: SC-7, AC-4, SI-15",
+      "NCA CSCC-1:2019 §2-4-1 (extends ECC 2-5-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1021.002",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-4-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt39",
+      "copykittens",
+      "homeland-justice",
+      "moses-staff",
+      "pioneer-kitten"
+    ],
+    "rationale": "SMB/admin-share lateral movement detection evidences the enhanced logical-and-physical segregation of critical networks: cross-segment SMB that the whitelist-only firewall should block is the observable signal that 2-4-1 isolation is being tested. Medium because SMB is also legitimate intra-tier traffic, so it evidences segregation less cleanly than egress/tunneling signals.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: AC-4, SC-7, SI-4, SI-15",
+      "NCA CSCC-1:2019 §2-4-1 (extends ECC 2-5-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1048",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-4-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "domestic-kitten",
+      "unc3890"
+    ],
+    "rationale": "Exfiltration over an alternative protocol evidences the 2-4-1 egress-blocking and whitelist-only firewall requirement, since any non-whitelisted outbound protocol from an isolated critical system should be denied and alerted. Medium: only two packs cover this base technique and the alternative-protocol channel overlaps the crypto/data-protection theme.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: AC-4, SC-7, SC-31, SI-4",
+      "NCA CSCC-1:2019 §2-4-1 (extends ECC 2-5-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1219",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-4-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "oilrig",
+      "pioneer-kitten",
+      "rocket-kitten",
+      "unc1549"
+    ],
+    "rationale": "Remote-access-tool detection evidences the 2-4-1 requirement to block internet access for internal critical systems and permit only whitelisted flows: an unsanctioned RAT beaconing outbound from a critical segment is precisely the whitelist-violating egress the enhanced control forbids. Medium because RAT use also intersects the IAM remote-access controls, so the network-layer nexus is partial.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: SC-7, AC-4, CM-7, SI-4",
+      "NCA CSCC-1:2019 §2-4-1 (extends ECC 2-5-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1005",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-6-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt39",
+      "charming-kitten",
+      "pioneer-kitten",
+      "stealth-falcon",
+      "tortoiseshell"
+    ],
+    "rationale": "Detection of bulk collection from local critical systems evidences the 2-6-1 data-leakage-prevention and classification enhancement: DLP and classified-data handling are the controls that make this collection detectable/blockable, and the CTID anchor lands squarely on the data-protection 800-53 family.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: AC-16, AC-23, SC-28, SC-13, CM-12",
+      "NCA CSCC-1:2019 §2-6-1 (extends ECC 2-7-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1041",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-6-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "arid-viper",
+      "copykittens",
+      "scarred-manticore",
+      "sidewinder"
+    ],
+    "rationale": "Exfiltration over C2 evidences the enhanced 2-6-1 DLP requirement and the prohibition on moving production/critical data out of controlled environments; the CTID anchor (AC-16/AC-23/SC-28/SC-31) is the DLP-and-boundary family, making this a direct data-protection detection.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: AC-16, AC-23, SC-28, SC-31, SC-7",
+      "NCA CSCC-1:2019 §2-6-1 (extends ECC 2-7-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1074.001",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-6-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt39",
+      "arid-viper",
+      "copykittens",
+      "rocket-kitten",
+      "sidewinder"
+    ],
+    "rationale": "Local data-staging detection evidences 2-6-1 DLP by catching the pre-exfiltration aggregation of critical-systems data into holding locations, which the enhanced retention/leakage controls are meant to constrain. Medium: this sub-technique has no CTID ATT&CK->NIST anchor (bundled-dataset caveat), so corroboration rests on the parent collection/staging theme rather than a mapped 800-53 family.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "No CTID ATT&CK->NIST anchor for T1074.001 (bundled-dataset caveat); parent data-staging theme aligns to AC-16/SC-28",
+      "NCA CSCC-1:2019 §2-6-1 (extends ECC 2-7-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1048.003",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-6-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "copykittens",
+      "infy",
+      "oilrig",
+      "rocket-kitten"
+    ],
+    "rationale": "Exfiltration over an unencrypted non-C2 protocol evidences 2-6-1 data-leakage-prevention and the ban on transferring production/critical data out of its controlled environment; the CTID anchor lands on the DLP/at-rest family. Medium because the signal is a network channel and thus shared with 2-4 network controls.",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: AC-16, AC-23, SC-28, SC-13",
+      "NCA CSCC-1:2019 §2-6-1 (extends ECC 2-7-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1490",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-8-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "apt33",
+      "cavern-manticore",
+      "homeland-justice",
+      "predatory-sparrow"
+    ],
+    "rationale": "Detecting inhibit-system-recovery (shadow-copy/boot-config destruction) is the detective complement to the 2-8-1 backup-and-recovery enhancement: early alerting on recovery-tampering is what lets an organization invoke its secured online/offline critical-systems backups before they are neutralized. CTID anchors directly on CP-9/CP-10.",
+    "mapping_confidence": "high",
+    "risk_reduction_flag": true,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: CP-9, CP-10, CP-7",
+      "NCA CSCC-1:2019 §2-8-1 (extends ECC 2-9-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1485",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-8-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "apt33",
+      "predatory-sparrow",
+      "wirte"
+    ],
+    "rationale": "Data-destruction detection evidences the 2-8-1 requirement that backups be protected against destruction and cover all critical systems: catching wiper activity is the trigger to fall back on the secured offline copies the control mandates. CTID anchors on the CP-9/CP-10 recovery family. (Audit: risk-flag→false — destructive-impact detection is response/recovery evidence, not proof the backup-protection control exists; only inhibit-recovery T1490 stays true.)",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: CP-9, CP-10, CP-7",
+      "NCA CSCC-1:2019 §2-8-1 (extends ECC 2-9-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1486",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-8-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "agrius",
+      "cavern-manticore",
+      "charming-kitten"
+    ],
+    "rationale": "Data-encrypted-for-impact (ransomware) detection evidences the 2-8-1 backup coverage/protection enhancement, since restorable secured backups are the primary recovery path after encryption; the CTID anchor lands on CP-9/CP-10. Medium: only three packs cover it and the detection also serves impact/response controls, so the backup-design nexus is partial. (Audit: risk-flag→false — destructive-impact detection is response/recovery evidence, not proof the backup-protection control exists; only inhibit-recovery T1490 stays true.)",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: CP-9, CP-10, CP-6",
+      "NCA CSCC-1:2019 §2-8-1 (extends ECC 2-9-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1561",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-8-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "agrius",
+      "homeland-justice",
+      "moses-staff",
+      "void-manticore"
+    ],
+    "rationale": "Disk-wipe detection evidences the 2-8-1 requirement that backup media be protected against destruction and that offline copies exist for all critical systems; wipers that also target backup volumes are exactly the destruction scenario the control defends. Medium: refs span the wipe sub-techniques (T1561.001/.002) and the signal principally supports response as well as backup design. (Audit: risk-flag→false — destructive-impact detection is response/recovery evidence, not proof the backup-protection control exists; only inhibit-recovery T1490 stays true.)",
+    "mapping_confidence": "medium",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: CP-9, CP-10",
+      "NCA CSCC-1:2019 §2-8-1 (extends ECC 2-9-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1056.003",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-5-1",
+    "evidence_type": "hunt",
+    "library_pack_refs": [
+      "domestic-kitten",
+      "rocket-kitten",
+      "tortoiseshell",
+      "unc3890"
+    ],
+    "rationale": "Web-portal credential capture by mobile-surveillance actors relates thematically to 2-5-1 (restricting mobile-device access to critical systems), but detecting stolen portal credentials does NOT evidence the enhanced control itself, which is a policy prohibition on mobile access plus full-disk encryption. Nominal: weak CTID corroboration (credential-access family only, no mobile-device 800-53 anchor) and no direct link to the access-prohibition/FDE requirement.",
+    "mapping_confidence": "low",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: AC-3, IA-2 (credential-access adjacent); no mobile-device 800-53 family - weak corroboration",
+      "NCA CSCC-1:2019 §2-5-1 (extends ECC 2-6-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1113",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-5-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "domestic-kitten",
+      "dark-caracal",
+      "arid-viper",
+      "infy",
+      "polonium"
+    ],
+    "rationale": "Screen capture by mobile-surveillance actor packs touches the 2-5-1 mobile-security theme, but endpoint detection of screen capture does not evidence the enhanced control, which prohibits mobile access to critical systems and mandates full-disk encryption on any permitted device. Nominal/checkbox: the detection reflects general mobile-threat awareness, not the access-restriction or FDE requirement.",
+    "mapping_confidence": "low",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: SI-4 collection-detection only; no mobile-device/FDE 800-53 family - weak corroboration",
+      "NCA CSCC-1:2019 §2-5-1 (extends ECC 2-6-3)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1046",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-1-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt39",
+      "cavern-manticore",
+      "oilrig",
+      "pioneer-kitten",
+      "homeland-justice"
+    ],
+    "rationale": "Network-service-discovery detection is only tangential to 2-1-1, which is a process control: maintaining an annually-updated critical-systems asset inventory with named owners. Detecting an adversary enumerating services does not evidence that an inventory exists or is maintained. Nominal: the CTID anchor does touch CM-8 (component inventory), giving weak thematic corroboration, but detection cannot substitute for the inventory/ownership process.",
+    "mapping_confidence": "low",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: CM-8 (component inventory), CM-2, RA-5 - weak/process-adjacent",
+      "NCA CSCC-1:2019 §2-1-1 (extends ECC subdomain 2-1)"
+    ]
+  },
+  {
+    "attack_technique_id": "T1048.003",
+    "framework": "NCA CSCC-1:2019",
+    "control_id": "2-7-1",
+    "evidence_type": "detect",
+    "library_pack_refs": [
+      "apt33",
+      "copykittens",
+      "infy",
+      "oilrig",
+      "rocket-kitten"
+    ],
+    "rationale": "Exfiltration over an unencrypted non-C2 protocol underscores why 2-7-1 mandates in-transit encryption of all critical-systems data, but detecting the unencrypted channel does NOT evidence that the cryptographic control is implemented - encryption in-transit/at-rest is a configuration/process control, not a detection. Nominal: cited only to record the crypto subdomain is essentially detection-thin.",
+    "mapping_confidence": "low",
+    "risk_reduction_flag": false,
+    "source_refs": [
+      "MITRE CTID ATT&CK->NIST 800-53: SC-13, SC-28 (encryption) - control is preventive/config, not evidenced by detection",
+      "NCA CSCC-1:2019 §2-7-1 (extends ECC 2-8-3)"
+    ]
+  }
+]

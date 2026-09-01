@@ -1,7 +1,6 @@
 [
   {
     "attack_technique_id": "T1566.001",
-    "ecc_control_id": "2-4-3",
     "evidence_type": "detect",
     "library_pack_refs": [
       "apt33",
@@ -16,11 +15,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53 (SI-08 spam protection, SC-44 detonation chamber, SC-07, SI-03)",
       "MITRE ATT&CK T1566.001"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-4-3"
   },
   {
     "attack_technique_id": "T1566.002",
-    "ecc_control_id": "2-4-3",
     "evidence_type": "detect",
     "library_pack_refs": [
       "charming-kitten",
@@ -35,11 +35,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53 (SI-08, SC-44, SC-20, SC-07)",
       "MITRE ATT&CK T1566.002"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-4-3"
   },
   {
     "attack_technique_id": "T1204.002",
-    "ecc_control_id": "2-4-3",
     "evidence_type": "detect",
     "library_pack_refs": [
       "charming-kitten",
@@ -54,11 +55,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53 (SI-08, SC-44, SI-10, SI-03)",
       "MITRE ATT&CK T1204.002"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-4-3"
   },
   {
     "attack_technique_id": "T1204.001",
-    "ecc_control_id": "2-4-3",
     "evidence_type": "detect",
     "library_pack_refs": [
       "apt33",
@@ -73,11 +75,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53 (SI-08, SC-44, SC-07)",
       "MITRE ATT&CK T1204.001"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-4-3"
   },
   {
     "attack_technique_id": "T1598.003",
-    "ecc_control_id": "2-4-2",
     "evidence_type": "hunt",
     "library_pack_refs": [
       "charming-kitten",
@@ -92,11 +95,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53 (SI-08, SC-44, SC-20)",
       "MITRE ATT&CK T1598.003"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-4-2"
   },
   {
     "attack_technique_id": "T1071.001",
-    "ecc_control_id": "2-5-3",
     "evidence_type": "detect",
     "library_pack_refs": [
       "apt33",
@@ -111,11 +115,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53 (SC-07, SC-10, SC-20, SC-21, SC-23, SI-04)",
       "MITRE ATT&CK T1071.001"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-5-3"
   },
   {
     "attack_technique_id": "T1090",
-    "ecc_control_id": "2-5-3",
     "evidence_type": "detect",
     "library_pack_refs": [
       "ballistic-bobcat",
@@ -130,11 +135,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53 (AC-03, AC-04, SC-07, SC-08, SI-10, SI-15)",
       "MITRE ATT&CK T1090"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-5-3"
   },
   {
     "attack_technique_id": "T1572",
-    "ecc_control_id": "2-5-3",
     "evidence_type": "detect",
     "library_pack_refs": [
       "ballistic-bobcat",
@@ -149,11 +155,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53 (AC-04, SC-07, CM-07, SI-10, SI-15)",
       "MITRE ATT&CK T1572"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-5-3"
   },
   {
     "attack_technique_id": "T1071.004",
-    "ecc_control_id": "2-5-3",
     "evidence_type": "detect",
     "library_pack_refs": [
       "apt39",
@@ -168,11 +175,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53 (SC-07, SC-20, SC-21, SC-22, SI-04)",
       "MITRE ATT&CK T1071.004"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-5-3"
   },
   {
     "attack_technique_id": "T1048.003",
-    "ecc_control_id": "2-5-3",
     "evidence_type": "detect",
     "library_pack_refs": [
       "apt33",
@@ -187,11 +195,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53 (AC-04, SC-07, SC-46, SI-10, SI-15)",
       "MITRE ATT&CK T1048.003"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-5-3"
   },
   {
     "attack_technique_id": "T1219",
-    "ecc_control_id": "2-5-3",
     "evidence_type": "detect",
     "library_pack_refs": [
       "apt33",
@@ -206,11 +215,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53 (AC-03, AC-04, SC-07, SI-04, SI-10)",
       "MITRE ATT&CK T1219"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-5-3"
   },
   {
     "attack_technique_id": "T1021.001",
-    "ecc_control_id": "2-5-2",
     "evidence_type": "detect",
     "library_pack_refs": [
       "apt33",
@@ -225,11 +235,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53 (AC-04, AC-17, SC-07, SI-04)",
       "MITRE ATT&CK T1021.001"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-5-2"
   },
   {
     "attack_technique_id": "T1190",
-    "ecc_control_id": "2-15-3",
     "evidence_type": "detect",
     "library_pack_refs": [
       "agrius",
@@ -244,11 +255,12 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53 (SC-07, SI-10, RA-05, SC-18, SI-03)",
       "MITRE ATT&CK T1190"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-15-3"
   },
   {
     "attack_technique_id": "T1505.003",
-    "ecc_control_id": "2-15-2",
     "evidence_type": "detect",
     "library_pack_refs": [
       "agrius",
@@ -263,6 +275,8 @@
     "source_refs": [
       "MITRE CTID ATT&CK->NIST 800-53 (RA-05, SI-04, CM-06, AC-03 - partial, no SC-07/SI-10 web anchor)",
       "MITRE ATT&CK T1505.003"
-    ]
+    ],
+    "framework": "NCA ECC-1:2018",
+    "control_id": "2-15-2"
   }
 ]

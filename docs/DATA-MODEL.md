@@ -1,10 +1,14 @@
 # KSA ECC-Map — Data Model
 
-Two machine-readable layers, both gated by `scripts/audit_eccmap.py`.
+Multi-framework. Two machine-readable layers, both gated by `scripts/audit_eccmap.py`.
+Each framework has one catalog in `catalog/` and its mappings under
+`mappings/<framework>/`. Today: **NCA ECC-1:2018** (`catalog/ecc.json`, `mappings/ecc/`)
+and **NCA CSCC-1:2019** (`catalog/cscc.json`, `mappings/cscc/`). OTCC/SAMA later.
 
-## 1. `catalog/ecc.json` — the source of truth
-The canonical **NCA ECC-1:2018** control list. Every mapping validates its
-`ecc_control_id` against this file; a control ID that isn't here is a hard ERR.
+## 1. `catalog/*.json` — the source of truth (one per framework)
+The canonical NCA control list for a framework. Every mapping validates its
+`control_id` against the catalog whose `framework` it names; a control ID not in
+that framework's catalog is a hard ERR.
 
 ```jsonc
 {
@@ -35,27 +39,31 @@ The canonical **NCA ECC-1:2018** control list. Every mapping validates its
 the official NCA document. We do **not** redistribute the NCA text verbatim. The
 audit flags any `intent` over 40 words for a verbatim-copy check.
 
-## 2. `mappings/*.json` — technique → control links
-One row per link between an ATT&CK technique the Detection Library covers and an
-ECC control that technique's detection/hunt provides **evidence** for.
+## 2. `mappings/<framework>/*.json` — technique → control links
+One row per link between an ATT&CK technique the Detection Library covers and a
+control (of the named framework) that technique's detection/hunt gives **evidence** for.
 
 ```jsonc
 [
   {
     "attack_technique_id": "T1059.001",   // must exist in the bundled ATT&CK dataset
-    "ecc_control_id": "2-3-1",            // must exist in catalog/ecc.json
+    "framework": "NCA ECC-1:2018",        // must match a catalog's "framework"
+    "control_id": "2-3-1",                // must exist in that framework's catalog
     "evidence_type": "detect",            // detect | hunt
     "library_pack_refs": ["muddywater", "oilrig/detections/T1059.001_….yml"],
-    "rationale": "why this detection evidences this control's monitoring intent",
+    "rationale": "why this detection evidences this control's intent",
     "mapping_confidence": "high",         // high | medium | low
     "risk_reduction_flag": true,          // does it genuinely reduce risk, or nominal/checkbox?
     "source_refs": ["MITRE CTID ATT&CK→NIST 800-53", "…"]
   }
 ]
 ```
+Uniqueness is per `(framework, technique, control)`. Control IDs may be any
+depth (`2-3`, `2-3-1`, `2-3-1-1`).
 
 ## Honesty invariants (enforced/flagged by the audit)
-- **No fabricated control IDs** — every `ecc_control_id` ∈ catalog.
+- **No fabricated control IDs** — every `control_id` ∈ its framework's catalog.
+- **No unknown frameworks** — every row's `framework` matches a catalog.
 - **No invalid techniques** — every `attack_technique_id` ∈ bundled ATT&CK dataset.
 - **No dangling library refs** — every `library_pack_ref` exists on disk.
 - **No blank claims** — rationale, confidence, `risk_reduction_flag`, source all required.
