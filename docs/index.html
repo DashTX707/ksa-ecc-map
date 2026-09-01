@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>KSA ECC-Map</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A community crosswalk mapping deployable detection content to the control clauses of Saudi Arabia's NCA ECC-1:2018 — audited, honest about coverage, not an NCA attestation.">
+<meta property="og:title" content="KSA ECC-Map">
+<meta property="og:description" content="Which detections give audit evidence for which NCA ECC-1:2018 control. 85 audited mappings across 20 controls; honest about the 94 with none.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='4' width='20' height='24' rx='2' fill='none' stroke='%239a6a2f' stroke-width='2'/%3E%3Cpath d='M10 11h9M10 16h9M10 21h5' stroke='%239a6a2f' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpath d='M19 22.5l2.2 2.2 4-4.4' fill='none' stroke='%232e6f4e' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#f4f1ea; --card:#fffdf8; --card2:#f0ece1; --ink:#22262c; --muted:#6b7280; --line:#e2dccf; --line2:#d3ccbb;
+  --slate:#3a4658; --bronze:#9a6a2f; --bronze-soft:#f0e4d2;
+  --high:#2e6f4e; --med:#a9791f; --low:#83837e; --nominal:#a8342b;
+  --detect:#2f5d7a; --hunt:#9a6a2f;
+  --serif:'IBM Plex Serif',Georgia,serif; --sans:'IBM Plex Sans',system-ui,sans-serif;
+  --ar:'IBM Plex Sans Arabic','IBM Plex Sans',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --sh:0 1px 2px rgba(40,34,20,.05),0 8px 24px -14px rgba(40,34,20,.18);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#13161b; --card:#1a1e25; --card2:#20252e; --ink:#e9e7e0; --muted:#98a1ac; --line:#2a3039; --line2:#343c47;
+  --slate:#a2b2c6; --bronze:#cf9a52; --bronze-soft:#2c2318;
+  --high:#5fb488; --med:#d8ad4a; --low:#9aa0a6; --nominal:#e2685a;
+  --detect:#6fa8cf; --hunt:#cf9a52;
+  --sh:0 1px 2px rgba(0,0,0,.3),0 10px 30px -16px rgba(0,0,0,.6);
+}}
+:root[data-theme="dark"]{
+  --paper:#13161b; --card:#1a1e25; --card2:#20252e; --ink:#e9e7e0; --muted:#98a1ac; --line:#2a3039; --line2:#343c47;
+  --slate:#a2b2c6; --bronze:#cf9a52; --bronze-soft:#2c2318;
+  --high:#5fb488; --med:#d8ad4a; --low:#9aa0a6; --nominal:#e2685a;
+  --detect:#6fa8cf; --hunt:#cf9a52;
+  --sh:0 1px 2px rgba(0,0,0,.3),0 10px 30px -16px rgba(0,0,0,.6);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;
+  font-size:15px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+a{color:var(--bronze);text-decoration:none}a:hover{text-decoration:underline}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;text-wrap:balance;margin:0}
+.mono{font-family:var(--mono)}
+.ar{font-family:var(--ar);direction:rtl;unicode-bidi:isolate}
+
+/* hero */
+header.hero{border-bottom:1px solid var(--line);background:
+  radial-gradient(120% 80% at 88% -10%, var(--bronze-soft) 0%, transparent 55%);}
+.hero .wrap{padding-top:40px;padding-bottom:34px}
+.eyebrow{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);font-weight:600;margin-bottom:14px}
+.titrow{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+h1{font-size:40px;letter-spacing:-.01em}
+.h1ar{font-family:var(--ar);font-size:26px;color:var(--slate);font-weight:500}
+.lede{margin:14px 0 0;max-width:60ch;color:var(--ink);font-size:16px}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;align-items:center}
+.verdict{display:inline-flex;align-items:center;gap:7px;background:color-mix(in srgb,var(--high) 14%,transparent);
+  color:var(--high);border:1px solid color-mix(in srgb,var(--high) 40%,transparent);
+  padding:5px 12px;border-radius:999px;font-weight:600;font-size:13px}
+.verdict::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--high)}
+.chip{font-size:12.5px;color:var(--muted);border:1px solid var(--line2);border-radius:999px;padding:4px 11px}
+.disclaimer{margin-top:18px;font-size:12.5px;color:var(--muted);border-left:3px solid var(--line2);padding:2px 0 2px 12px}
+
+/* stat band */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:26px 0}
+.stat{background:var(--card);padding:16px 16px}
+.stat .n{font-family:var(--serif);font-size:27px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+.stat .k{font-size:11.5px;color:var(--muted);margin-top:6px;letter-spacing:.02em}
+.stat.hl{background:var(--card2)}
+.stat.hl .n{color:var(--bronze)}
+
+section{padding:34px 0;border-top:1px solid var(--line)}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+h2{font-size:23px}
+.sec-sub{color:var(--muted);font-size:13.5px;margin:6px 0 20px;max-width:70ch}
+
+/* domain concentration */
+.dom{display:flex;flex-direction:column;gap:10px}
+.domrow{display:grid;grid-template-columns:1fr 150px;gap:14px;align-items:center;
+  background:var(--card);border:1px solid var(--line);border-radius:10px;padding:13px 16px}
+.domrow.zero{opacity:.72}
+.domname{display:flex;flex-direction:column;gap:2px}
+.domname b{font-weight:600;font-size:14.5px}
+.domname .a{font-family:var(--ar);font-size:13px;color:var(--muted)}
+.dommeter{display:flex;flex-direction:column;gap:5px}
+.bar{height:8px;border-radius:4px;background:var(--card2);overflow:hidden;border:1px solid var(--line)}
+.bar>i{display:block;height:100%;background:var(--bronze)}
+.dommeter .lbl{font-size:11.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.zero .lbl b{color:var(--muted)}
+
+/* methodology */
+.chain{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:4px 0 14px}
+.chain .step{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:12.5px;font-weight:500}
+.chain .step small{display:block;color:var(--muted);font-weight:400;font-size:11px}
+.chain .arr{color:var(--bronze);font-weight:700}
+
+/* controls / tabs */
+.tabs{display:inline-flex;background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:4px;gap:4px}
+.tab{border:0;background:transparent;color:var(--muted);font-family:var(--sans);font-size:13.5px;font-weight:600;
+  padding:7px 15px;border-radius:7px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--card);color:var(--ink);box-shadow:var(--sh)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 6px;align-items:center}
+.filters .fl{font-size:12px;color:var(--muted);margin-right:2px}
+.fbtn{border:1px solid var(--line2);background:var(--card);color:var(--ink);font-family:var(--sans);font-size:12.5px;
+  padding:5px 11px;border-radius:999px;cursor:pointer}
+.fbtn[aria-pressed="true"]{background:var(--slate);color:#fff;border-color:var(--slate)}
+:root[data-theme="dark"] .fbtn[aria-pressed="true"],
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .fbtn[aria-pressed="true"]{color:#10141a}}
+
+.subgroup{margin-top:24px}
+.subgroup h3{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--bronze);margin-bottom:2px}
+.subgroup .sar{font-family:var(--ar);color:var(--muted);font-size:13px;margin-bottom:12px}
+
+.ctrl{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden}
+.ctrl-h{display:flex;gap:14px;align-items:flex-start;padding:15px 17px;cursor:pointer}
+.cid{font-family:var(--mono);font-size:12.5px;font-weight:500;color:#fff;background:var(--slate);
+  padding:3px 8px;border-radius:6px;white-space:nowrap;margin-top:1px}
+.ctrl-t{flex:1;min-width:0}
+.ctrl-t b{font-weight:600;font-size:15px}
+.ctrl-t p{margin:4px 0 0;color:var(--muted);font-size:13px}
+.covwrap{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.covn{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--bronze);font-variant-numeric:tabular-nums}
+.covn small{font-size:11px;color:var(--muted);font-weight:400;font-family:var(--sans)}
+.caret{color:var(--muted);transition:transform .2s;margin-top:3px}
+.ctrl.open .caret{transform:rotate(90deg)}
+.maprows{display:none;border-top:1px solid var(--line);padding:4px 0}
+.ctrl.open .maprows{display:block}
+.mrow{display:grid;grid-template-columns:118px 1fr auto;gap:12px;align-items:start;padding:11px 17px;border-top:1px solid var(--line)}
+.mrow:first-child{border-top:0}
+.tid{font-family:var(--mono);font-size:12px}
+.tid b{display:block;font-weight:500}
+.tid span{color:var(--muted);font-size:11px}
+.mwhy{font-size:13px;color:var(--ink)}
+.mwhy .packs{margin-top:5px;display:flex;gap:5px;flex-wrap:wrap}
+.pk{font-family:var(--mono);font-size:10.5px;color:var(--muted);background:var(--card2);border:1px solid var(--line);
+  padding:1px 6px;border-radius:5px}
+.tags{display:flex;flex-direction:column;gap:5px;align-items:flex-end}
+.pill{font-size:11px;font-weight:600;padding:2px 9px;border-radius:999px;white-space:nowrap;
+  border:1px solid transparent}
+.pill.high{color:var(--high);background:color-mix(in srgb,var(--high) 13%,transparent);border-color:color-mix(in srgb,var(--high) 34%,transparent)}
+.pill.medium{color:var(--med);background:color-mix(in srgb,var(--med) 14%,transparent);border-color:color-mix(in srgb,var(--med) 36%,transparent)}
+.pill.low{color:var(--low);background:color-mix(in srgb,var(--low) 15%,transparent);border-color:color-mix(in srgb,var(--low) 40%,transparent)}
+.pill.detect{color:var(--detect);border-color:color-mix(in srgb,var(--detect) 40%,transparent)}
+.pill.hunt{color:var(--hunt);border-color:color-mix(in srgb,var(--hunt) 42%,transparent)}
+.pill.nominal{color:var(--nominal);border-color:color-mix(in srgb,var(--nominal) 45%,transparent);background:color-mix(in srgb,var(--nominal) 10%,transparent)}
+
+/* technique table */
+.ttbl{width:100%;border-collapse:collapse;font-size:13.5px}
+.ttbl th{text-align:left;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);
+  padding:9px 12px;border-bottom:1px solid var(--line2)}
+.ttbl td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.ttbl tr:hover td{background:var(--card)}
+.tctrls{display:flex;gap:5px;flex-wrap:wrap}
+.cc{font-family:var(--mono);font-size:11px;padding:2px 7px;border-radius:5px;border:1px solid var(--line2)}
+.cc.high{border-color:color-mix(in srgb,var(--high) 45%,transparent);color:var(--high)}
+.cc.medium{border-color:color-mix(in srgb,var(--med) 45%,transparent);color:var(--med)}
+.cc.low{border-color:color-mix(in srgb,var(--low) 45%,transparent);color:var(--low)}
+.hide{display:none !important}
+
+footer{border-top:1px solid var(--line);padding:30px 0 50px;color:var(--muted);font-size:13px}
+footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:26px}
+footer b{color:var(--ink);font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;display:block;margin-bottom:8px}
+footer a{display:block;margin-bottom:5px}
+.foot-note{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;line-height:1.6}
+.theme-tog{position:fixed;top:14px;right:14px;z-index:10;background:var(--card);border:1px solid var(--line2);
+  color:var(--muted);border-radius:8px;width:34px;height:34px;cursor:pointer;font-size:15px;box-shadow:var(--sh)}
+@media(max-width:720px){h1{font-size:32px}.mrow{grid-template-columns:1fr;gap:8px}.tags{flex-direction:row;align-items:center}
+  footer .grid{grid-template-columns:1fr}.covwrap .covn small{display:none}}
+</style>
+</head>
+<body>
+<button class="theme-tog" id="tt" title="Toggle theme" aria-label="Toggle theme">◐</button>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Community crosswalk · not an NCA attestation</div>
+    <div class="titrow">
+      <h1>KSA ECC-Map</h1>
+      <span class="h1ar">خريطة الضوابط الأساسية للأمن السيبراني</span>
+    </div>
+    <p class="lede">Which deployable detections give you <em>audit evidence</em> for which control of
+      Saudi Arabia's <strong>NCA ECC‑1:2018</strong> — the Essential Cybersecurity Controls. Built from the
+      <a href="https://github.com/DashTX707/mena-detection-library">MENA Detection Library</a>, corroborated
+      against MITRE CTID's ATT&amp;CK→NIST 800‑53 mapping, and put through a four‑stage audit.</p>
+    <div class="badges">
+      <span class="verdict">Audit verdict: PASS</span>
+      <span class="chip">85 evidence mappings</span>
+      <span class="chip">20 of 114 controls</span>
+      <span class="chip">Domain 2 · Cybersecurity Defense</span>
+    </div>
+    <p class="disclaimer">Community guidance mapping public detection content to ECC control <em>intent</em>.
+      It is <strong>not</strong> an NCA‑endorsed compliance attestation, and evidence of a control is not proof
+      of risk reduction. The Arabic ECC is the binding text; English here is a paraphrase aid.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats" id="stats"></div>
+</div>
+
+<section id="concentration">
+  <div class="wrap">
+    <div class="sec-h"><h2>Where coverage actually is</h2></div>
+    <p class="sec-sub">Detection content evidences <em>technical defense</em> controls. It cannot evidence
+      policy, governance, or process controls — so honest coverage is concentrated in one domain and
+      <strong>absent by design</strong> in the other four. We show that plainly rather than fake breadth.</p>
+    <div class="dom" id="dom"></div>
+  </div>
+</section>
+
+<section id="method">
+  <div class="wrap">
+    <div class="sec-h"><h2>How each mapping was made &amp; checked</h2></div>
+    <div class="chain" id="chain">
+      <span class="step">Execution<small>4 governance agents, by subdomain</small></span><span class="arr">→</span>
+      <span class="step">Deterministic gate<small>IDs · join integrity · fields</small></span><span class="arr">→</span>
+      <span class="step">Adversarial validation<small>10 rejected · 19 downgraded</small></span><span class="arr">→</span>
+      <span class="step">Governance full audit<small>PASS · signed off</small></span>
+    </div>
+    <p class="sec-sub">Corroboration axis: MITRE Center for Threat‑Informed Defense
+      <a href="https://center-for-threat-informed-defense.github.io/mappings-explorer/external/nist/">ATT&amp;CK→NIST 800‑53 R5</a>
+      (5,264 technique→control edges). Every mapping records rationale, a confidence grade, a
+      <strong>risk‑reduction flag</strong> (the “compliant ≠ secure” check), and its sources. Full sign‑off in
+      <a href="https://github.com/DashTX707/ksa-ecc-map/blob/main/docs/AUDIT-REPORT.md">AUDIT‑REPORT.md</a>.</p>
+  </div>
+</section>
+
+<section id="map">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2>The map</h2>
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" id="tab-c">By control</button>
+        <button class="tab" role="tab" aria-selected="false" id="tab-t">By technique</button>
+      </div>
+    </div>
+    <div class="filters" id="filters">
+      <span class="fl">Confidence</span>
+      <button class="fbtn" data-f="cf" data-v="high" aria-pressed="false">high</button>
+      <button class="fbtn" data-f="cf" data-v="medium" aria-pressed="false">medium</button>
+      <button class="fbtn" data-f="cf" data-v="low" aria-pressed="false">low</button>
+      <span class="fl" style="margin-left:8px">Evidence</span>
+      <button class="fbtn" data-f="ev" data-v="detect" aria-pressed="false">detect</button>
+      <button class="fbtn" data-f="ev" data-v="hunt" aria-pressed="false">hunt</button>
+      <button class="fbtn" data-f="rr" data-v="nominal" aria-pressed="false" style="margin-left:8px">nominal only (risk‑flag ✗)</button>
+    </div>
+    <div id="view-c"></div>
+    <div id="view-t" class="hide"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <b>About</b>
+        KSA ECC‑Map is a non‑commercial, community crosswalk. It references NCA control IDs and paraphrases
+        each control's intent; it does not redistribute the official NCA document text.
+      </div>
+      <div>
+        <b>Sources</b>
+        <a href="https://nca.gov.sa/en/regulatory-documents/controls-list/ecc/">NCA ECC‑1:2018 (official)</a>
+        <a href="https://center-for-threat-informed-defense.github.io/mappings-explorer/external/nist/">MITRE CTID · ATT&amp;CK→NIST 800‑53</a>
+        <a href="https://github.com/DashTX707/mena-detection-library">MENA Detection Library</a>
+      </div>
+      <div>
+        <b>Project</b>
+        <a href="https://github.com/DashTX707/ksa-ecc-map">Repository</a>
+        <a href="https://github.com/DashTX707/ksa-ecc-map/blob/main/docs/AUDIT-REPORT.md">Audit report</a>
+        <a href="https://github.com/DashTX707/ksa-ecc-map/blob/main/docs/DATA-MODEL.md">Data model</a>
+      </div>
+    </div>
+    <p class="foot-note">Mapping data &amp; docs: CC BY 4.0. ECC control text and IDs are the property of the
+      National Cybersecurity Authority (referenced, not relicensed). This page assesses mapping
+      evidence‑validity and honesty — it is <strong>not</strong> an NCA compliance attestation, and the binding
+      Arabic ECC governs any interpretation.</p>
+  </div>
+</footer>
+
+<script src="_data.js"></script>
+<script>
+(function(){
+  var d=ECCMAP, S=d.stats;
+  // theme toggle
+  var tt=document.getElementById('tt');
+  tt.onclick=function(){var r=document.documentElement;
+    var cur=r.getAttribute('data-theme')|| (matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+    r.setAttribute('data-theme',cur==='dark'?'light':'dark');};
+  // stats
+  var stat=[['n_mappings',S.mappings,'evidence mappings'],['controls',S.controls_covered+' / '+S.controls_total,'ECC controls covered'],
+    ['high',S.high,'high confidence'],['medium',S.medium,'medium'],['low',S.low,'low'],
+    ['nominal',S.nominal,'nominal (risk‑flag ✗)'],['ctid',(S.ctid_edges).toLocaleString(),'CTID corroboration edges']];
+  document.getElementById('stats').innerHTML=stat.map(function(s,i){
+    return '<div class="stat'+(i===1?' hl':'')+'"><div class="n">'+s[1]+'</div><div class="k">'+s[2]+'</div></div>';}).join('');
+  // domain concentration
+  document.getElementById('dom').innerHTML=d.domain_summary.map(function(x){
+    var pct=x.total?Math.round(100*x.covered/x.total):0, zero=x.covered===0;
+    var note=zero?'detection cannot evidence these':(x.covered+' of '+x.total+' carry evidence');
+    return '<div class="domrow'+(zero?' zero':'')+'"><div class="domname"><b>Domain '+x.id+' · '+x.en+'</b>'+
+      '<span class="a">'+x.ar+'</span></div><div class="dommeter"><div class="bar"><i style="width:'+pct+'%"></i></div>'+
+      '<span class="lbl"><b>'+x.covered+'</b> / '+x.total+' — '+note+'</span></div></div>';}).join('');
+
+  var F={cf:new Set(),ev:new Set(),rr:new Set()};
+  function pass(m){
+    if(F.cf.size&&!F.cf.has(m.cf))return false;
+    if(F.ev.size&&!F.ev.has(m.ev))return false;
+    if(F.rr.has('nominal')&&m.rr)return false;
+    return true;
+  }
+  // control view
+  function renderC(){
+    var groups={}, order=[];
+    d.controls.forEach(function(c){
+      var vis=c.mappings.filter(pass); if(!vis.length)return;
+      if(!groups[c.subdomain_id]){groups[c.subdomain_id]={en:c.subdomain_en,ar:c.subdomain_ar,items:[]};order.push(c.subdomain_id);}
+      groups[c.subdomain_id].items.push({c:c,vis:vis});
+    });
+    var html=order.map(function(sid){
+      var g=groups[sid];
+      var cards=g.items.map(function(o){
+        var c=o.c;
+        var rows=o.vis.map(function(m){
+          return '<div class="mrow"><div class="tid"><b>'+m.t+'</b><span>'+esc(m.tn)+'</span></div>'+
+            '<div class="mwhy">'+esc(m.why)+'<div class="packs">'+m.packs.slice(0,6).map(function(p){return '<span class="pk">'+p+'</span>';}).join('')+'</div></div>'+
+            '<div class="tags"><span class="pill '+m.cf+'">'+m.cf+'</span><span class="pill '+m.ev+'">'+m.ev+'</span>'+
+            (m.rr?'':'<span class="pill nominal">nominal</span>')+'</div></div>';}).join('');
+        return '<div class="ctrl"><div class="ctrl-h"><span class="cid">'+c.id+'</span><div class="ctrl-t"><b>'+esc(c.title_en)+
+          '</b><p>'+esc(c.intent)+'</p></div><div class="covwrap"><span class="covn">'+o.vis.length+'<small> map'+(o.vis.length>1?'s':'')+'</small></span>'+
+          '<span class="caret">▸</span></div></div><div class="maprows">'+rows+'</div></div>';
+      }).join('');
+      return '<div class="subgroup"><h3>'+sid+' · '+esc(g.en)+'</h3><div class="sar">'+esc(g.ar)+'</div>'+cards+'</div>';
+    }).join('');
+    document.getElementById('view-c').innerHTML=html||'<p class="sec-sub">No mappings match these filters.</p>';
+    document.querySelectorAll('.ctrl-h').forEach(function(h){h.onclick=function(){h.parentNode.classList.toggle('open');};});
+  }
+  // technique view
+  function renderT(){
+    var rows=d.techniques.map(function(t){
+      var mc=t.controls.filter(function(c){return !F.cf.size||F.cf.has(c.cf);});
+      if(F.cf.size&&!mc.length)return '';
+      if(F.ev.size&&!t.ev.some(function(e){return F.ev.has(e);}))return '';
+      return '<tr><td class="mono"><b>'+t.id+'</b></td><td>'+esc(t.name)+'</td>'+
+        '<td><div class="tctrls">'+mc.map(function(c){return '<span class="cc '+c.cf+'">'+c.c+'</span>';}).join('')+'</div></td>'+
+        '<td>'+t.ev.map(function(e){return '<span class="pill '+e+'">'+e+'</span>';}).join(' ')+'</td></tr>';
+    }).filter(Boolean).join('');
+    document.getElementById('view-t').innerHTML='<table class="ttbl"><thead><tr><th>Technique</th><th>Name</th><th>Evidences (ECC controls)</th><th>Evidence</th></tr></thead><tbody>'+
+      (rows||'<tr><td colspan="4">No techniques match these filters.</td></tr>')+'</tbody></table>';
+  }
+  function render(){renderC();renderT();}
+  // tabs
+  var tabc=document.getElementById('tab-c'),tabt=document.getElementById('tab-t');
+  tabc.onclick=function(){tabc.setAttribute('aria-selected','true');tabt.setAttribute('aria-selected','false');
+    document.getElementById('view-c').classList.remove('hide');document.getElementById('view-t').classList.add('hide');};
+  tabt.onclick=function(){tabt.setAttribute('aria-selected','true');tabc.setAttribute('aria-selected','false');
+    document.getElementById('view-t').classList.remove('hide');document.getElementById('view-c').classList.add('hide');};
+  // filters
+  document.querySelectorAll('.fbtn').forEach(function(b){b.onclick=function(){
+    var on=b.getAttribute('aria-pressed')==='true';b.setAttribute('aria-pressed',on?'false':'true');
+    var f=b.dataset.f,v=b.dataset.v; if(on)F[f].delete(v); else F[f].add(v); render();};});
+  function esc(s){return (s==null?'':''+s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  render();
+})();
+</script>
+</body>
+</html>
